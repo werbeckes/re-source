@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'home#index'
-
+  root 'sessions#new'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -9,6 +8,8 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+
+  get '/home' => 'home#index'
 
   # resources :sessions, only: [:destroy]
 
