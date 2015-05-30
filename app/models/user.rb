@@ -4,5 +4,6 @@ class User < ActiveRecord::Base
   has_many :notes, through: :categories
   has_many :snippets, through: :notes
 
+  has_secure_password
 
 end

@@ -41,6 +41,7 @@ GEM
       sprockets
       tilt
     arel (6.0.0)
+    bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bower-rails (0.9.2)
@@ -196,6 +197,7 @@ PLATFORMS
 
 DEPENDENCIES
   angular-rails-templates
+  bcrypt (~> 3.1.7)
   bower-rails
   byebug
   capybara
