@@ -1,6 +1,8 @@
 module Api
   class SnippetsController < ApplicationController
-    before_action :token_authenticate
+    # before_action :token_authenticate
+    #skip because we have no snippet form
+    skip_before_filter :verify_authenticity_token
 
     def index
       puts "HIT INDEX ROUTE"
