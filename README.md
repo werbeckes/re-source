@@ -1,9 +1,10 @@
-testing travis some more
-resource
+
+#re: source
 Learning to code is hard.
 We know, but why?
 
-There's been many times i've tried to teach myself to code and then hit a wall and gave up. You go for a while thinking you're really getting it, and you're ready to go out and create something awesome. So you sit down at your computer with an idea in mind, open your text editor, and just stare at the screen.
+
+There's been many times I've tried to teach myself to code and then hit a wall and gave up. You go for a while thinking you're really getting it, and you're ready to go out and create something awesome. So you sit down at your computer with an idea in mind, open your text editor, and just stare at the screen.
 
 Where the hell do I even begin?
 
@@ -11,7 +12,7 @@ Thats something I hear all the time from people starting out and learning, and i
 
 In comes documentation
 
-Developers live in the docs. It's supposed to be a land of no secrets and the key to understanding how to use that specific technology. Great! I guess if I have to learn this new puzzle piece I'll go check out the docs and come back with an understanding and be able to put it to practical use! So you start reading, and sooner rather than later you just get angry and frustrated because these people are explaining already foreign concepts with even more foreign terminology on a very technical level. So what do you do? I know I've just given up and walked away multiple times, finally accepting developers are just not muggles like the rest of us and I better not question how they do things because it's literally rocket science to me. The above process repeated about 15 times for me until I finally decided to go to school and actually give it a real shot. Mostly because it had been so long that I had forgotten all the complete bullshit that was about to hit me right in the face. But this time it didn't Well, I shouldn't say it didn't. It came to me easier than it had before. I didn't know why, I was just happy it was working. Fast forward to the first major project. I'm pumped. I feel like a super hero. I understand this stuff. I know how to actually do things now. Then I sit down to start.
+Developers live in the docs. It's supposed to be a land of no secrets and the key to understanding how to use that specific technology. Great! I guess if I have to learn this new puzzle piece I'll go check out the docs and come back with an understanding and be able to put it to practical use! So you start reading, and sooner rather than later you just get angry and frustrated because these people are explaining already foreign concepts with even more foreign terminology on a very technical level. So what do you do? I know I've just given up and walked away multiple times, finally accepting developers are just not muggles like the rest of us and I better not question how they do things because it's literally rocket science to me. The above process repeated about 15 times for me until I finally decided to go to school and actually give it a real shot. Mostly because it had been so long that I had forgotten all the complete bullshit that was about to hit me right in the face. But this time it didn't. Well, I shouldn't say it didn't. It came to me easier than it had before. I didn't know why, I was just happy it was working. Fast forward to the first major project. I'm pumped. I feel like a super hero. I understand this stuff. I know how to actually do things now. Then I sit down to start.
 
 What. The. Fuck.
 
@@ -33,63 +34,65 @@ When you're learning you generally are taking notes to refer back to, because no
 
 So that's our mission. Hope you're on board. Or not. We are, so it'll still be here.
 
-standups
+#Project Operating Agreement
 
-Come prepared. If you're working, you'll have something to say you did.
+##Stand-ups
+Come prepared.
+* What did you do?
+* What do you want to do next?
+* What are you struggling with?
+* Did you discover any useful tips to share?
+* What is your pairing preference?
 
-What did you do?
-What do you want to do next?
-What are you struggling with?
-If you have any tips to share that you found out about, share them.
 Everyone answers these questions and then the floor is open for conversation. Let them get out everything.
-Morning - 8:15 AM Morning(non-technical) - 10:15 AM Afternoon - 12:45 PM Evening - 4:30 PM
 
-General rules
+Morning - 8:15 AM
+Morning(non-technical) - 10:15 AM
+Afternoon - 12:45 PM
+Evening - 4:30 PM
 
-DONT EVER PUSH TO OR BREAK MASTER. YOU WILL GET BRANGED.
-Lunch is still the same time everyday. Feel free to keep coding, but you probably shouldn't be.
-It's encouraged to get lunch together!
-Also snack trips are awesome.
+Lunch is still 11:30-1:00. Feel free to keep coding, but you probably shouldn't be.
 
-Nathan is project manager
+8:00 check in if the guys are still here.
 
-Always knows what people are doing
-Knows what's next for the project
+##Workflow
+* Don't push broken code to master.
+* Every pull request must have at least one feature test.
+* Fork or branch, just keep it tidy people.
+* Kanban whiteboard. High-five yourself and team. Confidence is contagious.
+* Pair more often while working with new tech.
+* Pair less often while confident it will accelerate progress.
 
-Set aside a small period of time every day for non technical stuff.
+##Group Dynamics
+* Encourage lunch together as well as snack trips.
+* If you feel like you need to take the night off and come fresh tomorrow, do it.
+* If you're stuck for more than 20 minutes, ask a group memeber for help.
+* Still stuck? Address blocker at standup, make progress somewhere else.
+* We are always pseudo pairing, everyone is here to help each other.
 
-Check in and make sure no one is going crazy or wants to kill eachother.
-
-If everyone is still here at 8 and working, check ins held and if you feel like you need to take the night off and come fresh tomorrow, do it.
-
-MVP IS EVERYTHING
-How do we get there?
-
-Make good use of icebox. That's where the stretch lives. Post it and drop it till were there.
-Don't be afraid to sacrafice.
-Limit new tech.
-Make sure everyone sees the same finished product
-Workflow
-
-Using whiteboards.
-If you finish something, let everyone know, high five yourself and scream at the top of your lungs.
-Testing
-
-Every push must have at least 1 feature test.
-Group dynamics
-
-If you're stuck for more than 15 minutes, get help.
-Go to someone in the group first. If you guys both can't figure out what the problem is then go to a teacher.
-Pair more often during setups. Pair more often during new tech intros.
-Pair less when you know that it wouldn't be adventageous to the speed and flow of things.
-Fork or branch, just keep it tidy people.
-Freely express your pairing preference at stand ups.
-Be in the mindset that we're always pseudo pairing, everyone is here to help each other.
+##MVP IS EVERYTHING
+####How do we get there?
+* Icebox aggressively. Post it and drop it.
+* Make sure everyone shares same explicit vision.
+* Don't chase sunk cost.
+* Limit new tech.
 
 
+##Responsibilities
+Nathan - Project Manager
+  Always knows what people are doing
+  Knows what's next for the project
 
-+## Conflict Resolution
-+* Objective - Explain your thinking (pros/cons) such that group can agree on best course (consensus).
-+* Rate from 1-10 your level of concern
-+* Timebox to 30 minutes with vote resolution. Clock stops if a break is neaded to collect oneself.
-+* If vote is deadlocked, seek arbitration from Lucas/Casey/Leon/Alex
+Christian - Database/Server/Partial Speacialist
+
+Jim - User Experience
+
+Brang - Brang
+
+## Conflict Resolution
+* Objective - Explain your thinking (pros/cons) such that group can agree on best course (consensus).
+* Rate from 1-10 your level of concern
+* Timebox to 30 minutes with vote resolution. Clock stops if a break is neaded to collect oneself.
+* If vote is deadlocked, seek arbitration from Lucas/Casey/Leon/Alex
+
+![alt tag](schema.png)
