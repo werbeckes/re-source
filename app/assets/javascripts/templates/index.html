@@ -1,5 +1,15 @@
 <header class="row">
   <h1 class="text-center col-md-6 col-md-offset-3">Find Recipes</h1>
+  <ul ng-repeat="journey in journeys">
+    <li>{{journey.title}}</li>
+  </ul>
+  <ul ng-repeat="cat in cats">
+    <li>{{cat.title}}</li>
+  </ul>
+  <ul>
+    <li>Is this working??</li>
+    <li>Yup, definitely is</li>
+  </ul>
 </header>
 <section class="row">
   <form>
