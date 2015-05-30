@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   # resources :sessions, only: [:destroy]
 
-
+  namespace :api do
+    resources :snippets, only: :create
+  end
 
 
 
