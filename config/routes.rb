@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
 
   scope "api" do
-    resources :journeys
+    resources :journeys do
+      resources :categories
+    end
   end
 
 

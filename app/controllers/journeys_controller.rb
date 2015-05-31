@@ -10,7 +10,7 @@ class JourneysController < ApplicationController
   #fetch a single journey with Journey.show(id)
   def show
     @journey = Journey.find(params[:id])
-    respond_to @journey
+    render json: @journey
   end
 
 
