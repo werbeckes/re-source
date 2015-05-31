@@ -1,14 +1,20 @@
 var controllers;
 
-var app = angular.module('app', ['templates', 'ngRoute', 'controllers', 'ngResource']);
+var app = angular.module('resourceApp', ['templates', 'ngRoute', 'controllers', 'ngResource']);
 
 app.config([
-  '$routeProvider', function($routeProvider) {
+  '$routeProvider', function($routeProvider,$locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: "assets/templates/index.html",
-        controller: 'HomeController'
-      })
+        controller: 'HomeController'})
+      .when('/journeys/:id', {
+        templateUrl: "assets/templates/journey.html",
+        controller: 'JourneyController'})
+      .when('/journeys/:journey_id/category/:id', {
+        templateUrl: "assets/templates/category.html",
+        controller: 'CategoryController'})
+      .otherwise( { redirectTo: '/' } );
   }
 ]);
 
@@ -27,7 +33,6 @@ app.factory("Journey", function($resource) {
     }
   );
 })
-
 
 controllers = angular.module('controllers', []);
 app.controller("HomeController", [
