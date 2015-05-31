@@ -15,3 +15,70 @@
  */
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+
+@media (max-width: 767px) {
+  .breakpoint-alias:before {
+    content: "XS";
+  }
+}
+@media (min-width: 768px) and (max-width: 983px) {
+  .breakpoint-alias:before {
+    content: "SM";
+  }
+}
+@media (min-width: 984px) and (max-width: 1199px) {
+  .breakpoint-alias:before {
+    content: "MD";
+  }
+}
+@media (min-width: 1200px) {
+  .breakpoint-alias:before {
+    content: "LG";
+  }
+}
+
+
+
+
+* {
+  font-family:'Open Sans', sans-seriff;
+}
+
+.navbar {
+  transition: all .2s ease-out;
+  position: fixed;
+  width: 100%;
+  background-color: #4DC0E8;
+  min-height: 10%;
+  height: 10%;
+  border: none;
+  border-radius: 0px;
+  z-index: 2;
+  box-shadow: 0 0 1em .1em rgba(0,0,0,.2);
+
+  .navbar-left {
+    margin-left: 10%;
+    // margin-top: 1em;
+  }
+
+  .navbar-right {
+    margin-right: 3%;
+    margin-top: 2.1em;
+    li > a {color: white;}
+  }
+
+  .navbar-text{
+    color: white;
+  }
+
+  .col-xs-4 {
+    font-size: .5em;
+  }
+
+  //texts
+  h5 {
+    font-size: 3em;
+    color: #ffffff;
+  }
+
+}

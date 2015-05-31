@@ -3,6 +3,7 @@
   "dependencies": {
     "angular": "latest",
     "angular-route": "latest",
+    "angular-resource": "latest",
     "bootstrap-sass-official": "latest"
   }
 }
