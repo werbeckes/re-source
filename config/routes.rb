@@ -11,12 +11,12 @@ Rails.application.routes.draw do
 
   get '/home' => 'home#index'
 
-
+  get '/api/snippets/login' => 'api/snippets#login'
 
   # resources :sessions, only: [:destroy]
 
-
   scope "api" do
+    resources :snippets, only: [:create, :index]
     resources :journeys do
       resources :categories
     end
