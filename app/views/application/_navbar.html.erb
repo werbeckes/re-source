@@ -1,19 +1,22 @@
-<nav class="navbar navbar-inverse container" role="navigation">
-  <div class="navbar-collapse collapse row">
-    <% if logged_in? %>
-      <ul class="nav navbar-nav navbar-left col-sm-3">
-        <li ><h5 class="navbar-text nav-header" >Welcome, <%= current_user.first_name %></h5></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to("Logout", logout_path) %></li>
-      </ul>
-    <% else %>
-      <ul class="nav navbar-nav navbar-left">
-        <li><h5 class="navbar-text"><%= link_to "Login", login_path %></h5></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><h5 class="navbar-text"><%= link_to "Join", signup_path %></h5></li>
-      </ul>
-    <% end %>
+
+<header class="navbar navbar-default navbar-static-top " role="navigation">
+  <div class='container-fluid row' role='navigation'>
+      <% if logged_in? %>
+        <ul class="nav navbar-left col-xs-6">
+          <li ><h5 class="navbar-brand" >Welcome, <%= current_user.first_name %></h5></li>
+        </ul>
+        <ul class="nav navbar-right col-xs-6">
+          <li><%= link_to("Logout", logout_path) %></li>
+        </ul>
+      <% else %>
+        <ul class="nav navbar-nav navbar-left col-xs-6">
+          <li><h5 class="navbar-text "><%= link_to "Login", login_path %></h5></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right col-xs-6">
+          <li><h5 class="navbar-text"><%= link_to "Join", signup_path %></h5></li>
+        </ul>
+      <% end %>
+
   </div>
-</nav>
+</header>
+

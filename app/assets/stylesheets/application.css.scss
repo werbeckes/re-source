@@ -37,48 +37,57 @@
   }
 }
 
+@media screen and (max-width: 1024px){
+    #charts, #grid{
+      width: 40%;
+    }
+}
+
+// @media screen
 
 
 
 * {
   font-family:'Open Sans', sans-seriff;
+  transition: all .3s ease-out;
 }
 
-.navbar {
-  transition: all .2s ease-out;
-  position: fixed;
-  width: 100%;
-  background-color: #4DC0E8;
-  min-height: 10%;
-  height: 10%;
-  border: none;
-  border-radius: 0px;
-  z-index: 2;
-  box-shadow: 0 0 1em .1em rgba(0,0,0,.2);
-
-  .navbar-left {
-    margin-left: 10%;
-    // margin-top: 1em;
+.form-container {
+  height: 100%;
+  form.login-form {
+    height: 100%;
+    input {
+      display: block;
+      padding: 2em;
+      margin-bottom: 5%;
+      border: none;
+      background-color: rgb(45, 45, 45);
+      text-align: left;
+      border-radius: 1em;
+    }
   }
+}
 
-  .navbar-right {
-    margin-right: 3%;
-    margin-top: 2.1em;
-    li > a {color: white;}
+.input-container {
+  display: block;
+  height: 30%;
+}
+
+
+.navbar-left {
+  margin: 0;
+  li {
+    padding-left: 5%;
   }
+}
 
-  .navbar-text{
-    color: white;
+.navbar-right {
+  margin:0;
+  li {
+    float: right;
   }
+}
 
-  .col-xs-4 {
-    font-size: .5em;
-  }
-
-  //texts
-  h5 {
-    font-size: 3em;
-    color: #ffffff;
-  }
-
+.header-login {
+  text-align: center;
 }

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html ng-app="resourceApp">
+<html ng-app="resourceApp" lang="en">
 <head>
   <title>ReSource</title>
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content=="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- below is to use like a native app. disables zooming. users are only able to scroll. -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -12,9 +14,9 @@
   <%= csrf_meta_tags %>
 </head>
   <body>
-
-    <%= render 'navbar' %>
-    <%= yield %>
-
+    <!-- <div class="container-fluid"> -->
+      <%= render 'navbar' %>
+      <%= yield %>
+    <!-- </div> -->
   </body>
 </html>
