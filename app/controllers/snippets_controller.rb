@@ -23,7 +23,7 @@ class SnippetsController < ApplicationController
       # p token_authenticate
       puts "<><><><><><><><><><><><><><><><><><><><><><><>"
       user = token_authenticate
-      Snippet.create(text: params[:body], web_url: params[:snippetUrl], user: user)
+      Snippet.create(text: params[:body], web_url: params[:snippetUrl], user_id: user.id)
       render plain: "Created Snippet"
     end
 
