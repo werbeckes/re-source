@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/home' => 'home#index'
 
-  get '/api/snippets/login' => 'api/snippets#login'
+  get '/api/snippets/login' => 'snippets#login'
 
   # resources :sessions, only: [:destroy]
 
