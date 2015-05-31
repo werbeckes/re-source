@@ -11,9 +11,14 @@ Rails.application.routes.draw do
 
   get '/home' => 'home#index'
 
+
+
   # resources :sessions, only: [:destroy]
 
 
+  scope "api" do
+    resources :journeys
+  end
 
 
 
