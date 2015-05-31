@@ -4,15 +4,13 @@ class JourneysController < ApplicationController
   #fetch a list of all journeys with Journey.index()
   def index
     @journeys = current_user.journeys
-    puts "<><><><><><><><><><><><><><><><><><><><><><><><"
-    p @journeys
-    respond_with @journeys
+    render json: @journeys.to_a
   end
 
   #fetch a single journey with Journey.show(id)
   def show
     @journey = Journey.find(params[:id])
-    respond_with @journey
+    respond_to @journey
   end
 
 

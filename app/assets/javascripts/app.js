@@ -37,11 +37,6 @@ app.controller("HomeController", [
   function($scope, $location, Journey) {
     $scope.journeys = Journey.index();
 
-    $scope.cats = [
-      {title: "cat1"},
-      {title: "cat2"}
-    ]
-
     $scope.new = function() {
       $location.path("/journeys/new")
     };
