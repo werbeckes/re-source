@@ -1,5 +1,4 @@
-module Api
-  class SnippetsController < ApplicationController
+class SnippetsController < ApplicationController
     before_action :token_authenticate, except: [:login]
     #skip because we have no snippet form
     skip_before_filter :verify_authenticity_token
@@ -30,5 +29,4 @@ module Api
       end
     end
 
-  end
 end
