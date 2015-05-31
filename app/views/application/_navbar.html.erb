@@ -1,8 +1,8 @@
-<nav class="navbar navbar-inverse" role="navigation">
-  <div class="navbar-collapse collapse">
+<nav class="navbar navbar-inverse container" role="navigation">
+  <div class="navbar-collapse collapse row">
     <% if logged_in? %>
-      <ul class="nav navbar-nav navbar-left">
-        <li><h5 class="navbar-text" >Welcome, <%= current_user.first_name %></h5></li>
+      <ul class="nav navbar-nav navbar-left col-sm-3">
+        <li ><h5 class="navbar-text nav-header" >Welcome, <%= current_user.first_name %></h5></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to("Logout", logout_path) %></li>
