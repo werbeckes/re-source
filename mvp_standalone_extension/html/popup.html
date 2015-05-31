@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>My Popup</title>
+
+  <script src="/javascripts/jquery-1.11.3.min.js"></script>
+  <script src="/javascripts/extension.js"></script>
+  <script src="/javascripts/formControl.js"></script>
+</head>
+<body>
+
+  <h3 class="initiallyHidden" id="errorMessage">Invalid Email/Password</h3>
+  <h3 class="initiallyHidden" id="loginMessage">Logged In!</h3>
+  <h3 class="initiallyHidden" id="saveMessage">Saving...</h3>
+  <div class="initiallyHidden" id="loginContainer">
+  <h3>Log into your Re:Source account:</h3>
+  <form id="loginForm">
+    <p><input type="text", name="email", placeholder="Enter Email"></p>
+    <p><input type="password", name="password", placeholder="Enter Password"></p>
+    <p><input type="submit" value="Log In"></p>
+  </form>
+</div>
+</body>
+</html>
