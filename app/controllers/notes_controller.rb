@@ -20,6 +20,11 @@ class NotesController < ApplicationController
     end
   end
 
+  def update
+    @note = Note.find_by_id(params[:id])
+    #not done
+  end
+
   def destroy
     Note.find_by_id(params[:id]).destroy
     render json: " "
