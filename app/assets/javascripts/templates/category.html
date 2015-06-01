@@ -36,16 +36,24 @@
       <p>Snippets</p>
 
         <button ng-click="showSnipForm(note)" value="Add Snip">
-        <div ng-show="showSnipForm({{note.id}})"   class="snipForm">
+        <div ng-show="visibleSnipForm[{{note.id}}]"   class="snipForm">
           <form ng-submit="saveSnip()">
             <p>Snip Url:</p>
-            <input type="text" ng-model="snip.web_url">
-            <textarea ng-model="snip.text" placeholder="copy and paste your snip here"></textarea>
+            <p>
+              <input type="text" ng-model="snip.web_url"></p>
+            <p>Snip Content</p>
+            <p>
+              <textarea ng-model="snip.text" placeholder="copy and paste your snip here"></textarea>
+            </p>
             <p>Snip description</p>
-            <input type="text" ng-model="snip.description">
-            <input type="submit" value="Save snip">
+            <p>
+              <input type="text" ng-model="snip.description">
+            </p>
+            <p>
+              <input type="submit" value="Save snip">
+            </p>
           </form>
-        </div> 
+        </div>
 
       </div>
     </div>

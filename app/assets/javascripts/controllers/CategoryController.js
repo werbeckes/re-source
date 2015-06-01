@@ -13,7 +13,7 @@ app.controller("CategoryController", [
     $scope.notes = Note.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id } );
 
     $scope.showForm = false;
-    $scope.showSnipForm = [];
+    $scope.visibleSnipForm = [];
 
     $scope.displayForm = function() {
       $scope.showForm = true;
@@ -45,7 +45,7 @@ app.controller("CategoryController", [
     }
 
     $scope.showSnipForm = function(note) {
-      $scope.showSnipForm(note.id) = true;
+      $scope.visibleSnipForm[note.id] = true;
       $scope.snip = {};
     }
 
@@ -56,7 +56,7 @@ app.controller("CategoryController", [
 
 
           $route.reload();
-        }
+        });
     }
 
     $scope.to_trusted = function(html_code) {
