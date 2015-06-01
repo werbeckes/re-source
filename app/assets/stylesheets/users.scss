@@ -1,3 +1,21 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-home-head {
+  z-index: 1;
+}
+
+.sidebar {
+  position: absolute;
+  background-color: #333333;
+  top: 0;
+  height: 100%;
+  #journeys-side-head {
+    color: white;
+    text-align: center;
+    font-weight: 100;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #AAAAAA;
+  }
+}

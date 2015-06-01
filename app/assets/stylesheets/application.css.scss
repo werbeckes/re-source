@@ -37,48 +37,122 @@
   }
 }
 
+@media screen and (max-width: 1024px){
+
+}
+
+// @media screen
 
 
 
 * {
-  font-family:'Open Sans', sans-seriff;
+  font-family:'Lato', sans-seriff;
+  transition: all .3s ease-out;
+}
+
+body {
+  width: 100%;
+}
+
+.header-login {
+  font-size: 5em;
+  font-weight: 100;
+}
+
+.header-image {
+  width: 15%;
 }
 
 .navbar {
-  transition: all .2s ease-out;
-  position: fixed;
-  width: 100%;
-  background-color: #4DC0E8;
-  min-height: 10%;
-  height: 10%;
+  min-height: 0;
+  margin-bottom: 0;
+
+
+}
+.col-lg-resize {
+    padding-top: 2em;
+    padding-bottom: 2em;
+
+}
+
+.col-xs-resize {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.form-container {
+  height: 100%;
+  form.login-form {
+    height: 100%;
+    input {
+      display: block;
+      padding: 2em;
+      margin-bottom: 5%;
+      border: none;
+      background-color: #575757;
+      color: #DDDDDD;
+      text-align: left;
+      border-radius: 1em;
+    }
+    input[type="submit"]:hover {
+      background-color: #95EA78;
+      color: #fff;
+    }
+    input:focus {
+      outline:none;
+      box-shadow: inset 0 0 3px 2px #95EA78;
+    }
+  }
+}
+
+.input-container {
+  display: block;
+  height: 30%;
+}
+
+
+.navbar-left {
+  margin: 0;
+  li {
+    padding-left: 5%;
+    button {
+      border: none;
+      background-color: white;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+
+
+.navbar-right {
+  margin:0;
+  li {
+    float: right;
+    button {
+      border: none;
+      background-color: white;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.header-login {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.page-header {
+  text-align: center;
   border: none;
-  border-radius: 0px;
-  z-index: 2;
-  box-shadow: 0 0 1em .1em rgba(0,0,0,.2);
-
-  .navbar-left {
-    margin-left: 10%;
-    // margin-top: 1em;
-  }
-
-  .navbar-right {
-    margin-right: 3%;
-    margin-top: 2.1em;
-    li > a {color: white;}
-  }
-
-  .navbar-text{
-    color: white;
-  }
-
-  .col-xs-4 {
-    font-size: .5em;
-  }
-
-  //texts
-  h5 {
-    font-size: 3em;
-    color: #ffffff;
-  }
-
+  font-weight: 100;
 }
