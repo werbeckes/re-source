@@ -3,7 +3,7 @@
 <div class="sidebar">
   <h4>Journeys</h4>
   <ul ng-repeat="journey in journeys">
-    <li><a href="#/journeys/{{journey.id}}">{{journey.title}}</a>  <button ng-click="deleteJourney(journey)" ng-confirm-click="are you sure?"></li>
+    <li><a href="#/journeys/{{journey.id}}">{{journey.title}}</a>  <button ng-click="deleteJourney(journey)" value="-"></li>
   </ul>
   <h4 ng-click="displayForm()">New Journey (make me a button)</h4>
 </div>

@@ -18,7 +18,11 @@ Rails.application.routes.draw do
   scope "api" do
     resources :snippets, only: [:create, :index]
     resources :journeys do
-      resources :categories
+      resources :categories do
+        resources :notes do
+          resources :snippets
+        end
+      end
     end
   end
 
