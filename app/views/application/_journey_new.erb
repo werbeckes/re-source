@@ -1,0 +1,9 @@
+<div class="container-fluid row">
+  <div class="form-container-journey col-xs-12">
+    <h1>New Journey</h1>
+      <%= form_for :journey do |f| %>
+        <%= f.text_field :title, placeholder: "Title" %>
+        <%= f.submit :submit, value: "Create" %>
+      <% end %>
+  </div>
+</div>

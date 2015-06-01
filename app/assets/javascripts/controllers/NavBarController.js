@@ -3,14 +3,26 @@ app.controller("NavBarController", [
   '$location',
   function ($scope, $location) {
     var menuOpen = false;
-    $scope.showMenu = function () {
+    $scope.showJourneySidebar = function () {
       if (menuOpen === false) {
         $(".root-container").css("transform", "translateX(80%)");
-        menuOpen = true;
-      } else {
+          menuOpen = true;
+        } else {
         $(".root-container").css("transform", "translateX(0)");
-        menuOpen = false;
-      }
-    };
-  }
+          menuOpen = false;
+        }
+      };
+
+    $scope.showCategorySidebar = function () {
+      // body...
+      };
+
+    $scope.addJourneyPopup = function () {
+      // body...
+      };
+
+    $scope.addCategoryPopup = function  () {
+      // body...
+      };
+    }
   ]);

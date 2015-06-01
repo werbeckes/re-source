@@ -53,6 +53,21 @@
 body {
   width: 100%;
 }
+.menu-panel-left {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #111111;
+}
+
+.root-container {
+  position: absolute;
+  z-index: 4;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
 
 .header-login {
   font-size: 5em;
