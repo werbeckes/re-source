@@ -23,8 +23,9 @@ app.controller("HomeController", [
     $scope.deleteJourney = function(journey) {
       var msg = "are you sure you want to delete this Journey and all the categories and notes in it?"
       if (confirm(msg)) {
-        Journey.destroy(journey).$promise.then( $route.reload() );
-        //TODO use DOM manipulation to remove the specific journey rather than reload
+        Journey.destroy(journey).$promise.then(function() {
+          $(".sidebar").find("#" +journey.id).remove();
+        });
       }
     }
   }
