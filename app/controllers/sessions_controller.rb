@@ -8,11 +8,13 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:email])
-    if user && user.authenticate(params[:password])
+    # puts "Found User: #{user}"
+    # puts "User entered password: #{params[:password][0]}"
+    if user && user.authenticate(params[:password][0])
       session[:user_id] = user.id
       redirect_to '/home'
     else
-      redirect_to '/login'
+      render '/login'
     end
   end
 
