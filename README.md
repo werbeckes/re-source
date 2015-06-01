@@ -1,4 +1,8 @@
 
+
+<!--- [![Coverage Status](https://coveralls.io/repos/werbeckes/re-source/badge.svg)](https://coveralls.io/r/werbeckes/re-source) -->
+
+
 #re: source
 Learning to code is hard.
 We know, but why?
