@@ -35,7 +35,17 @@
       <pre ng-bind-html="to_trusted((note.code|pretty))"></pre>
       <p>Snippets</p>
 
-        <!-- Snippets go here -->
+        <button ng-click="showSnipForm(note)" value="Add Snip">
+        <div ng-show="showSnipForm({{note.id}})"   class="snipForm">
+          <form ng-submit="saveSnip()">
+            <p>Snip Url:</p>
+            <input type="text" ng-model="snip.web_url">
+            <textarea ng-model="snip.text" placeholder="copy and paste your snip here"></textarea>
+            <p>Snip description</p>
+            <input type="text" ng-model="snip.description">
+            <input type="submit" value="Save snip">
+          </form>
+        </div> 
 
       </div>
     </div>
