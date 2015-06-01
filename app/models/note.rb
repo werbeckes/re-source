@@ -4,4 +4,6 @@ class Note < ActiveRecord::Base
   belongs_to :category
   has_one :journey, through: :category
   has_one :user, through: :journey
+
+  validates :title, presence: true
 end
