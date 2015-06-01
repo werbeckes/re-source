@@ -8,6 +8,8 @@
 .sidebar {
   position: absolute;
   background-color: #333333;
+  text-align: center;
+  text-indent: 0;
   top: 0;
   height: 100%;
   #journeys-side-head {
@@ -18,9 +20,38 @@
     margin-bottom: 1em;
     border-bottom: 1px solid #AAAAAA;
   }
+  .cell-header {
+    text-indent: 0;
+}
 }
 
+cell-list {
+  padding: 0;
+  margin: 0;
+}
 
+.cell-list {
+  padding: 0;
+  list-style-type: none;
+  a {
+    color: rgb(90, 204, 237);
+    font-weight: 100;
+    font-size: 2em;
+    text-indent: 0;
+    text-decoration: none;
+
+    &:hover {
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    &:active {
+      cursor: pointer;
+      color: white;
+    }
+  }
+}
 
 .form-header {
   text-align: center;
@@ -86,6 +117,7 @@
         display: inline-block;
         margin-left: 1em;
         font-weight: 100;
+
       }
     }
   }

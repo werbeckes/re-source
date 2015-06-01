@@ -1,40 +1,40 @@
-<BR><BR><BR><BR>
-<h1>Category: {{ category.title }}</h1>
-<div class="sidebar">
-  <h4><a href="#/journeys/{{journey.id}}">Back</a></h4>
-  <h4>Notes:</h4>
-  <ul class="note-list">
-    <li ng-repeat="note in notes" id="id{{note.id}}">
-      <a href="">{{note.title}}</a>
-      <button ng-click="deleteNote(note)" value="-">
-    </li>
-  </ul>
-  <h4 ng-click="displayForm()">New Note (I work!)</h4>
-</div>
-
-<div class="container">
-  <h2>Notes in {{journey.title}} / {{category.title}}</h2>
-  <div class="notes">
-    <div ng-repeat="note in notes" id="{{note.id}}">
-      <h3>Title: {{note.title}}</h3>
-      <p>Synopsis: {{note.synopsis}}</p>
-      <p>Code: {{note.code}}</p>
-      <p>Snippets</p>
-
-      <!-- Snippets go here -->
-
-    </div>
+<div class="container-fluid row">
+  <div class="sidebar col-lg-3 col-xs-12">
+    <h4><a href="#/journeys/{{journey.id}}">Back</a></h4>
+    <h4 class="cell-header">Notes:</h4>
+    <ul class="note-list">
+      <li ng-repeat="note in notes" id="id{{note.id}}" class="cell-list">
+        <a href="">{{note.title}}</a>
+        <button ng-click="deleteNote(note)" value="-">
+      </li>
+    </ul>
+    <h4 ng-click="displayForm()">New Note (I work!)</h4>
   </div>
 
-  <form ng-show="showForm" ng-submit="createNote()">
-    <h2>New Note</h2>
-    <h5>Title</h5>
-    <input type="text" ng-model="note.title" placeholder="Title"><br>
-    <h5>Synopsis</h5>
-    <textarea ng-model="note.synopsis" placeholder="words"></textarea><br>
-    <h5>Code</h5>
-    <textarea ng-model="note.code" placeholder="Code here"></textarea><br>
-    public? <input type="checkbox" ng-model="note.public_bool"><br>
-    <input type="submit" value="Save Note">
-  </form>
+  <div class="gaga">
+    <h2 class="page-header col-lg-8 visible-lg">Notes in {{journey.title}} / {{category.title}}</h2>
+    <div class="notes">
+      <div ng-repeat="note in notes" id="{{note.id}}">
+        <h3>Title: {{note.title}}</h3>
+        <p>Synopsis: {{note.synopsis}}</p>
+        <p>Code: {{note.code}}</p>
+        <p>Snippets</p>
+
+        <!-- Snippets go here -->
+
+      </div>
+    </div>
+
+    <form ng-show="showForm" ng-submit="createNote()">
+      <h2>New Note</h2>
+      <h5>Title</h5>
+      <input type="text" ng-model="note.title" placeholder="Title"><br>
+      <h5>Synopsis</h5>
+      <textarea ng-model="note.synopsis" placeholder="words"></textarea><br>
+      <h5>Code</h5>
+      <textarea ng-model="note.code" placeholder="Code here"></textarea><br>
+      public? <input type="checkbox" ng-model="note.public_bool"><br>
+      <input type="submit" value="Save Note">
+    </form>
+  </div>
 </div>
