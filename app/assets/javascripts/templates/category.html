@@ -18,7 +18,8 @@
     <div ng-repeat="note in notes" id="{{note.id}}">
       <h3>Title: {{note.title}}</h3>
       <p>Synopsis: {{note.synopsis}}</p>
-      <p>Code: {{note.code}}</p>
+      <p>Code: </p>
+      <pre ng-bind-html="to_trusted((note.code|pretty))"></pre>
       <p>Snippets</p>
 
       <!-- Snippets go here -->

@@ -2,4 +2,5 @@ asset 'angular'
 asset 'angular-route'
 asset 'bootstrap-sass-official'
 asset 'angular-resource'
+asset 'google-code-prettify'
 # vim: ft=ruby

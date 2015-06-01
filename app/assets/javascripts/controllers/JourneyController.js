@@ -9,7 +9,6 @@ app.controller("JourneyController", [
     $scope.categories = Category.index( { journey_id: $routeParams.id } )
 
     $scope.showForm = false;
-
     $scope.displayForm = function() {
       $scope.showForm = true;
       $scope.category = {};
