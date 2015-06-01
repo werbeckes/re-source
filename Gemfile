@@ -35,6 +35,7 @@ gem 'sprockets'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'coveralls', require: false
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -58,6 +59,7 @@ group :development, :test do
   gem "capybara"
   gem "database_cleaner"
   gem "selenium-webdriver"
+  gem 'jasmine-rails'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

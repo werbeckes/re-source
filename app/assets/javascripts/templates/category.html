@@ -24,14 +24,16 @@
     </div>
   </div>
 
-  <div class="gaga">
-    <h2 class="page-header col-lg-8 visible-lg">Notes in {{journey.title}} / {{category.title}}</h2>
-    <div class="notes">
-      <div ng-repeat="note in notes" id="{{note.id}}">
-        <h3>Title: {{note.title}}</h3>
-        <p>Synopsis: {{note.synopsis}}</p>
-        <p>Code: {{note.code}}</p>
-        <p>Snippets</p>
+
+<div class="contaasdfiner">
+  <h2 class="page-header col-lg-8 visible-lg">Notes in {{journey.title}} / {{category.title}}</h2>
+  <div class="notes">
+    <div ng-repeat="note in notes" id="{{note.id}}">
+      <h3>Title: {{note.title}}</h3>
+      <p>Synopsis: {{note.synopsis}}</p>
+      <p>Code: </p>
+      <pre ng-bind-html="to_trusted((note.code|pretty))"></pre>
+      <p>Snippets</p>
 
         <!-- Snippets go here -->
 

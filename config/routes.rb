@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root 'sessions#new'
 
   get '/login' => 'sessions#new'
@@ -17,10 +18,10 @@ Rails.application.routes.draw do
 
   scope "api" do
     resources :snippets, only: [:create, :index]
-    resources :journeys do
-      resources :categories do
-        resources :notes do
-          resources :snippets
+    resources :journeys, only: [:index, :show, :create, :destroy] do
+      resources :categories, only: [:index, :show, :create, :destroy] do
+        resources :notes, only: [:index, :create, :update, :destroy] do
+          resources :snippets, only: [:index, :create, :update, :destroy]
         end
       end
     end
