@@ -3,8 +3,8 @@
     <h1 class="col-xs-12 header-login">Log in</h1>
   </div>
 
-  <div class="form-container row center-block">
-    <%= form_tag '/login', class: "login-form col-lg-3 col-xs-12  " do %>
+  <div class="form-container row">
+    <%= form_tag '/login', class: "login-form col-centered col-md-3 col-xs-12" do %>
     <div class="input-container">
       <%= email_field_tag :email, nil, class: "col-xs-12", placeholder:  "Enter email" %>
     </div>
