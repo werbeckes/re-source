@@ -17,3 +17,4 @@
 //= require angular-rails-templates
 //= require angular-resource/angular-resource
 //= require_tree .
+
