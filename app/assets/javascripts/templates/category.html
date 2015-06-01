@@ -5,7 +5,7 @@
     <ul class="note-list">
       <li ng-repeat="note in notes" id="id{{note.id}}" class="cell-list">
         <a href="">{{note.title}}</a>
-        <button ng-click="deleteNote(note)" value="-">
+        <button ng-click="deleteNote(note)" value="-"></button>
       </li>
     </ul>
     <h4 ng-click="displayForm()" class="form-header">New Note</h4>
@@ -35,22 +35,22 @@
       <pre ng-bind-html="to_trusted((note.code|pretty))"></pre>
       <p>Snippets</p>
 
-        <button ng-click="showSnipForm(note)" value="Add Snip">
+        <button ng-click="showSnipForm(note)" value="Add Snippet"></button>
         <div ng-show="visibleSnipForm[{{note.id}}]"   class="snipForm">
-          <form ng-submit="saveSnip()">
-            <p>Snip Url:</p>
+          <form ng-submit="saveSnip(note)">
+            <p>Snippet Url:</p>
             <p>
-              <input type="text" ng-model="snip.web_url"></p>
-            <p>Snip Content</p>
+              <input type="text" ng-model="snippet.web_url"></p>
+            <p>Snippet Content</p>
             <p>
-              <textarea ng-model="snip.text" placeholder="copy and paste your snip here"></textarea>
+              <textarea ng-model="snippet.text" placeholder="copy and paste your snippet here"></textarea>
             </p>
-            <p>Snip description</p>
+            <p>Snippet description</p>
             <p>
-              <input type="text" ng-model="snip.description">
+              <input type="text" ng-model="snippet.description">
             </p>
             <p>
-              <input type="submit" value="Save snip">
+              <input type="submit" value="Save snippet">
             </p>
           </form>
         </div>
