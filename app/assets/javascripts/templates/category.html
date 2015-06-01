@@ -8,7 +8,20 @@
         <button ng-click="deleteNote(note)" value="-">
       </li>
     </ul>
-    <h4 ng-click="displayForm()">New Note (I work!)</h4>
+    <h4 ng-click="displayForm()" class="form-header">New Note (I work!)</h4>
+    <div class="form-container-journey">
+      <form ng-show="showForm" ng-submit="createNote()">
+        <h2>New Note</h2>
+        <h5>Title</h5>
+        <input class="col-xs-12" type="text" ng-model="note.title" placeholder="Title"><br>
+        <h5>Synopsis</h5>
+        <textarea class="col-xs-12" ng-model="note.synopsis" placeholder="Explain how you understand it"></textarea><br>
+        <h5>Code</h5>
+        <textarea class="col-xs-12 visible-lg" ng-model="note.code" placeholder="Code here"></textarea><br>
+        <span class="check col-xs-12"><p>public? </p><input type="checkbox" ng-model="note.public_bool"></span>
+        <input class="col-xs-12" type="submit" value="Save Note">
+      </form>
+    </div>
   </div>
 
   <div class="gaga">
@@ -25,16 +38,6 @@
       </div>
     </div>
 
-    <form ng-show="showForm" ng-submit="createNote()">
-      <h2>New Note</h2>
-      <h5>Title</h5>
-      <input type="text" ng-model="note.title" placeholder="Title"><br>
-      <h5>Synopsis</h5>
-      <textarea ng-model="note.synopsis" placeholder="words"></textarea><br>
-      <h5>Code</h5>
-      <textarea ng-model="note.code" placeholder="Code here"></textarea><br>
-      public? <input type="checkbox" ng-model="note.public_bool"><br>
-      <input type="submit" value="Save Note">
-    </form>
+
   </div>
 </div>
