@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+
+  def unassigned_snippets
+    Snippet.where(note_id: nil, user_id: id )
+  end
+
 # ========= Token Auth
 before_create :set_auth_token
 
