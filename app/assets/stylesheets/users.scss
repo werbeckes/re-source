@@ -19,3 +19,73 @@
     border-bottom: 1px solid #AAAAAA;
   }
 }
+
+
+
+.form-header {
+  text-align: center;
+  color: rgb(90, 204, 237);
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #AAAAAA;
+  font-weight: 100;
+
+  &:visited {
+    color: white;
+  }
+
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+
+  &:active {
+    cursor: pointer;
+    color: white;
+  }
+
+}
+
+.form-header-journey {
+  text-align: center;
+  color: rgb(90, 204, 237);
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  color:white;
+  border-bottom: 1px solid #AAAAAA;
+  font-weight: 100;
+  input {
+    display: block;
+    width:100%;
+  }
+}
+  .form-container-journey {
+    height: 100%;
+    input {
+      display: block;
+      padding: 2em;
+      margin-bottom: 5%;
+      border: none;
+      background-color: #575757;
+      color: #DDDDDD;
+      text-align: left;
+      border-radius: 1em;
+    }
+    input[type="submit"]:hover {
+      background-color: #95EA78;
+      color: #fff;
+    }
+    input:focus {
+      outline:none;
+      box-shadow: inset 0 0 3px 2px #95EA78;
+    }
+
+    #check {
+      color:white;
+      & > * {
+        display: inline-block;
+        margin-left: 1em;
+        font-weight: 100;
+      }
+    }
+  }

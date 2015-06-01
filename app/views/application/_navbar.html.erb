@@ -7,7 +7,7 @@
           <li >
             <h5 class="navbar-brand visible-lg">Hello, <%= current_user.first_name %></h5>
             <button class="navbar-brand visible-xs visible-md visible-sm" >
-              <span ng-click="showMenu()" class="glyphicon glyphicon-menu-hamburger"></span>
+              <span ng-click="showJourneySidebar()" class="glyphicon glyphicon-menu-hamburger"></span>
           </li>
         </ul>
         <ul class="nav navbar-right col-xs-6">
@@ -15,7 +15,7 @@
           <li>
             <h5 class="navbar-brand visible-lg"><%= link_to("Logout", logout_path) %></h5>
             <button class="navbar-brand visible-xs visible-md visible-sm">
-              <span class="glyphicon glyphicon-plus "></span>
+              <span ng-click="addJourneyPopup()" class="glyphicon glyphicon-plus "></span>
             </button></li>
         </ul>
       <% else %>

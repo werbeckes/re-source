@@ -14,7 +14,14 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <div class="menu-panel-left visible-xs visible-sm visible-md">
+      <%= render 'settings_user' %>
+    </div>
+
     <div class="root-container">
+      <div class="menu-panel-right visible-xs visible-sm visible-md">
+        <% render "journey_new" %>
+      </div>
       <%= render 'navbar' %>
       <%= yield %>
     </div>
