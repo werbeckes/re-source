@@ -1,20 +1,28 @@
-<BR><BR><BR><BR>
-<h1>Home page</h1>
-<div class="sidebar">
-  <h4>Journeys</h4>
-  <ul ng-repeat="journey in journeys">
-    <li><a href="#/journeys/{{journey.id}}">{{journey.title}}</a>  <button ng-click="deleteJourney(journey)" value="-"></li>
-  </ul>
-  <h4 ng-click="displayForm()">New Journey (make me a button)</h4>
-</div>
+<div class="container-fluid row">
 
-<div class="container">
+  <div class="sidebar col-xs-12 col-md-12 col-lg-3">
+    <h3 id="journeys-side-head">Journeys</h3>
+    <ul >
+      <li ng-repeat="journey in journeys" id="{{journey.id}}">
+        <a href="#/journeys/{{journey.id}}">{{journey.title}}</a>  <button ng-click="deleteJourney(journey)" value="-"></li>
+    </ul>
+    <h4 ng-click="displayForm()">New Journey (make me a button)</h4>
+  </div>
 
-  <form ng-show="showForm" ng-submit="createJourney()">
-    <h2>What are you journeying into next?</h2>
-    <input type="text" ng-model="journey.title" placeholder="Title">
-    <input type="text" ng-model="journey.description" placeholder="Description"><br>
-    public? <input type="checkbox" ng-model="journey.public_bool"> (you can change this later) <br>
-    <input type="submit" value="Start Journey">
-  </form>
+  <div class="user-home-head col-xs-12 col-lg-8 visible-lg">
+    <h1 class="page-header">Categories</h1>
+  </div>
+
+
+
+  <div class="container">
+
+    <form ng-show="showForm" ng-submit="createJourney()">
+      <h2>What are you journeying into next?</h2>
+      <input type="text" ng-model="journey.title" placeholder="Title">
+      <input type="text" ng-model="journey.description" placeholder="Description"><br>
+      public? <input type="checkbox" ng-model="journey.public_bool"> (you can change this later) <br>
+      <input type="submit" value="Start Journey">
+    </form>
+  </div>
 </div>
