@@ -8,6 +8,8 @@
 .sidebar {
   position: absolute;
   background-color: #333333;
+  text-align: center;
+  text-indent: 0;
   top: 0;
   height: 100%;
   #journeys-side-head {
@@ -18,9 +20,34 @@
     margin-bottom: 1em;
     border-bottom: 1px solid #AAAAAA;
   }
+  .cell-header {
+    text-indent: 0;
+}
 }
 
 
+.cell-list {
+  padding: 0;
+  list-style-type: none;
+  a {
+    color: rgb(90, 204, 237);
+    font-weight: 100;
+    font-size: 2em;
+    text-indent: 0;
+    text-decoration: none;
+
+    &:hover {
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    &:active {
+      cursor: pointer;
+      color: white;
+    }
+  }
+}
 
 .form-header {
   text-align: center;
@@ -61,15 +88,25 @@
 }
   .form-container-journey {
     height: 100%;
-    input {
+    .form-header {
+      color: white;
+      border: none;
+      padding-top: 1em;
+      padding-bottom: 0;
+    }
+    input, textarea {
       display: block;
       padding: 2em;
       margin-bottom: 5%;
+      resize: none;
       border: none;
       background-color: #575757;
       color: #DDDDDD;
       text-align: left;
       border-radius: 1em;
+    }
+    textarea {
+      height: 10em;
     }
     input[type="submit"]:hover {
       background-color: #95EA78;
@@ -80,7 +117,7 @@
       box-shadow: inset 0 0 3px 2px #95EA78;
     }
 
-    #check {
+    .check {
       color:white;
       & > * {
         display: inline-block;

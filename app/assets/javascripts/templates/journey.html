@@ -1,17 +1,16 @@
-<BR><BR><BR><BR>
 <div class="container-fluid row">
   <div class="sidebar col-xs-12 col-md-12 col-lg-3">
     <!-- <h4><a href="#/">Back</a></h4> -->
     <h1 class="cell-header">Categories</h1>
     <ul class="categories">
-      <li ng-repeat="category in categories" id="id{{category.id}}">
+      <li ng-repeat="category in categories" id="id{{category.id}}" class="cell-list col-xs-12">
         <a href="#/journeys/{{journey.id}}/categories/{{category.id}}">{{category.title}}</a>
-        <button ng-click="deleteCategory(category)" value="-">
+        <!-- <button ng-click="deleteCategory(category)" value="-"> -->
       </li>
     </ul>
     <h4 ng-click="displayForm()">New Category (click me!)</h4>
   </div>
-  <h1 class="page-header" col-lg-8">Journey: {{ journey.title }}</h1>
+  <h1 class="page-header visible-lg col-lg-8">{{ journey.title }}</h1>
   <div class="container">
 
 <div class="container">
