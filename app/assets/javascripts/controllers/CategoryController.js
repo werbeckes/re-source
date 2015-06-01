@@ -6,7 +6,8 @@ app.controller("CategoryController", [
   'Journey',
   'Category',
   'Note',
-  function($scope, $location, $route, $routeParams, Journey, Category, Note) {
+  '$sce',
+  function($scope, $location, $route, $routeParams, Journey, Category, Note, $sce) {
     $scope.journey = Journey.get({id: $routeParams.journey_id});
     $scope.category = Category.get({journey_id: $routeParams.journey_id, id: $routeParams.id});
     $scope.notes = Note.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id } );
@@ -40,6 +41,10 @@ app.controller("CategoryController", [
           $(".notes").find("#" +note.id).remove();
         } );
       }
+    }
+
+    $scope.to_trusted = function(html_code) {
+      return $sce.trustAsHtml(html_code);
     }
   }
 ]);

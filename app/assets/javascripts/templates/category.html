@@ -19,7 +19,7 @@
       <h3>Title: {{note.title}}</h3>
       <p>Synopsis: {{note.synopsis}}</p>
       <p>Code: </p>
-      <pre class="prettyprint lang-javascript">{{note.code}}</pre>
+      <pre ng-bind-html="to_trusted((note.code|pretty))"></pre>
       <p>Snippets</p>
 
       <!-- Snippets go here -->
