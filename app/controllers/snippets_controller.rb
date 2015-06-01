@@ -14,11 +14,17 @@ class SnippetsController < ApplicationController
 
     def index
       puts "HIT INDEX ROUTE"
-      render plain: "HIT INDEX ROUTE"
+      render plain: "HIT INDEX (PREFLIGHT) ROUTE"
     end
 
     def create
-      render plain: "HIT CREATE ROUTE"
+      puts "<><><><><><><><><><><><><><><><><><><><><><><>"
+      puts "CREATING SNIPPET"
+      # p token_authenticate
+      puts "<><><><><><><><><><><><><><><><><><><><><><><>"
+      user = token_authenticate
+      Snippet.create(text: params[:body], web_url: params[:snippetUrl], user_id: user.id)
+      render plain: "Created Snippet"
     end
 
     protected
