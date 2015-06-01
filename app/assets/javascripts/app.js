@@ -9,7 +9,7 @@ app.config([
       .when('/journeys/:id', {
         templateUrl: "assets/templates/journey.html",
         controller: 'JourneyController'})
-      .when('/journeys/:journey_id/category/:id', {
+      .when('/journeys/:journey_id/categories/:id', {
         templateUrl: "assets/templates/category.html",
         controller: 'CategoryController'})
       .otherwise( { redirectTo: '/' } );
