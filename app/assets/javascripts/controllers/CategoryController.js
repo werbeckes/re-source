@@ -13,6 +13,7 @@ app.controller("CategoryController", [
     $scope.notes = Note.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id } );
 
     $scope.showForm = false;
+    $scope.showSnipForm = [];
 
     $scope.displayForm = function() {
       $scope.showForm = true;
@@ -41,6 +42,21 @@ app.controller("CategoryController", [
           $(".notes").find("#" +note.id).remove();
         } );
       }
+    }
+
+    $scope.showSnipForm = function(note) {
+      $scope.showSnipForm(note.id) = true;
+      $scope.snip = {};
+    }
+
+    $scope.saveSnip = function() {
+      Note.create( {journey_id: $scope.journey.id, category_id: $scope.category.id}, $scope.note )
+        .$promise.then( function(response) {
+          //add the snips in here with DOM manipulation
+
+
+          $route.reload();
+        }
     }
 
     $scope.to_trusted = function(html_code) {
