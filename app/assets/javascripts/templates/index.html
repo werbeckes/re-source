@@ -1,7 +1,20 @@
 <BR><BR><BR><BR>
 <h1>Home page</h1>
-<div class="container">
+<div class="sidebar">
+  <h4>Journeys</h4>
   <ul ng-repeat="journey in journeys">
-    <li><a href="#/journeys/{{journey.id}}">{{journey.title}}</a></li>
+    <li><a href="#/journeys/{{journey.id}}">{{journey.title}}</a>  <button ng-click="deleteJourney(journey)" value="-"></li>
   </ul>
+  <h4 ng-click="displayForm()">New Journey (make me a button)</h4>
+</div>
+
+<div class="container">
+
+  <form ng-show="showForm" ng-submit="createJourney()">
+    <h2>What are you journeying into next?</h2>
+    <input type="text" ng-model="journey.title" placeholder="Title">
+    <input type="text" ng-model="journey.description" placeholder="Description"><br>
+    public? <input type="checkbox" ng-model="journey.public_bool"> (you can change this later) <br>
+    <input type="submit" value="Start Journey">
+  </form>
 </div>

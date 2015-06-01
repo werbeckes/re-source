@@ -20,6 +20,9 @@ gem 'jquery-rails'
 gem 'responders'
 gem 'better_errors'
 
+# for making cross-domain requests
+gem 'rack-cors', :require => 'rack/cors'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
