@@ -5,7 +5,7 @@
     <ul class="note-list">
       <li ng-repeat="note in notes" id="id{{note.id}}" class="cell-list">
         <a href="">{{note.title}}</a>
-        <button ng-click="deleteNote(note)" value="-">
+        <button ng-click="deleteNote(note)" value="-"></button>
       </li>
     </ul>
     <h4 ng-click="displayForm()" class="form-header">New Note</h4>
@@ -34,18 +34,36 @@
       <p>Code: </p>
       <pre ng-bind-html="to_trusted((note.code|pretty))"></pre>
       <p>Snippets</p>
+        <div class="show-snippets">
+          <div class="single-snippet" ng-repeat="snippet in note.snippets">
+            <p>Description:</p>
+            <p>{{snippet.description}}</p>
+            <p>Text:</p>
+            <p>{{snippet.text}}</p>
+            <p>URL:</p>
+            <p>{{snippet.web_url}}</p>
+          </div>
 
-        <button ng-click="showSnipForm(note)" value="Add Snip">
-        <div ng-show="showSnipForm({{note.id}})"   class="snipForm">
-          <form ng-submit="saveSnip()">
-            <p>Snip Url:</p>
-            <input type="text" ng-model="snip.web_url">
-            <textarea ng-model="snip.text" placeholder="copy and paste your snip here"></textarea>
-            <p>Snip description</p>
-            <input type="text" ng-model="snip.description">
-            <input type="submit" value="Save snip">
-          </form>
-        </div> 
+          <button ng-click="showSnipForm(note)" value="Add Snippet"></button>
+          <div ng-show="visibleSnipForm[{{note.id}}]"   class="snipForm">
+            <form ng-submit="saveSnip(note)">
+              <p>Snippet description</p>
+              <p>
+                <input type="text" ng-model="snippet.description">
+              </p>
+              <p>Snippet Content</p>
+              <p>
+                <textarea ng-model="snippet.text" placeholder="copy and paste your snippet here"></textarea>
+              </p>
+              <p>Snippet Url:</p>
+              <p>
+                <input type="text" ng-model="snippet.web_url"></p>
+              <p>
+                <input type="submit" value="Save snippet">
+              </p>
+            </form>
+          </div>
+        </div>
 
       </div>
     </div>

@@ -6,14 +6,25 @@ app.controller("CategoryController", [
   'Journey',
   'Category',
   'Note',
+  'Snippet',
   '$sce',
-  function($scope, $location, $route, $routeParams, Journey, Category, Note, $sce) {
+  function($scope, $location, $route, $routeParams, Journey, Category, Note, Snippet, $sce) {
     $scope.journey = Journey.get({id: $routeParams.journey_id});
     $scope.category = Category.get({journey_id: $routeParams.journey_id, id: $routeParams.id});
     $scope.notes = Note.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id } );
 
+    $scope.notes.$promise.then( function() {
+      console.log("Inside the callback");
+      console.log($scope.notes);
+      angular.forEach($scope.notes,function(note,index){
+        console.log("inside the loop: ")
+        console.log($scope.notes[index])
+        $scope.notes[index].snippets = Snippet.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id, note_id: note.id } );
+      });
+    })
+
     $scope.showForm = false;
-    $scope.showSnipForm = [];
+    $scope.visibleSnipForm = [];
 
     $scope.displayForm = function() {
       $scope.showForm = true;
@@ -45,18 +56,18 @@ app.controller("CategoryController", [
     }
 
     $scope.showSnipForm = function(note) {
-      $scope.showSnipForm(note.id) = true;
-      $scope.snip = {};
+      $scope.visibleSnipForm[note.id] = true;
+      $scope.snippet = {};
     }
 
-    $scope.saveSnip = function() {
-      Note.create( {journey_id: $scope.journey.id, category_id: $scope.category.id}, $scope.note )
+    $scope.saveSnip = function(note) {
+      console.log($scope.snippet);
+      Snippet.create( {journey_id: $scope.journey.id, category_id: $scope.category.id, note_id: note.id}, $scope.snippet )
         .$promise.then( function(response) {
           //add the snips in here with DOM manipulation
 
-
           $route.reload();
-        }
+        });
     }
 
     $scope.to_trusted = function(html_code) {
