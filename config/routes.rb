@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/api/snippets/login' => 'snippets#login'
   get '/api/snippets' => 'snippets#extension_index'
   post '/api/snippets' => 'snippets#extension_create'
+  get '/api/snippets/unassigned' => 'snippets#unassigned'
 
   # resources :sessions, only: [:destroy]
 

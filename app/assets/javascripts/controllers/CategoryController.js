@@ -7,24 +7,26 @@ app.controller("CategoryController", [
   'Category',
   'Note',
   'Snippet',
+  'UnassignedSnippet',
   '$sce',
-  function($scope, $location, $route, $routeParams, Journey, Category, Note, Snippet, $sce) {
+  function($scope, $location, $route, $routeParams, Journey, Category, Note, Snippet, UnassignedSnippet, $sce ) {
     $scope.journey = Journey.get({id: $routeParams.journey_id});
     $scope.category = Category.get({journey_id: $routeParams.journey_id, id: $routeParams.id});
     $scope.notes = Note.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id } );
 
+    $scope.unassignedSnippets = UnassignedSnippet.index();// handle current user on rails side.
+
     $scope.notes.$promise.then( function() {
-      console.log("Inside the callback");
-      console.log($scope.notes);
       angular.forEach($scope.notes,function(note,index){
-        console.log("inside the loop: ")
-        console.log($scope.notes[index])
         $scope.notes[index].snippets = Snippet.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id, note_id: note.id } );
       });
     })
 
+
+
     $scope.showForm = false;
     $scope.visibleSnipForm = [];
+    $scope.editNoteFlag = [];
 
     $scope.displayForm = function() {
       $scope.showForm = true;
@@ -55,13 +57,25 @@ app.controller("CategoryController", [
       }
     }
 
+    $scope.showNoteForm = function(note) {
+      $scope.editNoteFlag[note.id] = true;
+      $scope.editingNote = note;
+    }
+
+    $scope.editNote = function(note) {
+      Note.update( {journey_id: $scope.journey.id}, $scope.editingNote).$promise.then( function() {
+          $scope.editNoteFlag[note.id] = false;
+          // $(".note-list").find("#id" +note.id).remove();
+          // $(".notes").find("#" +note.id).remove();
+        } );
+    }
+
     $scope.showSnipForm = function(note) {
       $scope.visibleSnipForm[note.id] = true;
       $scope.snippet = {};
     }
 
     $scope.saveSnip = function(note) {
-      console.log($scope.snippet);
       Snippet.create( {journey_id: $scope.journey.id, category_id: $scope.category.id, note_id: note.id}, $scope.snippet )
         .$promise.then( function(response) {
           //add the snips in here with DOM manipulation
@@ -69,6 +83,25 @@ app.controller("CategoryController", [
           $route.reload();
         });
     }
+
+    $scope.saveSnipEdit = function(note, snippet) {
+      Snippet.update( {journey_id: $scope.journey.id, category_id: $scope.category.id, note_id: note.id, snippet_id: snippet.id}, snippet )
+        .$promise.then( function(response){
+          console.log("do we give a shit?")
+        })
+    }
+
+    $scope.addToNote = function(note, snippet) {
+      snippet.note_id = note.id;
+
+      Snippet.update( {journey_id: $scope.journey.id, category_id: $scope.category.id, note_id: note.id, snippet_id: snippet.id}, snippet )
+        .$promise.then( function(response){
+          console.log("We give a shit. Improve on this.");
+          $route.reload();
+        })
+    }
+
+
 
     $scope.to_trusted = function(html_code) {
       return $sce.trustAsHtml(html_code);
