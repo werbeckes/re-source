@@ -5,20 +5,19 @@ chrome.runtime.onMessage.addListener(
                 "from a content script:" + sender.tab.url :
                 "from the extension");
     if (request.greeting == "hello") {
-      // saveSnippet(request.user_token, request.params);
-      sendResponse({farewell: "goodbye", recieved: request});
+      saveSnippet(request, sender, sendResponse);
+      // sendResponse({farewell: stuff, recieved: request});
 
     }
-
-    if (request.directive == "saveASnippet") {
-      saveSnippet(request.user_token, request.params);
-      sendResponse({notice: "Snippet save requested"});
-    }
+    return true;
   });
 
 
 // saves the snippet to the database. called from the initialAuthCheck callback function in event of successful authentication.
-function saveSnippet(user_token, params) {
+function saveSnippet(request, sender, sendResponse) {
+      var user_token = request.user_token;
+      var params = request.params;
+      // return "This function doesn't do anything."
       var request = $.ajax({
                       url: "http://localhost:3000/api/snippets",
                       method: "POST",
@@ -28,16 +27,17 @@ function saveSnippet(user_token, params) {
 
       request.fail(function(response) {
         $("#saveMessage").text('Error saving: ');
-        debugger;
+        sendResponse({farewell: "goodbye, message complete!"});
         console.log("Something went wrong.");
         console.log(response);
       });
 
       request.done(function (response) {
+        sendResponse({farewell: "goodbye, message complete!"});
         $("#saveMessage").text("Saved!");
         console.log("Saved!");
         console.log(response);
-        window.setTimeout(window.close, 1000);
+        // window.setTimeout(window.close, 1000);
       });
 
 }

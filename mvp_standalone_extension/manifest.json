@@ -6,7 +6,7 @@
   "icons": {"128": "images/re_icon.png"},
 
   "background": {
-    "page": "background.html"
+    "scripts": ["scripts/jquery-2.1.4.min.js", "background.js"]
   },
 
   "browser_action": {
