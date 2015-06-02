@@ -1,7 +1,7 @@
 .notes-container-global.col-lg-8
 {
     z-index: 3;
-
+    background-color: #4C4C4C;
     padding: 0;
 }
 
@@ -40,11 +40,12 @@
 }
 
 
+
 .ind-note-container
 {
-    margin-bottom: 1em;
+    margin-bottom: 0em;
     padding: 1em;
-    border-bottom: 1px solid black;
+    // border-bottom: 1px solid black;
     background-color: #444;
     .note-header
     {
@@ -88,10 +89,22 @@
     }
 }
 
+.delete-button {
+  background: none;
+  float: right;
+  border: none;
+  box-shadow: none;
+  color: #666666;
 
+  &:hover {
+    color: red;
+  }
+}
 
 .snippet-title {
   border-bottom: 1px solid #666666;
+  text-indent: 1em;
+  color: #999999;
   padding-bottom: 1em;
 }
 
@@ -155,3 +168,4 @@
       }
     }
   }
+

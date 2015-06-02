@@ -11,7 +11,7 @@
   text-align: center;
   text-indent: 0;
   top: 0;
-  height: 100%;
+  height: 100vh;
   #journeys-side-head {
     color: white;
     text-align: center;
@@ -22,7 +22,12 @@
   }
   .cell-header {
     text-indent: 0;
-
+  }
+  ul.categories {
+    padding: 0;
+    li {
+      padding-left: 0;
+    }
   }
 }
 
@@ -40,16 +45,28 @@
     text-indent: 0;
     text-decoration: none;
 
+    &:link {
+      text-decoration: none;
+    }
+    &:visited {
+      color: rgb(90, 204, 237);
+      text-decoration: none;
+    }
+
     &:hover {
       color: white;
       cursor: pointer;
       text-decoration: none;
     }
 
+
+
     &:active {
       cursor: pointer;
+      text-decoration: none;
       color: white;
     }
+
   }
 }
 
@@ -134,3 +151,4 @@
       }
     }
   }
+
