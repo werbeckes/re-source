@@ -91,6 +91,16 @@ app.controller("CategoryController", [
         })
     }
 
+    $scope.addToNote = function(note, snippet) {
+      snippet.note_id = note.id;
+
+      Snippet.update( {journey_id: $scope.journey.id, category_id: $scope.category.id, note_id: note.id, snippet_id: snippet.id}, snippet )
+        .$promise.then( function(response){
+          console.log("We give a shit. Improve on this.");
+          $route.reload();
+        })
+    }
+
 
 
     $scope.to_trusted = function(html_code) {

@@ -71,7 +71,7 @@ class SnippetsController < ApplicationController
     end
 
     def snippet_params
-      params.require(:snippet).permit(:web_url, :description, :text)
+      params.require(:snippet).permit(:web_url, :description, :text, :note_id)
     end
 
 end

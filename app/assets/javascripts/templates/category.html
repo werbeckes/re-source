@@ -116,7 +116,11 @@
           <hr>
           <h4>Unassigned Snippets:</h4>
           <div class="single-unassigned-snippet" ng-repeat="snippet in unassignedSnippets">
-            <p>{{snippet.web_url}}</p>
+            <p>{{snippet.text | limitTo:140}}...
+              <span>
+                <button ng-click="addToNote(note, snippet)">Add to Note</button>
+              </span>
+            </p>
           </div>
           <hr>
         </div>
