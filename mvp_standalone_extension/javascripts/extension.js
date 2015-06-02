@@ -71,7 +71,10 @@ function selectionDecision(user_token) {
       console.log(selection);
       // selection already exists, so no need to open the bin.
       params['body'] = selection[0];
-      saveSnippet(user_token, params);
+
+      // send message to background to save
+      sendSaveRequest(user_token, params);
+      // saveSnippet(user_token, params);
     } else {
       // no selection found, so OPEN THE BIN
       // throw new Error("Havent started the bin route yet.");
@@ -80,6 +83,19 @@ function selectionDecision(user_token) {
     }
     });
   });
+}
+
+function sendSaveRequest(user_token, params) {
+  console.log("sending save message");
+  chrome.runtime.sendMessage({
+      greeting: "hello",
+      user_token: user_token,
+      params: params
+  },
+    function(response) {
+      console.log("Got a response!");
+      console.log(response);
+    });
 }
 
 // saves the snippet to the database. called from the initialAuthCheck callback function in event of successful authentication.
@@ -102,7 +118,7 @@ function saveSnippet(user_token, params) {
         $("#saveMessage").text("Saved!");
         console.log("Saved!");
         console.log(response);
-        // window.setTimeout(window.close, 1000);
+        window.setTimeout(window.close, 1000);
       });
 
 }
@@ -122,11 +138,11 @@ function displaySideBar() {
 }
 
 // Listens for a message from the bin object
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    console.log(sender.tab ?
-                "from a content script:" + sender.tab.url :
-                "from the extension");
-    if (request.greeting == "hello")
-      sendResponse({farewell: "goodbye"});
-  });
+// chrome.runtime.onMessage.addListener(
+//   function(request, sender, sendResponse) {
+//     console.log(sender.tab ?
+//                 "from a content script:" + sender.tab.url :
+//                 "from the extension");
+//     if (request.directive == "hello")
+//       sendResponse({farewell: "goodbye"});
+//   });
