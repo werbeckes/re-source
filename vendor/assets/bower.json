@@ -5,6 +5,7 @@
     "angular-route": "latest",
     "bootstrap-sass-official": "latest",
     "angular-resource": "latest",
-    "google-code-prettify": "latest"
+    "google-code-prettify": "latest",
+    "angular-animate": "latest"
   }
 }

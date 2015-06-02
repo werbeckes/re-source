@@ -1,7 +1,11 @@
 <div class="container-fluid row">
   <div class="sidebar col-lg-3 visible-lg">
-    <h4><a href="#/journeys/{{journey.id}}">Back</a></h4>
-    <h4 class="cell-header">Notes:</h4>
+    <div class="sidebar-header-container">
+    <div class="sidebar-header-container col-xs-12">
+      <h4 class="col-xs-1 back-button"><a href="#/journeys/{{journey.id}}">Back</a></h4>
+      <h1 class="cell-header">Notes:</h1>
+    </div>
+    </div>
     <ul class="note-list">
       <li ng-repeat="note in notes" id="id{{note.id}}" class="cell-list">
         <a href="">{{note.title}}</a>
@@ -10,7 +14,8 @@
         </button>
       </li>
     </ul>
-    <h4 ng-click="displayForm()" class="form-header"> New Note</h4>
+
+    <h4 ng-click="displayForm()" class="cell-list col-xs-12 cat-new-button"> New Note</h4>
     <div class="form-container-journey">
       <form ng-show="showForm" ng-submit="createNote()">
         <h2 class="form-header">New Note</h2>

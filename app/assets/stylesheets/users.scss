@@ -27,6 +27,22 @@ h4.cell-list.col-xs-12.cat-new-button {
   text-indent: 0;
   top: 0;
   height: 100vh;
+
+  .back-button {
+    margin: 0;
+    padding: 0;
+    padding-top: 1.75em;
+  }
+
+  ul {
+    padding: 0;
+    border: none;
+    border-top: none;
+    li {
+      text-align: left;
+      border-top: none;
+    }
+  }
   #journeys-side-head {
     color: white;
     text-align: center;
@@ -38,12 +54,7 @@ h4.cell-list.col-xs-12.cat-new-button {
   .cell-header {
     text-indent: 0;
     margin-bottom: 0;
-  }
-  ul.categories {
-    padding: 0;
-    li {
-      padding-left: 0;
-    }
+    border: none;
   }
 }
 
@@ -74,8 +85,6 @@ h4.cell-list.col-xs-12.cat-new-button {
       cursor: pointer;
       text-decoration: none;
     }
-
-
 
     &:active {
       cursor: pointer;
@@ -157,7 +166,6 @@ h4.cell-list.col-xs-12.cat-new-button {
       outline:none;
       box-shadow: inset 0 0 3px 2px #95EA78;
     }
-
     .check {
       color:white;
       & > * {
