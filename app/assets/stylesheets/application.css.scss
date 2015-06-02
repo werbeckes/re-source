@@ -182,11 +182,13 @@ BEGIN PRETTY PRINT CSS THEME
  */
 
 pre {
-  background: #002451;
-  font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
-  font-size: 12px;
+  background: #222222;
+  font-family: 'Open Sans', monospace;
+  font-size: 15px;
+  font-weight: 300;
   line-height: 1.5;
-  border: 1px solid #ccc;
+  margin-right: 5em;
+  border: none;
   padding: 10px;
 }
 
@@ -197,13 +199,13 @@ pre {
   .kwd { color: #ebbbff; }  /* a keyword */
   .com { color: #7285b7; }  /* a comment */
   .typ { color: #bbdaff; }  /* a type name */
-  .lit { color: #ffc58f; }  /* a literal value */
+  .lit { color: #12b9cc; }  /* a literal value */
   /* punctuation, lisp open bracket, lisp close bracket */
   .pun, .opn, .clo { color: white }
   .tag { color: #ff9da4; }  /* a markup tag name */
   .atn { color: #ffc58f; }  /* a markup attribute name */
   .atv { color: #99ffff; }  /* a markup attribute value */
-  .dec, .var { color: #ffc58f; }  /* a declaration; a variable name */
+  .dec, .var { color: #12b9cc; }  /* a declaration; a variable name */
   .fun { color: bbdaff; }  /* a function name */
 }
 
@@ -213,7 +215,7 @@ pre {
   .kwd { color: #006; font-weight: bold }
   .com { color: #600; font-style: italic }
   .typ { color: #404; font-weight: bold }
-  .lit { color: #004444; }
+  .lit { color: #12b9cc; }
   .pun, .opn, .clo { color: #444400; }
   .tag { color: #006; font-weight: bold }
   .atn { color: #440044; }
