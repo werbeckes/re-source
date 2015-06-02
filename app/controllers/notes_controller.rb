@@ -22,7 +22,8 @@ class NotesController < ApplicationController
 
   def update
     @note = Note.find_by_id(params[:id])
-    #not done
+    @note.update(note_params)
+    render nothing: true
   end
 
   def destroy

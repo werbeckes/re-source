@@ -14,17 +14,14 @@ app.controller("CategoryController", [
     $scope.notes = Note.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id } );
 
     $scope.notes.$promise.then( function() {
-      console.log("Inside the callback");
-      console.log($scope.notes);
       angular.forEach($scope.notes,function(note,index){
-        console.log("inside the loop: ")
-        console.log($scope.notes[index])
         $scope.notes[index].snippets = Snippet.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id, note_id: note.id } );
       });
     })
 
     $scope.showForm = false;
     $scope.visibleSnipForm = [];
+    $scope.editNoteFlag = [];
 
     $scope.displayForm = function() {
       $scope.showForm = true;
@@ -53,6 +50,19 @@ app.controller("CategoryController", [
           $(".notes").find("#" +note.id).remove();
         } );
       }
+    }
+
+    $scope.showNoteForm = function(note) {
+      $scope.editNoteFlag[note.id] = true;
+      $scope.editingNote = note;
+    }
+
+    $scope.editNote = function(note) {
+      Note.update( {journey_id: $scope.journey.id}, $scope.editingNote).$promise.then( function() {
+          $scope.editNoteFlag[note.id] = false;
+          // $(".note-list").find("#id" +note.id).remove();
+          // $(".notes").find("#" +note.id).remove();
+        } );
     }
 
     $scope.showSnipForm = function(note) {
