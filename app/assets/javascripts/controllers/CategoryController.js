@@ -7,17 +7,22 @@ app.controller("CategoryController", [
   'Category',
   'Note',
   'Snippet',
+  'UnassignedSnippet',
   '$sce',
-  function($scope, $location, $route, $routeParams, Journey, Category, Note, Snippet, $sce) {
+  function($scope, $location, $route, $routeParams, Journey, Category, Note, Snippet, UnassignedSnippet, $sce ) {
     $scope.journey = Journey.get({id: $routeParams.journey_id});
     $scope.category = Category.get({journey_id: $routeParams.journey_id, id: $routeParams.id});
     $scope.notes = Note.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id } );
+
+    $scope.unassignedSnippets = UnassignedSnippet.index();// handle current user on rails side.
 
     $scope.notes.$promise.then( function() {
       angular.forEach($scope.notes,function(note,index){
         $scope.notes[index].snippets = Snippet.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id, note_id: note.id } );
       });
     })
+
+
 
     $scope.showForm = false;
     $scope.visibleSnipForm = [];
@@ -71,7 +76,6 @@ app.controller("CategoryController", [
     }
 
     $scope.saveSnip = function(note) {
-      console.log($scope.snippet);
       Snippet.create( {journey_id: $scope.journey.id, category_id: $scope.category.id, note_id: note.id}, $scope.snippet )
         .$promise.then( function(response) {
           //add the snips in here with DOM manipulation
@@ -79,6 +83,15 @@ app.controller("CategoryController", [
           $route.reload();
         });
     }
+
+    $scope.saveSnipEdit = function(note, snippet) {
+      Snippet.update( {journey_id: $scope.journey.id, category_id: $scope.category.id, note_id: note.id, snippet_id: snippet.id}, snippet )
+        .$promise.then( function(response){
+          console.log("do we give a shit?")
+        })
+    }
+
+
 
     $scope.to_trusted = function(html_code) {
       return $sce.trustAsHtml(html_code);

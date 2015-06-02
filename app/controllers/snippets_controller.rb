@@ -47,11 +47,19 @@ class SnippetsController < ApplicationController
     end
 
     def update
+      @snippet = Snippet.find_by_id(params[:id])
+      @snippet.update(snippet_params)
+      render nothing: true
     end
 
     def destroy
       Note.find_by_id(params[:id]).destroy
-      render json: " "
+      render nothing: true
+    end
+
+    def unassigned
+      @snippets = current_user.unassigned_snippets
+      render json: @snippets.to_a
     end
 
     protected
