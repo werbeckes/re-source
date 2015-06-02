@@ -4,11 +4,18 @@ chrome.runtime.onMessage.addListener(
     console.log(sender.tab ?
                 "from a content script:" + sender.tab.url :
                 "from the extension");
-    if (request.greeting == "hello") {
+    if (request.directive == "saveAsSnippet") {
       saveSnippet(request, sender, sendResponse);
       // sendResponse({farewell: stuff, recieved: request});
-
     }
+
+    if (request.directive == "getUserToken") {
+      chrome.storage.sync.get("resource_user_token", function(response) {
+        sendResponse( {user_token: response.resource_user_token} );
+        // THIS IS A CALL BACK FUNCTION.
+      });
+    }
+
     return true;
   });
 

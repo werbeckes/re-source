@@ -61,10 +61,20 @@ function styleBar (id) {
 			// alert("dropped")
 			// send message back to extension.js
 			console.log("Object drop detected");
-			chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
-			  console.log("received response: ")
-			  console.log(response);
+			chrome.runtime.sendMessage({directive: "getUserToken"}, function(token_response) {
+			  console.log("received response: ");
+			  console.log(token_response);
+			  console.log("calling next part of message ");
+			  chrome.runtime.sendMessage({
+			  	directive: "saveAsSnippet",
+			  	user_token: token_response.user_token,
+			  	params: {body: selection, snippetUrl: document.URL}
+			  }, function(response) {
+				  console.log("received response: ");
+				  console.log(response);
+				});
 			});
+
 		}
 	})
 	var bodyText = $(id).children();

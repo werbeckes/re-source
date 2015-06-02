@@ -88,7 +88,7 @@ function selectionDecision(user_token) {
 function sendSaveRequest(user_token, params) {
   console.log("sending save message");
   chrome.runtime.sendMessage({
-      greeting: "hello",
+      directive: "saveAsSnippet",
       user_token: user_token,
       params: params
   },
