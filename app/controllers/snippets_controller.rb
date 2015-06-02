@@ -27,6 +27,11 @@ class SnippetsController < ApplicationController
       render plain: "Created Snippet"
     end
 
+    def extension_logout
+      render plain: "HIT THE EXTENSION LOGOUT ROUTE"
+      # request.headers["Authorization"] = "lolololwrong"
+    end
+
     def create
       @note = Note.find_by_id(params[:note_id])
       @snippet = @note.snippets.new(snippet_params)

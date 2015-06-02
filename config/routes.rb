@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/api/snippets' => 'snippets#extension_index'
   post '/api/snippets' => 'snippets#extension_create'
   get '/api/snippets/unassigned' => 'snippets#unassigned'
+  get '/api/snippets/logout' => 'snippets#extension_logout'
 
   get '/api/checkOwner/:id' => 'users#checkOwner'
 
