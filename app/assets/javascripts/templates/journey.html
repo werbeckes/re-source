@@ -7,20 +7,23 @@
         <a href="#/journeys/{{journey.id}}/categories/{{category.id}}">{{category.title}}</a>
         <!-- <button ng-click="deleteCategory(category)" value="-"> -->
       </li>
+
     </ul>
-    <h4 ng-click="displayForm()">New Category (click me!)</h4>
-  </div>
+    <h4 class="cell-list col-xs-12 cat-new-button" ng-click="displayForm()">New Category</h4>
+      <div class="form-container-journey">
+        <form  ng-show="showForm" ng-submit="createCategory()">
+          <!-- <h2 class="form-header" id="cat-form-head">New Category</h2> -->
+          <input class="col-xs-12"  type="text" ng-model="category.title" placeholder="Title" required>
+          <input class="col-xs-12"  type="text" ng-model="category.description" placeholder="Description" required>
+          <span class="check">
+            <input type="checkbox" ng-model="category.public_bool"><p>public? (you can change this later)</p> </span>
+          <input class="col-xs-12"  type="submit" value="Create Category">
+        </form>
+      </div>
+    </div>
   <h1 class="page-header visible-lg col-lg-8">{{ journey.title }}</h1>
   <div class="container">
 
-<div class="container">
-    <form ng-show="showForm" ng-submit="createCategory()">
-      <h2>New Category</h2>
-      <input type="text" ng-model="category.title" placeholder="Title" required>
-      <input type="text" ng-model="category.description" placeholder="Description" required><br>
-      public? <input type="checkbox" ng-model="category.public_bool"> (you can change this later)<br>
-      <input type="submit" value="Create Category">
-    </form>
-  </div>
+
 </div>
 

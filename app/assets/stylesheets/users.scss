@@ -5,6 +5,21 @@
   z-index: 1;
 }
 
+#cat-form-head {
+  padding-top: 0;
+}
+
+h4.cell-list.col-xs-12.cat-new-button {
+  font-size: 2em;
+  font-weight: 100;
+  padding-top: .5em;
+  color: rgb(90, 204, 237);
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+}
+
 .sidebar {
   position: absolute;
   background-color: #333333;
