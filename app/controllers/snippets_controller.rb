@@ -38,6 +38,14 @@ class SnippetsController < ApplicationController
       end
     end
 
+    def index
+      puts "returning snippets <><><><><><><><><><><><><><><><><><<"
+      @snippets = Note.find_by(id: params[:note_id]).snippets
+
+      p @snippets
+      render json: @snippets.to_a
+    end
+
     def update
     end
 

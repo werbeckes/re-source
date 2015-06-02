@@ -13,6 +13,16 @@ app.controller("CategoryController", [
     $scope.category = Category.get({journey_id: $routeParams.journey_id, id: $routeParams.id});
     $scope.notes = Note.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id } );
 
+    $scope.notes.$promise.then( function() {
+      console.log("Inside the callback");
+      console.log($scope.notes);
+      angular.forEach($scope.notes,function(note,index){
+        console.log("inside the loop: ")
+        console.log($scope.notes[index])
+        $scope.notes[index].snippets = Snippet.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id, note_id: note.id } );
+      });
+    })
+
     $scope.showForm = false;
     $scope.visibleSnipForm = [];
 
