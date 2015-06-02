@@ -5,13 +5,32 @@
   "version": "1.1",
   "icons": {"128": "images/re_icon.png"},
 
+  "background": {
+    "scripts": ["scripts/jquery-2.1.4.min.js", "background.js"]
+  },
+
   "browser_action": {
     "default_icon": "images/re_icon.png",
     "default_popup": "html/popup.html",
     "default_title": "Save your Snippet!"
     },
 
+    "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/jquery-2.1.4.min.js", "scripts/jquery-ui.js", "responderScript.js"]
+    }
+    ],
+      "web_accessible_resources": [
+      "images/*.png",
+      "base_dom/*.css",
+      "base_dom/*.html",
+      "custom_scripts/*.js"
+    ],
+
   "permissions": [
+    "http://*/",
+    "https://*/",
     "activeTab",
     "tabs",
     "storage",
