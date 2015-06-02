@@ -14,9 +14,7 @@ app.controller("JourneyController", [
       $scope.isOwner = response.isOwner;
     });
 
-    console.log("is owner?: " +$scope.isOwner);
-
-    $scope.journey = Journey.get({id: $routeParams.id});
+    $scope.journey = Journey.get( { id: $routeParams.id } );
     $scope.categories = Category.index( { journey_id: $routeParams.id } )
 
     $scope.showForm = false;
@@ -41,7 +39,7 @@ app.controller("JourneyController", [
         }
     }
 
-    $scope.display() = function(item) { ($scope.isOwner || item.public_bool) };
+    $scope.display = function(item) { return ($scope.isOwner || item.public_bool) };
 
   }
 ]);
