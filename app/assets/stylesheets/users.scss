@@ -22,13 +22,17 @@
   }
   .cell-header {
     text-indent: 0;
-}
+
+  }
 }
 
 
 .cell-list {
   padding: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
   list-style-type: none;
+  border-bottom: 1px solid #666666;
   a {
     color: rgb(90, 204, 237);
     font-weight: 100;
@@ -47,6 +51,10 @@
       color: white;
     }
   }
+}
+
+.note-list {
+  padding:0;
 }
 
 .form-header {
@@ -86,7 +94,7 @@
     width:100%;
   }
 }
-  .form-container-journey {
+.form-container-journey {
     height: 100%;
     .form-header {
       color: white;
