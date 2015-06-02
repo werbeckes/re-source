@@ -176,3 +176,79 @@ button.edit-button.col-xs-12.lighter-edit {
   background-color: #4C4C4C;
   padding-right: 1em;
 }
+
+/*
+BEGIN PRETTY PRINT CSS THEME
+ */
+
+pre {
+  background: #002451;
+  font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.pln { color: white }  /* plain text CHANGE TO WHITE AFTER BG FIXED*/
+
+@media screen {
+  .str { color: #d1f1a9; }  /* string content */
+  .kwd { color: #ebbbff; }  /* a keyword */
+  .com { color: #7285b7; }  /* a comment */
+  .typ { color: #bbdaff; }  /* a type name */
+  .lit { color: #ffc58f; }  /* a literal value */
+  /* punctuation, lisp open bracket, lisp close bracket */
+  .pun, .opn, .clo { color: white }
+  .tag { color: #ff9da4; }  /* a markup tag name */
+  .atn { color: #ffc58f; }  /* a markup attribute name */
+  .atv { color: #99ffff; }  /* a markup attribute value */
+  .dec, .var { color: #ffc58f; }  /* a declaration; a variable name */
+  .fun { color: bbdaff; }  /* a function name */
+}
+
+/* Use higher contrast and text-weight for printable form. */
+@media print, projection {
+  .str { color: #006600; }
+  .kwd { color: #006; font-weight: bold }
+  .com { color: #600; font-style: italic }
+  .typ { color: #404; font-weight: bold }
+  .lit { color: #004444; }
+  .pun, .opn, .clo { color: #444400; }
+  .tag { color: #006; font-weight: bold }
+  .atn { color: #440044; }
+  .atv { color: #006600; }
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* IE indents via margin-left */
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L4,
+li.L5,
+li.L6,
+li.L7,
+li.L8,
+li.L9 {
+  /* */
+}
+
+/* Alternate shading for lines */
+li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 {
+  /* */
+}
+
+ /*
+END PRETTY PRINT CSS THEME
+ */
