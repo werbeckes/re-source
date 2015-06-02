@@ -2,11 +2,11 @@
   "manifest_version": 2,
   "name": "Re:Source Snippet Saver",
   "description": "Highlight something you like, and click to save to your resource journey",
-  "version": "1.1",
-  "icons": {"128": "images/re_icon.png"},
+  "version": "1.6",
+  "icons": {"128": "images/re_icon.png", "16": "images/re_icon_small.png"},
 
   "background": {
-    "scripts": ["scripts/jquery-2.1.4.min.js", "background.js"]
+    "scripts": ["scripts/jquery-2.1.4.min.js", "background.js", "contextMenu.js"]
   },
 
   "browser_action": {
@@ -34,6 +34,7 @@
     "activeTab",
     "tabs",
     "storage",
+    "contextMenus",
     "http://localhost:3000/api/snippets"
     ]
 }
