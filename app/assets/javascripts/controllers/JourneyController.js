@@ -41,5 +41,7 @@ app.controller("JourneyController", [
         }
     }
 
+    $scope.display() = function(item) { ($scope.isOwner || item.public_bool) };
+
   }
 ]);

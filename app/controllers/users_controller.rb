@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def checkOwner
-    if params[:id].to_i == current_user.id
+    if logged_in? && params[:id].to_i == current_user.id
       render json: {isOwner: true}
     else
       render json: {isOwner: false}
