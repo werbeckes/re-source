@@ -22,7 +22,17 @@
   font-weight: 100;
   color: white;
 }
+.show-snippets-container {
+  padding: 1em;
+  padding-left: 0;
+  margin-left: 2em;
+  margin-right: 2em;
+  background-color: #4C4C4C;
+}
 
+.single-snippet-content {
+  background-color: #4C4C4C;
+}
 
 #plus-pic {
   width: 10%;
@@ -66,7 +76,7 @@
 
         margin-bottom: 1em;
         padding-bottom: 1em;
-
+        background: #4C4C4C;
         color: #4cadc9;
         border: none;
         border-bottom: 1px solid #555;
@@ -81,6 +91,11 @@
 
 
 
+.snippet-title {
+  border-bottom: 1px solid #666666;
+  padding-bottom: 1em;
+}
+
 .form-container-edit {
     height: 100%;
     .form-header {
@@ -89,6 +104,9 @@
       text-align: left;
       padding-bottom: .5em;
       margin-bottom: 0;
+      &:hover {
+        cursor: default;
+      }
     }
     input, textarea {
       display: block;
@@ -109,7 +127,7 @@
       text-align: center;
       padding-top: .5em;
       padding-bottom: .5em;
-      width: 15%;
+      width: 20%;
       float: right;
       margin-top: 2em;
     }

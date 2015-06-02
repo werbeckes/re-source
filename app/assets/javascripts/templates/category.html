@@ -62,8 +62,8 @@
       </div>
 
 
-      <h3 class="note-title">Snippets</h3>
-        <div class="show-snippets">
+      <h3 class="note-title snippet-title">Snippets</h3>
+        <div class="show-snippets-container">
           <div class="single-snippet" ng-repeat="snippet in note.snippets">
             <div class="single-snippet-content" ng-show="!toggle">
               <h4 class="note-header">Description:</h4>
@@ -72,52 +72,45 @@
               <p class="note-text">{{snippet.text}}</p>
               <h4 class="note-header">URL:</h4>
               <p class="note-text">{{snippet.web_url}}</p>
-              <button class="edit-button col-xs-12" ng-click="toggle = !toggle">Edit Snippet</button>
+              <button class="edit-button col-xs-12 lighter-edit" ng-click="toggle = !toggle">Edit Snippet</button>
             </div>
-            <div class="single-snippet-edit-form" ng-show="toggle">
+
+            <div class="form-container-edit" ng-show="toggle">
               <form ng-submit="saveSnipEdit(note, snippet)">
-                <p>Snippet description</p>
-                <p>
-                  <input type="text" ng-model="snippet.description">
-                </p>
-                <p>Snippet Content</p>
-                <p>
-                  <textarea ng-model="snippet.text" placeholder="copy and paste your snippet here"></textarea>
-                </p>
-                <p>Snippet Url:</p>
-                <p>
-                  <input type="text" ng-model="snippet.web_url"></p>
-                <p>
+                <h3 class="form-header col-xs-12 col-pull-12"> Snippet description</h3>
+                  <input class="col-xs-12" type="text" ng-model="snippet.description">
+                <h3 class="form-header col-xs-12 col-pull-12">Snippet Content</h3>
+                  <textarea class="col-xs-12" ng-model="snippet.text" placeholder="copy and paste your snippet here"></textarea>
+                <h3 class="form-header col-xs-12 col-pull-12">Snippet Url:</h3>
+                  <input class="col-xs-12" type="text" ng-model="snippet.web_url"></p>
+                <div class="col-xs-12 submit-container">
                   <input type="submit" value="Save snippet" ng-click="toggle = !toggle">
-                </p>
+                </div>
               </form>
             </div>
           </div>
 
           <button class="edit-button col-xs-12" ng-click="showSnipForm(note)">Add Snippet</button>
-          <div ng-show="visibleSnipForm[{{note.id}}]"   class="snipForm">
-            <form ng-submit="saveSnip(note)">
-              <p>Snippet description</p>
-              <p>
-                <input type="text" ng-model="snippet.description">
-              </p>
-              <p>Snippet Content</p>
-              <p>
-                <textarea ng-model="snippet.text" placeholder="copy and paste your snippet here"></textarea>
-              </p>
-              <p>Snippet Url:</p>
-              <p>
-                <input type="text" ng-model="snippet.web_url"></p>
-              <p>
-                <input type="submit" value="Save snippet">
-              </p>
-            </form>
+          <div class="form-container-edit">
+            <div ng-show="visibleSnipForm[{{note.id}}]"   class="snipForm">
+              <form ng-submit="saveSnip(note)">
+                <h3 class="form-header col-xs-12 col-pull-12">Snippet description</h3>
+                  <input class="col-xs-12" type="text" ng-model="snippet.description">
+                <h3 class="form-header col-xs-12 col-pull-12">Snippet Content</h3>
+                  <textarea class="col-xs-12" ng-model="snippet.text" placeholder="copy and paste your snippet here"></textarea>
+                <h3 class="form-header col-xs-12 col-pull-12">Snippet Url:</h3>
+                  <input class="col-xs-12" ng-model="snippet.web_url">
+                <div class="col-xs-12 submit-container">
+                  <input type="submit" value="Save snippet">
+                </div>
+              </form>
+            </div>
           </div>
         </div>
         <!-- end of note repeat -->
         <div class="unassigned-snippets-container">
           <hr>
-          <h4>Unassigned Snippets:</h4>
+          <h4 class="note-title">Unassigned Snippets:</h4>
           <div class="single-unassigned-snippet" ng-repeat="snippet in unassignedSnippets">
             <p>{{snippet.text | limitTo:140}}...
               <span>
