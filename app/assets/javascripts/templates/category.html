@@ -1,7 +1,11 @@
 <div class="container-fluid row">
   <div class="sidebar col-lg-3 visible-lg">
-    <h4><a href="#/journeys/{{journey.id}}">Back</a></h4>
-    <h4 class="cell-header">Notes:</h4>
+    <div class="sidebar-header-container">
+    <div class="sidebar-header-container row">
+      <h4 class="col-xs-1"><a href="#/journeys/{{journey.id}}">Back</a></h4>
+      <h1 class="cell-header">Notes:</h1>
+    </div>
+    </div>
     <ul class="note-list">
       <li ng-repeat="note in notes" id="id{{note.id}}" class="cell-list">
         <a href="">{{note.title}}</a>

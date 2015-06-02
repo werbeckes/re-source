@@ -182,6 +182,18 @@ button.edit-button.col-xs-12.lighter-edit {
   padding-right: 1em;
 }
 
+.sidebar-header-container {
+  border-bottom: 1px solid #666666;
+  & > h1 {
+    display: inline-block;
+    border: none;
+  }
+  & > h4 {
+    display: inline-block;
+    padding-top: 1em;
+  }
+}
+
 /*
 BEGIN PRETTY PRINT CSS THEME
  */
