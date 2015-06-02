@@ -3,8 +3,19 @@ app.controller("HomeController", [
   '$location',
   '$route',
   'Journey',
-  function($scope, $location, $route, Journey) {
-    $scope.journeys = Journey.index();
+  'Owner',
+  function($scope, $location, $route, Journey, Owner) {
+    var regex = /users\/(.)#/;
+    var user_id = regex.exec($location.absUrl());
+
+    var owner = Owner.check( {id: user_id[1]} );
+    owner.$promise.then( function(response) {
+      $scope.isOwner = response.isOwner;
+      console.log("Owner inside? " +$scope.isOwner);
+    });
+    console.log("Owner outside? " +$scope.isOwner)
+
+    $scope.journeys = Journey.index({user_id: user_id[1]});
 
     $scope.showForm = false;
 
@@ -28,5 +39,14 @@ app.controller("HomeController", [
         });
       }
     }
+
+    $scope.display = function(item) {
+      console.log("display for: " +item.title)
+      console.log("item public?: " + item.public_bool)
+      console.log($scope.isOwner || item.public_bool);
+      return ($scope.isOwner || item.public_bool)
+    };
+
+
   }
 ]);

@@ -1,9 +1,14 @@
 class JourneysController < ApplicationController
   respond_to :json
+  before_action :require_user, only: [:create, :destroy]
 
   #fetch a list of all journeys with Journey.index()
   def index
-    @journeys = current_user.journeys
+    puts "<><><><><><><><><><><><><><><><><><><><><>"
+    p params
+    puts "<><><><><><><><><><><><><><><><><><><><><>"
+    # @journeys = current_user.journeys
+    @journeys = User.find_by_id(params[:user_id]).journeys
     render json: @journeys.to_a
   end
 
