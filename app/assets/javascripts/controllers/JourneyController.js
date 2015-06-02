@@ -4,7 +4,18 @@ app.controller("JourneyController", [
   '$routeParams',
   'Category',
   'Journey',
-  function($scope, $location, $routeParams, Category, Journey) {
+  'Owner',
+  function($scope, $location, $routeParams, Category, Journey, Owner) {
+    var regex = /users\/(.)#/;
+    var user_id = regex.exec($location.absUrl());
+
+    var owner = Owner.check( {id: user_id[1]} );
+    owner.$promise.then( function(response) {
+      $scope.isOwner = response.isOwner;
+    });
+
+    console.log("is owner?: " +$scope.isOwner);
+
     $scope.journey = Journey.get({id: $routeParams.id});
     $scope.categories = Category.index( { journey_id: $routeParams.id } )
 

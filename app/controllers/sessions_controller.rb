@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     if logged_in?
-      redirect_to '/home'
+      redirect_to "/users/#{current_user.id}"
     end
   end
 
@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     # puts "User entered password: #{params[:password][0]}"
     if user && user.authenticate(params[:password][0])
       session[:user_id] = user.id
-      redirect_to '/home'
+      redirect_to "/users/#{user.id}"
     else
       render '/login'
     end

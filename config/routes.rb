@@ -10,12 +10,14 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
-  get '/home' => 'home#index'
+  get '/users/:id' => 'home#index'
 
   get '/api/snippets/login' => 'snippets#login'
   get '/api/snippets' => 'snippets#extension_index'
   post '/api/snippets' => 'snippets#extension_create'
   get '/api/snippets/unassigned' => 'snippets#unassigned'
+
+  get '/api/checkOwner/:id' => 'users#checkOwner'
 
   # resources :sessions, only: [:destroy]
 

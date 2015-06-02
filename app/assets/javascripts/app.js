@@ -4,13 +4,13 @@ app.config([
   '$routeProvider', function($routeProvider,$locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: "assets/templates/index.html",
+        templateUrl: "../assets/templates/index.html",
         controller: 'HomeController'})
       .when('/journeys/:id', {
-        templateUrl: "assets/templates/journey.html",
+        templateUrl: "../assets/templates/journey.html",
         controller: 'JourneyController'})
       .when('/journeys/:journey_id/categories/:id', {
-        templateUrl: "assets/templates/category.html",
+        templateUrl: "../assets/templates/category.html",
         controller: 'CategoryController'})
       .otherwise( { redirectTo: '/' } );
   }
