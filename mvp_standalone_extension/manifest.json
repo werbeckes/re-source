@@ -18,7 +18,7 @@
     "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["scripts/jquery-2.1.4.min.js", "scripts/jquery-ui.js","custom_scripts/first_draft.js", "responderScript.js"]
+      "js": ["scripts/jquery-2.1.4.min.js", "scripts/jquery-ui.js", "responderScript.js"]
     }
     ],
       "web_accessible_resources": [

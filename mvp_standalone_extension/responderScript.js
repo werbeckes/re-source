@@ -57,8 +57,14 @@ function styleBar (id) {
 		activeClass: "drag-highlight",
 		hoverClass: "drag-hover",
 		drop: function (event, ui) {
-			api(selection);
+			// api(selection);
 			// alert("dropped")
+			// send message back to extension.js
+			console.log("Object drop detected");
+			chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
+			  console.log("received response: ")
+			  console.log(response);
+			});
 		}
 	})
 	var bodyText = $(id).children();

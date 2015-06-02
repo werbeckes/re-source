@@ -1,13 +1,9 @@
-console.log( 'Background.html starting!' );
-	/*Send request to current tab when page action is clicked*/
-	chrome.browserAction.onClicked.addListener(function(tab) {
-		chrome.tabs.getSelected(null, function(tab) {
-			chrome.tabs.sendRequest(
-				//Selected tab id
-				tab.id,
-				//Params inside a object data
-				{callFunction: "toggleSidebar"}
-			);
-		});
-	});
-console.log( 'Background.html done.' );
+// Listens for a message from the bin object
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log(sender.tab ?
+                "from a content script:" + sender.tab.url :
+                "from the extension");
+    if (request.greeting == "hello")
+      sendResponse({farewell: "goodbye"});
+  });

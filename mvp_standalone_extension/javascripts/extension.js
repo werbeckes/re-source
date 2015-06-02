@@ -74,8 +74,9 @@ function selectionDecision(user_token) {
       saveSnippet(user_token, params);
     } else {
       // no selection found, so OPEN THE BIN
-      throw new Error("Havent started the bin route yet.");
-      console.log("Nothing found");
+      // throw new Error("Havent started the bin route yet.");
+      displaySideBar();
+      // console.log("Nothing found");
     }
     });
   });
@@ -105,3 +106,27 @@ function saveSnippet(user_token, params) {
       });
 
 }
+
+//==================================
+// bin code
+function displaySideBar() {
+  console.log("displaying sidebar");
+  chrome.tabs.getSelected(null, function(tab) {
+      chrome.tabs.sendRequest(
+      //Selected tab id
+      tab.id,
+      //Params inside a object data
+      {callFunction: "toggleSidebar"}
+    );
+  });
+}
+
+// Listens for a message from the bin object
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log(sender.tab ?
+                "from a content script:" + sender.tab.url :
+                "from the extension");
+    if (request.greeting == "hello")
+      sendResponse({farewell: "goodbye"});
+  });
