@@ -18,6 +18,7 @@ $(function(){
   chrome.storage.sync.get("resource_user_token", function(response) {
     user_token = response.resource_user_token;
     // THIS IS A CALL BACK FUNCTION. THE REST OF THE AUTH CALL GETS EXECUTED HERE
+    // (preflight)
     initialAuthCheck(user_token);
   });
 
@@ -47,33 +48,41 @@ function initialAuthCheck(user_token) {
         console.log("User Logged In");
         console.log(response);
         // if successful request, continue on with saving function.
-        saveSnippet(user_token);
+        selectionDecision(user_token);
       });
 }
 
-// saves the snippet to the database. called from the initialAuthCheck callback function in event of successful authentication.
-function saveSnippet(user_token) {
-  // =============
-  //get highlighted text, and current url, and send them to create#snippets
+function selectionDecision(user_token) {
+  // get the selection, and do logic based upon if it is empty
   chrome.tabs.executeScript( {
     code: "document.getSelection().toString();"
   }, function(selection) {
     console.log(selection);
     var params = {};
 
-    if (selection !== undefined) {
-      params['body'] = selection[0];
-    } else {
-      console.log("Nothing found");
-    }
-
-    // get the url of the page
+    // get the url of the page, both methods need it.
     chrome.tabs.query({'active': true, 'currentWindow': true}, function (tabs) {
       // console.log(tabs[0].url);
       params['snippetUrl'] = tabs[0].url;
       console.log(params);
 
+    if (selection[0] !== "") {
+      console.log ("saving with selection of: ");
+      console.log(selection);
+      // selection already exists, so no need to open the bin.
+      params['body'] = selection[0];
+      saveSnippet(user_token, params);
+    } else {
+      // no selection found, so OPEN THE BIN
+      throw new Error("Havent started the bin route yet.");
+      console.log("Nothing found");
+    }
+    });
+  });
+}
 
+// saves the snippet to the database. called from the initialAuthCheck callback function in event of successful authentication.
+function saveSnippet(user_token, params) {
       var request = $.ajax({
                       url: "http://localhost:3000/api/snippets",
                       method: "POST",
@@ -92,10 +101,7 @@ function saveSnippet(user_token) {
         $("#saveMessage").text("Saved!");
         console.log("Saved!");
         console.log(response);
-        window.setTimeout(window.close, 1000);
+        // window.setTimeout(window.close, 1000);
       });
 
-    });
-
-  });
 }
