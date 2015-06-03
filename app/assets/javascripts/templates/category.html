@@ -2,7 +2,7 @@
   <nav class="sidebar col-lg-3 visible-lg" id="sidebar-scroll" >
     <div class="sidebar-header-container">
 
-      <div class="sidebar-header-container col-xs-12">
+      <div class="sidebar-header-container col-xs-12" z-index='-20'>
         <h4 class="col-xs-1 back-button"><a href="#/journeys/{{journey.id}}">Back</a></h4>
         <h1 class="cell-header">Notes:</h1>
       </div>
@@ -10,10 +10,10 @@
     </div>
 
     <ul class="note-list">
-      <li ng-repeat="note in notes" id="id{{note.id}}" class="cell-list active" ng-show="display(note)">
-        <a href="{{fullPath}}/#note-{{note.id}}" data-toggle="tooltip" title="jump to {{note.title}}">{{note.title}}</a>
+      <li ng-repeat="note in notes" id="id{{note.id}}" class="cell-list" ng-show="display(note)" du-scrollspy="note-{{note.id}}">
+        <a du-smooth-scroll="note-{{note.id}}" data-toggle="tooltip" title="jump to {{note.title}}">{{note.title}}</a>
         <button class="delete-button" ng-click="deleteNote(note)" ng-show="isOwner">
-        <span class=" glyphicon glyphicon-remove-sign"></span>
+        <span class="glyphicon glyphicon-remove-sign"></span>
         </button>
       </li>
     </ul>
