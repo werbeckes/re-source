@@ -203,6 +203,19 @@ button.edit-button.col-xs-12.lighter-edit {
 .fade.ng-enter.ng-enter-active {
   opacity:1;
 }
+.navbar.navbar-default.navbar-static-top.navbar-xs.navbar-md.ng-scope {
+  position: fixed;
+  width: 100%;
+}
+
+.sidebar.col-lg-3.visible-lg {
+  position: fixed;
+  margin-top: 5em;
+}
+.page-header{
+  margin-left: 25%;
+  margin-top: 4em;
+}
 
 /*
 BEGIN PRETTY PRINT CSS THEME
