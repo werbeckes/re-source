@@ -208,6 +208,10 @@ button.edit-button.col-xs-12.lighter-edit {
   width: 100%;
 }
 
+.active {
+  transform: translateX(1em);
+}
+
 .sidebar.col-lg-3.visible-lg {
   position: fixed;
   margin-top: 5em;
@@ -216,7 +220,9 @@ button.edit-button.col-xs-12.lighter-edit {
   margin-left: 25%;
   margin-top: 4em;
 }
-
+.ind-note-container {
+  margin-bottom: 10em;
+}
 /*
 BEGIN PRETTY PRINT CSS THEME
  */
