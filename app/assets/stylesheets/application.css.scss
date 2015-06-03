@@ -296,7 +296,10 @@ button.edit-button.col-xs-12.lighter-edit
 
 .active
 {
-    transform: translateX(1em);
+    a{
+        padding-left: 1em;
+    }
+
 }
 
 .sidebar.col-lg-3.visible-lg
