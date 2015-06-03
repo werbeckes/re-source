@@ -467,4 +467,7 @@ END PRETTY PRINT CSS THEME
 
 .ace_line {
   font-family: "Open-Sans", monospace;
+  span {
+    font-family: inherit;
+  }
 }
