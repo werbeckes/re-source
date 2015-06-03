@@ -19,6 +19,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'responders'
 gem 'better_errors'
+gem 'pry'
 
 # for making cross-domain requests
 gem 'rack-cors', :require => 'rack/cors'

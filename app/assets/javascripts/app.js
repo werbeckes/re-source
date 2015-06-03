@@ -1,4 +1,5 @@
-var app = angular.module('resourceApp', ['templates', 'ngRoute', 'ngResource', 'ui.ace', 'ngAnimate']);
+var app = angular.module('resourceApp', ['templates', 'ngRoute', 'ngResource', 'ui.ace', 'duScroll', 'ngAnimate']);
+
 
 app.config([
   '$routeProvider', function($routeProvider,$locationProvider) {
@@ -20,3 +21,6 @@ app.config(function($httpProvider) {
   $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
 });
 
+app.value('duScrollBottomSpy', true);
+
+app.value('duScrollOffset', 80);
