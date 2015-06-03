@@ -2,8 +2,8 @@ class SnippetsController < ApplicationController
     before_action :token_authenticate, only: [:extension_index, :extension_create]
     #skip because we have no snippet form
     skip_before_filter :verify_authenticity_token
+
     def login
-      puts "HIT LOGIN ROUTE"
       user = User.find_by_email(params[:email])
       if user && user.authenticate(params[:password])
         render json: {username: user.username, auth_token: user.auth_token}
@@ -13,17 +13,13 @@ class SnippetsController < ApplicationController
     end
 
     def extension_index
-      puts "HIT INDEX ROUTE"
       render plain: "HIT INDEX (PREFLIGHT) ROUTE"
     end
 
     def extension_create
-      puts "<><><><><><><><><><><><><><><><><><><><><><><>"
-      puts "CREATING SNIPPET"
-      # p token_authenticate
-      puts "<><><><><><><><><><><><><><><><><><><><><><><>"
       user = token_authenticate
-      Snippet.create(text: params[:body], web_url: params[:snippetUrl], user_id: user.id)
+      @snippet = Snippet.create(text: params[:body], web_url: params[:snippetUrl], user_id: user.id)
+      @snippet.get_cached_url
       render plain: "Created Snippet"
     end
 
@@ -31,7 +27,7 @@ class SnippetsController < ApplicationController
       @note = Note.find_by_id(params[:note_id])
       @snippet = @note.snippets.new(snippet_params)
       if @snippet.save
-        puts "We won!!!"
+        @snippet.get_cached_url
         render json: @snippet
       else
         #TODO catch and return errors
@@ -39,10 +35,7 @@ class SnippetsController < ApplicationController
     end
 
     def index
-      puts "returning snippets <><><><><><><><><><><><><><><><><><<"
       @snippets = Note.find_by(id: params[:note_id]).snippets
-
-      p @snippets
       render json: @snippets.to_a
     end
 
