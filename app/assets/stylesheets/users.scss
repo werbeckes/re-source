@@ -1,178 +1,234 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.user-home-head {
-  z-index: 1;
+.user-home-head
+{
+    z-index: 1;
 }
 
-#cat-form-head {
-  padding-top: 0;
+#cat-form-head
+{
+    padding-top: 0;
 }
 
-h4.cell-list.col-xs-12.cat-new-button {
-  font-size: 2em;
-  font-weight: 100;
-  padding-top: .5em;
-  color: rgb(90, 204, 237);
-  &:hover {
-    color: white;
-    cursor: pointer;
-  }
-}
-
-.sidebar {
-  position: fixed;
-  background-color: #333333;
-  text-align: center;
-  text-indent: 0;
-  top: 0;
-  height: 100vh;
-
-  .back-button {
-    margin: 0;
-    padding: 0;
-    padding-top: 1.75em;
-  }
-
-  ul {
-    padding: 0;
-    border: none;
-    border-top: none;
-    li {
-      text-align: left;
-      border-top: none;
-    }
-  }
-  #journeys-side-head {
-    color: white;
-    text-align: center;
-    font-weight: 100;
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-    border-bottom: 1px solid #AAAAAA;
-  }
-  .cell-header {
-    text-indent: 0;
-    margin-bottom: 0;
-    border: none;
-  }
-}
-
-
-.cell-list {
-  padding: 0;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  list-style-type: none;
-  border-bottom: 1px solid #666666;
-  a {
-    color: rgb(90, 204, 237);
-    font-weight: 100;
+h4.cell-list.col-xs-12.cat-new-button
+{
     font-size: 2em;
+    font-weight: 100;
+
+    padding-top: .5em;
+
+    color: rgb(90, 204, 237);
+    &:hover
+    {
+        cursor: pointer;
+
+        color: white;
+    }
+}
+
+.sidebar
+{
+    position: fixed;
+    top: 0;
+
+    height: 100vh;
+
+    text-align: center;
     text-indent: 0;
-    text-decoration: none;
 
-    &:link {
-      text-decoration: none;
+    background-color: #333;
+    .back-button
+    {
+        margin: 0;
+        padding: 0;
+        padding-top: 1.75em;
     }
-    &:visited {
-      color: rgb(90, 204, 237);
-      text-decoration: none;
+    ul
+    {
+        padding: 0;
+
+        border: none;
+        border-top: none;
+        li
+        {
+            text-align: left;
+
+            border-top: none;
+        }
     }
-
-    &:hover {
-      color: white;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    &:active {
-      cursor: pointer;
-      text-decoration: none;
-      color: white;
-    }
-
-  }
-}
-
-.note-list {
-  padding:0;
-}
-
-.form-header {
-  text-align: center;
-  color: rgb(90, 204, 237);
-  padding-bottom: 1em;
-  margin-bottom: 1em;
-  border-bottom: 1px solid #AAAAAA;
-  font-weight: 100;
-
-  &:visited {
-    color: white;
-  }
-
-  &:hover {
-    color: white;
-    cursor: pointer;
-  }
-
-  &:active {
-    cursor: pointer;
-    color: white;
-  }
-
-}
-
-.form-header-journey {
-  text-align: center;
-  color: rgb(90, 204, 237);
-  padding-bottom: 1em;
-  margin-bottom: 1em;
-  color:white;
-  border-bottom: 1px solid #AAAAAA;
-  font-weight: 100;
-  input {
-    display: block;
-    width:100%;
-  }
-}
-.form-container-journey {
-    height: 100%;
-    .form-header {
-      color: white;
-      border: none;
-      padding-top: 1em;
-      padding-bottom: 0;
-    }
-    input, textarea {
-      display: block;
-      padding: 2em;
-      margin-bottom: 5%;
-      resize: none;
-      border: none;
-      background-color: #575757;
-      color: #DDDDDD;
-      text-align: left;
-      border-radius: 1em;
-    }
-    textarea {
-      height: 10em;
-    }
-    input[type="submit"]:hover {
-      background-color: #95EA78;
-      color: #fff;
-    }
-    input:focus {
-      outline:none;
-      box-shadow: inset 0 0 3px 2px #95EA78;
-    }
-    .check {
-      color:white;
-      & > * {
-        display: inline-block;
-        margin-left: 1em;
+    #journeys-side-head
+    {
         font-weight: 100;
-      }
-    }
-  }
 
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+
+        text-align: center;
+
+        color: white;
+        border-bottom: 1px solid #aaa;
+    }
+    .cell-header
+    {
+        margin-bottom: 0;
+
+        text-indent: 0;
+
+        border: none;
+    }
+}
+
+
+.cell-list
+{
+    padding: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    list-style-type: none;
+
+    border-bottom: 1px solid #666;
+    a
+    {
+        font-size: 2em;
+        font-weight: 100;
+
+        text-decoration: none;
+        text-indent: 0;
+
+        color: rgb(90, 204, 237);
+        &:link
+        {
+            text-decoration: none;
+        }
+        &:visited
+        {
+            text-decoration: none;
+
+            color: rgb(90, 204, 237);
+        }
+        &:hover
+        {
+            cursor: pointer;
+            text-decoration: none;
+
+            color: white;
+        }
+        &:active
+        {
+            cursor: pointer;
+            text-decoration: none;
+
+            color: white;
+        }
+    }
+}
+
+.note-list
+{
+    padding: 0;
+}
+
+.form-header
+{
+    font-weight: 100;
+
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+
+    text-align: center;
+
+    color: rgb(90, 204, 237);
+    border-bottom: 1px solid #aaa;
+    &:visited
+    {
+        color: white;
+    }
+    &:hover
+    {
+        cursor: pointer;
+
+        color: white;
+    }
+    &:active
+    {
+        cursor: pointer;
+
+        color: white;
+    }
+}
+
+.form-header-journey
+{
+    font-weight: 100;
+
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+
+    text-align: center;
+
+    color: rgb(90, 204, 237);
+    color: white;
+    border-bottom: 1px solid #aaa;
+    input
+    {
+        display: block;
+
+        width: 100%;
+    }
+}
+.form-container-journey
+{
+    height: 100%;
+    .form-header
+    {
+        padding-top: 1em;
+        padding-bottom: 0;
+
+        color: white;
+        border: none;
+    }
+    input,
+    textarea
+    {
+        display: block;
+
+        margin-bottom: 5%;
+        padding: 2em;
+
+        resize: none;
+        text-align: left;
+
+        color: #ddd;
+        border: none;
+        border-radius: 1em;
+        background-color: #575757;
+    }
+    textarea
+    {
+        height: 10em;
+    }
+    input[type='submit']:hover
+    {
+        color: #fff;
+        background-color: #95ea78;
+    }
+    input:focus
+    {
+        outline: none;
+        box-shadow: inset 0 0 3px 2px #95ea78;
+    }
+    .check
+    {
+        color: white;
+        & > *
+        {
+            font-weight: 100;
+
+            display: inline-block;
+
+            margin-left: 1em;
+        }
+    }
+}
