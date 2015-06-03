@@ -53,13 +53,17 @@ class SnippetsController < ApplicationController
     end
 
     def destroy
-      Note.find_by_id(params[:id]).destroy
+      Snippet.find_by_id(params[:id]).destroy
       render nothing: true
     end
 
     def unassigned
-      @snippets = current_user.unassigned_snippets
-      render json: @snippets.to_a
+      if logged_in? && current_user.id == params[:user_id].to_i
+        @snippets = current_user.unassigned_snippets
+        render json: @snippets.to_a
+      else
+        render nothing: true
+      end
     end
 
     protected
