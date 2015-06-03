@@ -11,7 +11,7 @@
 
     <ul class="note-list">
       <li ng-repeat="note in notes" id="id{{note.id}}" class="cell-list active" ng-show="display(note)">
-        <a href="{{fullPath}}/#note-{{note.id}}">{{note.title}}</a>
+        <a href="{{fullPath}}/#note-{{note.id}}" data-toggle="tooltip" title="jump to {{note.title}}">{{note.title}}</a>
         <button class="delete-button" ng-click="deleteNote(note)" ng-show="isOwner">
         <span class=" glyphicon glyphicon-remove-sign"></span>
         </button>
