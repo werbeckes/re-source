@@ -116,6 +116,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.7.0)
@@ -126,6 +127,10 @@ GEM
       mini_portile (~> 0.6.0)
     pg (0.18.2)
     phantomjs (1.9.8.0)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.6.1)
     rack-cors (0.4.0)
     rack-test (0.6.3)
@@ -208,6 +213,7 @@ GEM
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
+    slop (3.6.0)
     sprockets (3.1.0)
       rack (~> 1.0)
     sprockets-rails (2.3.1)
@@ -257,6 +263,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg
+  pry
   rack-cors
   rails (= 4.2.1)
   rails_12factor
