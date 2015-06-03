@@ -24,7 +24,14 @@ app.controller("CategoryController", [
     $scope.category = Category.get({journey_id: $routeParams.journey_id, id: $routeParams.id});
     $scope.notes = Note.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id } );
 
-    $scope.unassignedSnippets = UnassignedSnippet.index({user_id: user_id[1]});// handle current user on rails side.
+    UnassignedSnippet.index({user_id: user_id[1]}).$promise.then( function(response) {
+      $scope.unassignedSnippets = response;
+      debugger;
+    })
+
+
+    // handle current user on rails side.
+    console.log("Looking for unassignSnippets")
 
     $scope.notes.$promise.then( function() {
       angular.forEach($scope.notes,function(note,index){
