@@ -5,4 +5,5 @@ asset 'angular-resource'
 asset 'google-code-prettify'
 asset 'angular-animate'
 asset 'angular-ui-ace'
+asset 'angular-scroll'
 # vim: ft=ruby

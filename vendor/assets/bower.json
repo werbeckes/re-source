@@ -7,6 +7,7 @@
     "angular-resource": "latest",
     "google-code-prettify": "latest",
     "angular-animate": "latest",
-    "angular-ui-ace": "latest"
+    "angular-ui-ace": "latest",
+    "angular-scroll": "latest"
   }
 }
