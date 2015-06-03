@@ -47,12 +47,14 @@ app.controller("CategoryController", [
     $scope.toggleMenu = function(noteId) {
       var noteAsString =  "#context" + noteId.toString();
       if (menuOpen === false) {
-        $(noteAsString).css("transform", "translateX(-20%)");
+        $(noteAsString).css("animation", "toggle_context_menu_open ease-in-out .3s");
+        $(noteAsString).css("animation-fill-mode", "forwards");
         $(noteAsString).css("box-shadow", "-5px 0px 16px 6px rgba(0, 0, 0, .1)");
         menuOpen = true;
       }else {
 
-        $(noteAsString).css("transform", "translateX(0)");
+        $(noteAsString).css("animation", "toggle_context_menu_closed ease-in-out .3s");
+        $(noteAsString).css("animation-fill-mode", "forwards");
         $(noteAsString).css("box-shadow", "none");
         menuOpen = false;
       }
