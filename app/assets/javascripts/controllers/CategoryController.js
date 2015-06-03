@@ -13,6 +13,7 @@ app.controller("CategoryController", [
   function($scope, $location, $route, $routeParams, Journey, Category, Note, Snippet, UnassignedSnippet, Owner, $sce ) {
     var regex = /users\/(.)#/;
     var user_id = regex.exec($location.absUrl());
+    $scope.fullPath = $location.absUrl();
 
     var owner = Owner.check( {id: user_id[1]} );
     owner.$promise.then( function(response) {
