@@ -24,7 +24,7 @@
         <!-- <h5>Synopsis</h5> -->
         <textarea class="col-xs-12" ng-model="note.synopsis" placeholder="Explain how you understand it"></textarea><br>
         <!-- <h5>Code</h5> -->
-        <div class="col-xs-12 visible-lg" ng-model="note.code" placeholder="Code here" ui-ace="{theme:'twilight',mode:'ruby'}"></div><br>
+        <div class="col-xs-12 visible-lg" ng-model="note.code" placeholder="Code here" ui-ace="{theme:'tomorrow_night_bright', useWrapMode:'true', mode: 'ruby'}"></div><br>
         <span class="check col-xs-12">
           <p>public? </p><input type="checkbox" ng-model="note.public_bool">
         </span>
@@ -68,11 +68,7 @@
               <h3 class="form-header col-xs-12">How do you understand it?: </h3>
               <textarea class="col-xs-12" ng-model="editingNote.synopsis"></textarea>
               <h3 class="form-header col-xs-12">Code: </h3>
-              <div class="col-xs-12" ng-model="editingNote.code" ui-ace="{
-                                                                          theme:'twilight',
-                                                                          useWrapMode:'true',
-                                                                          mode: 'ruby'
-                                                                         }" ></div>
+              <div class="col-xs-12" ng-model="editingNote.code" ui-ace="{theme:'tomorrow_night_bright', useWrapMode:'true', mode: 'ruby'}" ></div>
               <div class="col-xs-12 submit-container">
                 <input type="submit" value="Save Note Edits">
               </div>
