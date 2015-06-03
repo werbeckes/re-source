@@ -114,6 +114,11 @@ app.controller("CategoryController", [
 
     $scope.display = function(item) { return ($scope.isOwner || item.public_bool) };
 
+    $scope.validUrl = function(snippet) {
+      if (snippet.cached_url) {return true}
+      else {return false}
+    }
+
     $scope.to_trusted = function(html_code) {
       return $sce.trustAsHtml(html_code);
     }

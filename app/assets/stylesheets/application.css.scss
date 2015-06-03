@@ -303,6 +303,32 @@ button.edit-button.col-xs-12.lighter-edit
 {
     margin-bottom: 10em;
 }
+.dropdown {
+    padding-right: 1em;
+    float: right;
+    display: block;
+
+    .btn {
+        background-color: #333333;
+        border-radius: 2em;
+        color: white;
+    }
+    .invalid-url {
+        display: block;
+        margin-top: 5px;
+        color: red;
+        font-weight: 100;
+        text-align: center;
+    }
+}
+
+.btn-group {
+    border: none;
+}
+.dropdown-menu {
+    float: right;
+    padding-right: 1em;
+}
 /*
 BEGIN PRETTY PRINT CSS THEME
  */
