@@ -6,6 +6,7 @@
     "bootstrap-sass-official": "latest",
     "angular-resource": "latest",
     "google-code-prettify": "latest",
-    "angular-animate": "latest"
+    "angular-animate": "latest",
+    "angular-ui-ace": "latest"
   }
 }

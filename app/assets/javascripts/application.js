@@ -17,5 +17,6 @@
 //= require angular-rails-templates
 //= require angular-resource/angular-resource
 //= require google-code-prettify
+//= require angular-ui-ace
 //= require_tree .
 
