@@ -17,5 +17,6 @@
 //= require angular-rails-templates
 //= require angular-resource/angular-resource
 //= require google-code-prettify
+//= require bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy
 //= require_tree .
 

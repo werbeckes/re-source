@@ -1,9 +1,10 @@
-.notes-container-global.col-lg-8
+.notes-container-global
 {
     z-index: 3;
-    background-color: #333333;
+
     padding: 0;
-    margin-left: 25%;
+
+    background-color: #333;
 }
 
 .note-head-container
@@ -19,40 +20,48 @@
     }
 }
 
-.note-title {
-  font-weight: 100;
-  color: white;
+.note-title
+{
+    font-weight: 100;
+
+    color: white;
 }
-.show-snippets-container {
-  padding: 1em;
-  padding-left: 0;
-  margin-left: 2em;
-  margin-right: 2em;
-  background-color: #4C4C4C;
+.show-snippets-container
+{
+    margin-right: 2em;
+    margin-left: 2em;
+    padding: 1em;
+    padding-left: 0;
+
+    background-color: #4c4c4c;
 }
 
-.snippets-container {
-  padding-bottom:3em;
-  margin-left: 2em;
-  margin-right: 2em;
+.snippets-container
+{
+    margin-right: 2em;
+    margin-left: 2em;
+    padding-bottom: 3em;
 }
 
-.single-snippet-content {
-  background-color: #4C4C4C;
+.single-snippet-content
+{
+    background-color: #4c4c4c;
 }
 
-#plus-pic {
-  width: 10%;
-  height: 10%;
+#plus-pic
+{
+    width: 10%;
+    height: 10%;
 }
 
 
 
 .ind-note-container
 {
-    margin-bottom: 0em;
+    margin-bottom: 0;
     padding: 1em;
     // border-bottom: 1px solid black;
+
     background-color: #444;
     .note-header
     {
@@ -65,6 +74,7 @@
     .note-text
     {
         font-weight: 100;
+
         margin-right: 5em;
         margin-left: 3em;
 
@@ -78,13 +88,16 @@
     {
         font-size: 1.5em;
         font-weight: 100;
+
         float: right;
+
         margin-bottom: 1em;
         padding-bottom: 1em;
-        background: #4C4C4C;
+
         color: #4cadc9;
         border: none;
         border-bottom: 1px solid #555;
+        background: #4c4c4c;
         background: none;
         box-shadow: none;
         &:hover
@@ -94,82 +107,107 @@
     }
 }
 
-.delete-button {
-  background: none;
-  float: right;
-  border: none;
-  box-shadow: none;
-  color: #666666;
-  &:hover {
-    color: red;
-  }
+.delete-button
+{
+    float: right;
+
+    color: #666;
+    border: none;
+    background: none;
+    box-shadow: none;
+    &:hover
+    {
+        color: red;
+    }
 }
 
-.snippet-title {
-  border-bottom: 1px solid #666666;
-  text-indent: 1em;
-  color: #999999;
-  padding-bottom: 1em;
+.snippet-title
+{
+    padding-bottom: 1em;
+
+    text-indent: 1em;
+
+    color: #999;
+    border-bottom: 1px solid #666;
 }
 
-.form-container-edit {
+.form-container-edit
+{
     height: 100%;
-    .form-header {
-      color: white;
-      border: none;
-      text-align: left;
-      padding-bottom: .5em;
-      margin-bottom: 0;
-      &:hover {
-        cursor: default;
-      }
-    }
-    input, textarea {
-      display: block;
-      padding: 2em;
-      resize: none;
-      border: none;
-      margin-bottom: .5em;
-      background-color: #575757;
-      color: #DDDDDD;
-      text-align: left;
-      border-radius: 1em;
-    }
-    textarea {
-      height: 10em;
-    }
-    input[type="submit"] {
-      background-color: #3D9DB7;
-      text-align: center;
-      padding-top: .5em;
-      padding-bottom: .5em;
-      width: 20%;
-      float: right;
-      margin-top: 2em;
-    }
-    input[type="submit"]:hover {
-      background-color: #95EA78;
+    .form-header
+    {
+        margin-bottom: 0;
+        padding-bottom: .5em;
 
-      color: #fff;
-    }
-    input:focus {
-      outline:none;
-      box-shadow: inset 0 0 3px 2px #95EA78;
-    }
+        text-align: left;
 
-    .submit-container {
-      padding-bottom: 1em;
-      margin-bottom: 1em;
-      border-bottom: 1px solid #555555;
+        color: white;
+        border: none;
+        &:hover
+        {
+            cursor: default;
+        }
     }
+    input,
+    textarea
+    {
+        display: block;
 
-    .check {
-      color:white;
-      & > * {
-        display: inline-block;
-        margin-left: 1em;
-        font-weight: 100;
-      }
+        margin-bottom: .5em;
+        padding: 2em;
+
+        resize: none;
+        text-align: left;
+
+        color: #ddd;
+        border: none;
+        border-radius: 1em;
+        background-color: #575757;
     }
-  }
+    textarea
+    {
+        height: 10em;
+    }
+    input[type='submit']
+    {
+        float: right;
 
+        width: 20%;
+        margin-top: 2em;
+        padding-top: .5em;
+        padding-bottom: .5em;
+
+        text-align: center;
+
+        background-color: #3d9db7;
+    }
+    input[type='submit']:hover
+    {
+        color: #fff;
+        background-color: #95ea78;
+    }
+    input:focus
+    {
+        outline: none;
+        box-shadow: inset 0 0 3px 2px #95ea78;
+    }
+    .submit-container
+    {
+        margin-bottom: 1em;
+        padding-bottom: 1em;
+
+        border-bottom: 1px solid #555;
+    }
+    .check
+    {
+        color: white;
+        & > *
+        {
+            font-weight: 100;
+
+            display: inline-block;
+
+            margin-left: 1em;
+        }
+    }
+}
