@@ -11,16 +11,16 @@
 
     <ul class="note-list">
       <li ng-repeat="note in notes" id="id{{note.id}}" class="cell-list active" ng-show="display(note)">
-        <a href="{{fullPath}}/#note-{{note.id}}" data-toggle="tooltip" title="jump to {{note.title}}">{{note.title}}</a>
+        <a href="#" data-toggle="tooltip" title="jump to {{note.title}}">{{note.title}}</a>
         <button class="delete-button" ng-click="deleteNote(note)" ng-show="isOwner">
         <span class=" glyphicon glyphicon-remove-sign"></span>
         </button>
       </li>
     </ul>
 
-    <h4 ng-click="displayForm()" class="cell-list col-xs-12 cat-new-button" ng-show="isOwner"> New Note</h4>
+    <h4 ng-click="displayForm()" class="cell-list col-xs-12 cat-new-button" ng-show="isOwner" ng-class="{active: form-show}"> New Note</h4>
     <div class="form-container-journey">
-      <form ng-show="showForm" ng-submit="createNote()">
+      <form ng-show="showForm" class="animate-show" ng-submit="createNote()">
         <h2 class="form-header">New Note</h2>
         <!-- <h5>Title</h5> -->
         <input class="col-xs-12" type="text" ng-model="note.title" placeholder="Title"><br>
@@ -69,7 +69,7 @@
               <p class="note-text"> {{note.synopsis}}</p>
               <h4 class="note-header">Code: </h4>
             <pre class="note-code" ng-bind-html="to_trusted((note.code|pretty))"></pre>
-            <button class="edit-button col-xs-12" ng-click="showNoteForm(note)" ng-show="isOwner">Edit Note</button>
+            <button class="edit-button col-xs-12" ng-click="showNoteForm(note)" ng-show="isOwner" ng-class="{active: form-show}">Edit Note</button>
             </div>
           </div>
 
@@ -139,10 +139,6 @@
                 </div>
               </div>
 
-
-              </div> <!-- End of show snippets div -->
-
-
               <div class="unassigned-snippets-container col-xs-12" ng-show="isOwner && unassignedSnippets.count > 0">
                 <h4 class="note-title">Unassigned Snippets:</h4>
                 <div class="single-unassigned-snippet" ng-repeat="snippet in unassignedSnippets">
@@ -154,6 +150,11 @@
                 </div>
                 <hr>
               </div>
+
+              </div> <!-- End of show snippets div -->
+
+
+
 
 
               </div> <!-- End of snippets container -->

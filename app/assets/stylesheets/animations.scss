@@ -21,3 +21,30 @@
   50% {transform: translateX(-21%);}
   100% {transform: translateX(0);}
 }
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 100%;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 100%;}
+}
+
+@keyframes fadeThisOut {
+  0% {opacity: 100%;}
+  100% {opacity: 0;}
+}
+
+@-webkit-keyframes fadeThisOut {
+  0% {opacity: 100%;}
+  100% {opacity: 0;}
+}
+.ng-hide-add {
+  animation: .3s fadeIn ease;
+}
+
+.ng-hide-remove {
+  animation: .3s fadeIn ease;
+}
