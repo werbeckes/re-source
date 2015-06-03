@@ -31,11 +31,15 @@ h4.cell-list.col-xs-12.cat-new-button
 {
     position: fixed;
     top: 0;
-
+    overflow-y: scroll;
     height: 100vh;
 
     text-align: center;
     text-indent: 0;
+
+    .ace_editor {
+        text-align: left;
+    }
 
     background-color: #333;
     .back-button
