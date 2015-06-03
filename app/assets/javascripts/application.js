@@ -22,5 +22,8 @@
 //= require ace-builds/src-min-noconflict/mode-ruby
 //= require angular-ui-ace
 //= require bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy
+//= require bootstrap-sass-official/assets/javascripts/bootstrap/button
+//= require bootstrap-sass-official/assets/javascripts/bootstrap/dropdown
+//= require bootstrap-sass-official/assets/javascripts/bootstrap/tooltip
 //= require_tree .
 

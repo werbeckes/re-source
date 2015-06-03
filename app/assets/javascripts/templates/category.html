@@ -11,7 +11,7 @@
 
     <ul class="note-list">
       <li ng-repeat="note in notes" id="id{{note.id}}" class="cell-list active" ng-show="display(note)">
-        <a href="{{fullPath}}/#note-{{note.id}}">{{note.title}}</a>
+        <a href="{{fullPath}}/#note-{{note.id}}" data-toggle="tooltip" title="jump to {{note.title}}">{{note.title}}</a>
         <button class="delete-button" ng-click="deleteNote(note)" ng-show="isOwner">
         <span class=" glyphicon glyphicon-remove-sign"></span>
         </button>
@@ -87,11 +87,33 @@
                 <h4 class="note-header">Description:</h4>
                 <p class="note-text">{{snippet.description}}</p>
                 <h4 class="note-header">Text:</h4>
+
                 <p class="note-text" ng-bind-html="to_trusted((snippet.text | youtube))">
                   <!-- {{snippet.text | youtube}} -->
                 </p>
-                <h4 class="note-header">URL:</h4>
-                <p class="note-text">{{snippet.web_url}}</p>
+
+                <div class="dropdown">
+                  <button disabled ng-show="!validUrl(snippet)" type="button" class="btn">Visit Site</button>
+                  <span class="invalid-url" ng-show="!validUrl(snippet)">Invalid URL</span>
+                  <div class="dropdown btn-group" ng-show="validUrl(snippet)">
+                    <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+                      Visit Site
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li>
+                        <a role="menuitem" href="{{snippet.web_url}}" target="_blank">Active</a>
+                      </li>
+                      <li>
+                        <a role="menuitem" href="{{snippet.cached_url}}" target="_blank">Cached</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <br><br>
+                <p>Taken on: {{snippet.created_at | date:'medium'}};  From: {{snippet.web_url}}</p>
+
                 <button class="edit-button col-xs-12 lighter-edit" ng-click="toggle = !toggle" ng-show="isOwner">Edit Snippet</button>
                 <button class="edit-button col-xs-12 lighter-edit" ng-click="deleteSnippet(snippet)" ng-show="isOwner">Delete Snippet</button>
               </div>
