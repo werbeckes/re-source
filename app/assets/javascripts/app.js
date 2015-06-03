@@ -1,4 +1,5 @@
-var app = angular.module('resourceApp', ['templates', 'ngRoute', 'ngResource', 'ui.ace', 'duScroll']);
+var app = angular.module('resourceApp', ['templates', 'ngRoute', 'ngResource', 'ui.ace', 'duScroll', 'ngAnimate']);
+
 
 app.config([
   '$routeProvider', function($routeProvider,$locationProvider) {
