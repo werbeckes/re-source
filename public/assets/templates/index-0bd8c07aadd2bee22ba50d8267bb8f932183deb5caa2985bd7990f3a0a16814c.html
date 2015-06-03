@@ -2,18 +2,15 @@
 
   <div class="sidebar col-xs-12 col-md-12 col-lg-3">
     <h3 id="journeys-side-head">Journeys</h3>
-
-    <ul>
-      <li ng-repeat="journey in journeys" id="{{journey.id}}" ng-show="display(journey)" class="cell-list col-xs-12">
-        <a href="#/journeys/{{journey.id}}">{{journey.title}}</a>
-        <button class="delete-button" ng-click="deleteJourney(journey)">
-          <span class=" glyphicon glyphicon-remove-sign"></span>
-        </button>
-      </li>
+    <ul >
+      <li ng-repeat="journey in journeys" id="{{journey.id}}">
+        <a href="#/journeys/{{journey.id}}">{{journey.title}}</a>  <button ng-click="deleteJourney(journey)" value="-"></li>
     </ul>
-    <h4 class="cell-list col-xs-12 cat-new-button" ng-show="isOwner" ng-click="displayForm()">New Journey</h4>
-    <div class="form-container-journey">
+
+    <h4 ng-click="displayForm()" class="form-header">New Journey</h4>
+  <div class="form-container-journey">
       <form ng-show="showForm" ng-submit="createJourney()">
+        <h2 class="form-header-journey">What are you journeying into next?</h2>
         <input class="col-xs-12" type="text" ng-model="journey.title" placeholder="Title">
         <input class="col-xs-12" type="text" ng-model="journey.description" placeholder="Description"><br>
         <span class="check"><input type="checkbox" ng-model="journey.public_bool">  <p>public? (you can change this later)</p> </span>
@@ -24,11 +21,6 @@
 
   <div class="user-home-head col-xs-12 col-lg-8 visible-lg">
     <h1 class="page-header">Categories</h1>
-    <div ng-show="journeys.length === 0" style="color: white;">
-      <h1>Intro</h1>
-      <p>Put Orientation text here</p>
-    </div>
-
   </div>
 
 
@@ -56,4 +48,4 @@
     </div>
 
   </div>
-</div> -->
+</div> --.

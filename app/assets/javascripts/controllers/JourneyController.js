@@ -4,8 +4,17 @@ app.controller("JourneyController", [
   '$routeParams',
   'Category',
   'Journey',
-  function($scope, $location, $routeParams, Category, Journey) {
-    $scope.journey = Journey.get({id: $routeParams.id});
+  'Owner',
+  function($scope, $location, $routeParams, Category, Journey, Owner) {
+    var regex = /users\/(.)#/;
+    var user_id = regex.exec($location.absUrl());
+
+    var owner = Owner.check( {id: user_id[1]} );
+    owner.$promise.then( function(response) {
+      $scope.isOwner = response.isOwner;
+    });
+
+    $scope.journey = Journey.get( { id: $routeParams.id } );
     $scope.categories = Category.index( { journey_id: $routeParams.id } )
 
     $scope.showForm = false;
@@ -29,6 +38,8 @@ app.controller("JourneyController", [
           })
         }
     }
+
+    $scope.display = function(item) { return ($scope.isOwner || item.public_bool) };
 
   }
 ]);

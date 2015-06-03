@@ -1,17 +1,21 @@
 class UsersController < ApplicationController
 
-  def new
-
-  end
-
   def create
     user = User.new(user_params)
 
     if user.save
       session[:user_id] = user.id
-      redirect_to '/home'
+      redirect_to "/users/#{user.id}"
     else
       redirect_to '/signup'
+    end
+  end
+
+  def checkOwner
+    if logged_in? && params[:id].to_i == current_user.id
+      render json: {isOwner: true}
+    else
+      render json: {isOwner: false}
     end
   end
 
