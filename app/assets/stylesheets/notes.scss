@@ -56,7 +56,7 @@
 
 
 
-.ind-note-container
+.ind-note-container, .showing-container
 {
     margin-bottom: 0;
     padding: 1em;
@@ -105,6 +105,12 @@
             color: rgb(90, 204, 237);
         }
     }
+}
+
+.showing-container {
+    position: relative;
+    z-index: 15;
+
 }
 
 .delete-button

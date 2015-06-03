@@ -30,18 +30,35 @@ app.controller("CategoryController", [
       angular.forEach($scope.notes,function(note,index){
         $scope.notes[index].snippets = Snippet.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id, note_id: note.id } );
       });
-    })
+    });
 
 
 
     $scope.showForm = false;
     $scope.visibleSnipForm = [];
     $scope.editNoteFlag = [];
+    var menuOpen = false;
 
     $scope.displayForm = function() {
       $scope.showForm = true;
       $scope.note = {};
-    }
+    };
+
+    $scope.toggleMenu = function(noteId) {
+      var noteAsString =  "#context" + noteId.toString();
+      if (menuOpen === false) {
+        $(noteAsString).css("animation", "toggle_context_menu_open ease-in-out .3s");
+        $(noteAsString).css("animation-fill-mode", "forwards");
+        $(noteAsString).css("box-shadow", "-5px 0px 16px 6px rgba(0, 0, 0, .1)");
+        menuOpen = true;
+      }else {
+
+        $(noteAsString).css("animation", "toggle_context_menu_closed ease-in-out .3s");
+        $(noteAsString).css("animation-fill-mode", "forwards");
+        $(noteAsString).css("box-shadow", "none");
+        menuOpen = false;
+      }
+    };
 
     $scope.createNote = function() {
       Note.create( {journey_id: $scope.journey.id, category_id: $scope.category.id}, $scope.note )
@@ -59,6 +76,7 @@ app.controller("CategoryController", [
 
     $scope.deleteNote = function(note) {
       var msg = "are you sure you want to delete this Note and all included snippets?"
+      $scope.toggleMenu(note.id);
       if (confirm(msg)) {
         Note.destroy( {journey_id: $scope.journey.id}, note).$promise.then( function() {
           $(".note-list").find("#id" +note.id).remove();

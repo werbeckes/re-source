@@ -1,0 +1,47 @@
+.glyphicon-cog {
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.right-context-menu {
+  position: absolute;
+  right: 3em;
+  z-index: 0;
+  width: 20%;
+  height: 18em;
+  background-color: #353535;
+  // transform: translateX(-20%);
+  .note-list {
+    text-align: right;
+    font-weight: 100;
+    height: 100%;
+    font-size: 1.5em;
+    margin-right: 1em;
+    .context-list {
+      margin-right: 1em;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .delete-button {
+      color: #337AB7;
+      &:hover {
+        color: red;
+      }
+    }
+    .share-button {
+      color: #337AB7;
+      &:hover {
+        color: yellow;
+      }
+    }
+    .update-button {
+      color: #337AB7;
+      &:hover {
+        color: green;
+      }
+    }
+  }
+}

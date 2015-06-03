@@ -1,0 +1,23 @@
+@keyframes toggle_context_menu_open {
+  0% {transform: translateX(0%);}
+  59% {transform: translateX(-21%);}
+  82% {transform: translateX(-19%);}
+  100% {transform: translateX(-20%);}
+}
+@-webkit-keyframes toggle_context_menu_open {
+  0% {transform: translateX(-0%);}
+  59% {transform: translateX(-21%);}
+  82% {transform: translateX(-19%);}
+  100% {transform: translateX(-20%);}
+}
+
+@keyframes toggle_context_menu_closed {
+  0% {transform: translateX(-20%);}
+  50% {transform: translateX(-21%);}
+  100% {transform: translateX(0);}
+}
+@-webkit-keyframes toggle_context_menu_closed {
+  0% {transform: translateX(-20%);}
+  50% {transform: translateX(-21%);}
+  100% {transform: translateX(0);}
+}
