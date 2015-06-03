@@ -18,5 +18,7 @@
 //= require angular-resource/angular-resource
 //= require google-code-prettify
 //= require bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy
+//= require bootstrap-sass-official/assets/javascripts/bootstrap/dropdown
+//= require bootstrap-sass-official/assets/javascripts/bootstrap/tooltip
 //= require_tree .
 
