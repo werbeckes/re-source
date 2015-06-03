@@ -1,7 +1,9 @@
 <div class="container-fluid row">
   <div class="sidebar col-xs-12 col-md-12 col-lg-3">
-    <h4><a href="#/">Back</a></h4>
-    <h1 class="cell-header">Categories</h1>
+    <div class="sidebar-header-container col-xs-12">
+      <h4 class="col-xs-1 back-button"><a href="#/">Back</a></h4>
+      <h1 class="cell-header col-xs-10">Categories</h1>
+    </div>
     <ul class="categories">
       <li ng-repeat="category in categories" id="id{{category.id}}" class="cell-list col-xs-12" ng-show="display(category)">
         <a href="#/journeys/{{journey.id}}/categories/{{category.id}}">{{category.title}}</a>

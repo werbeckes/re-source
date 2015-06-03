@@ -18,6 +18,7 @@ $(function(){
   chrome.storage.sync.get("resource_user_token", function(response) {
     user_token = response.resource_user_token;
     // THIS IS A CALL BACK FUNCTION. THE REST OF THE AUTH CALL GETS EXECUTED HERE
+    // (preflight)
     initialAuthCheck(user_token);
   });
 
@@ -47,33 +48,58 @@ function initialAuthCheck(user_token) {
         console.log("User Logged In");
         console.log(response);
         // if successful request, continue on with saving function.
-        saveSnippet(user_token);
+        selectionDecision(user_token);
       });
 }
 
-// saves the snippet to the database. called from the initialAuthCheck callback function in event of successful authentication.
-function saveSnippet(user_token) {
-  // =============
-  //get highlighted text, and current url, and send them to create#snippets
+function selectionDecision(user_token) {
+  // get the selection, and do logic based upon if it is empty
   chrome.tabs.executeScript( {
     code: "document.getSelection().toString();"
   }, function(selection) {
     console.log(selection);
     var params = {};
 
-    if (selection !== undefined) {
-      params['body'] = selection[0];
-    } else {
-      console.log("Nothing found");
-    }
-
-    // get the url of the page
+    // get the url of the page, both methods need it.
     chrome.tabs.query({'active': true, 'currentWindow': true}, function (tabs) {
       // console.log(tabs[0].url);
       params['snippetUrl'] = tabs[0].url;
       console.log(params);
 
+    if (selection[0] !== "") {
+      console.log ("saving with selection of: ");
+      console.log(selection);
+      // selection already exists, so no need to open the bin.
+      params['body'] = selection[0];
 
+      // send message to background to save
+      sendSaveRequest(user_token, params);
+      // saveSnippet(user_token, params);
+    } else {
+      // no selection found, so OPEN THE BIN
+      // throw new Error("Havent started the bin route yet.");
+      displaySideBar();
+      // console.log("Nothing found");
+    }
+    });
+  });
+}
+
+function sendSaveRequest(user_token, params) {
+  console.log("sending save message");
+  chrome.runtime.sendMessage({
+      directive: "saveAsSnippet",
+      user_token: user_token,
+      params: params
+  },
+    function(response) {
+      console.log("Got a response!");
+      console.log(response);
+    });
+}
+
+// saves the snippet to the database. called from the initialAuthCheck callback function in event of successful authentication.
+function saveSnippet(user_token, params) {
       var request = $.ajax({
                       url: "http://localhost:3000/api/snippets",
                       method: "POST",
@@ -95,7 +121,28 @@ function saveSnippet(user_token) {
         window.setTimeout(window.close, 1000);
       });
 
-    });
+}
 
+//==================================
+// bin code
+function displaySideBar() {
+  console.log("displaying sidebar");
+  chrome.tabs.getSelected(null, function(tab) {
+      chrome.tabs.sendRequest(
+      //Selected tab id
+      tab.id,
+      //Params inside a object data
+      {callFunction: "toggleSidebar"}
+    );
   });
 }
+
+// Listens for a message from the bin object
+// chrome.runtime.onMessage.addListener(
+//   function(request, sender, sendResponse) {
+//     console.log(sender.tab ?
+//                 "from a content script:" + sender.tab.url :
+//                 "from the extension");
+//     if (request.directive == "hello")
+//       sendResponse({farewell: "goodbye"});
+//   });

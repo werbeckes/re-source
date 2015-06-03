@@ -3,4 +3,5 @@ asset 'angular-route'
 asset 'bootstrap-sass-official'
 asset 'angular-resource'
 asset 'google-code-prettify'
+asset 'angular-animate'
 # vim: ft=ruby
