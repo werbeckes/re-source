@@ -196,6 +196,14 @@ button.edit-button.col-xs-12.lighter-edit {
   }
 }
 
+.fade.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+.fade.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
 /*
 BEGIN PRETTY PRINT CSS THEME
  */
