@@ -87,7 +87,9 @@
                 <h4 class="note-header">Description:</h4>
                 <p class="note-text">{{snippet.description}}</p>
                 <h4 class="note-header">Text:</h4>
-                <p class="note-text">{{snippet.text}}</p>
+                <p class="note-text" ng-bind-html="to_trusted((snippet.text | youtube))">
+                  <!-- {{snippet.text | youtube}} -->
+                </p>
                 <h4 class="note-header">URL:</h4>
                 <p class="note-text">{{snippet.web_url}}</p>
                 <button class="edit-button col-xs-12 lighter-edit" ng-click="toggle = !toggle" ng-show="isOwner">Edit Snippet</button>
