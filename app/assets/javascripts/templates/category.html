@@ -87,7 +87,10 @@
                 <h4 class="note-header">Description:</h4>
                 <p class="note-text">{{snippet.description}}</p>
                 <h4 class="note-header">Text:</h4>
-                <p class="note-text">{{snippet.text}}</p>
+
+                <p class="note-text" ng-bind-html="to_trusted((snippet.text | youtube))">
+                  <!-- {{snippet.text | youtube}} -->
+                </p>
 
                 <div class="dropdown">
                   <button disabled ng-show="!validUrl(snippet)" type="button" class="btn">Visit Site</button>
