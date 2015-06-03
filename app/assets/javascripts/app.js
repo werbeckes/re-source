@@ -1,4 +1,4 @@
-var app = angular.module('resourceApp', ['templates', 'ngRoute', 'ngResource']);
+var app = angular.module('resourceApp', ['templates', 'ngRoute', 'ngResource', 'ui.ace']);
 
 app.config([
   '$routeProvider', function($routeProvider,$locationProvider) {

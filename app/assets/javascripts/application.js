@@ -17,6 +17,10 @@
 //= require angular-rails-templates
 //= require angular-resource/angular-resource
 //= require google-code-prettify
+//= require ace-builds/src-min-noconflict/ace
+//= require ace-builds/src-min-noconflict/theme-tomorrow_night_bright
+//= require ace-builds/src-min-noconflict/mode-ruby
+//= require angular-ui-ace
 //= require bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy
 //= require_tree .
 
