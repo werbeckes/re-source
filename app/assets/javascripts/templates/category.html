@@ -3,14 +3,14 @@
     <div class="breadcrumb-container row visible-lg">
       <h4 class="back-button"><a href="#/journeys/{{journey.id}}">{{journey.title}}</a></h4>
       <span class="breadcrumb-carrot" id="first-carrot"> > </span>
-      <a id="category-bread" href="#/journeys/{{category.id}}">{{category.title}}</a>
+      <h5 class="category-bread">{{category.title}}</h5>
     </div>
       <div class="sidebar-header-container col-xs-12" z-index='20'>
         <h1 class="cell-header">Pages:</h1>
       </div>
 
     <ul class="note-list">
-      <li ng-repeat="note in notes | orderBy:'title'" id="id{{note.id}}" class="cell-list" ng-show="display(note)" du-scrollspy="note-{{note.id}}">
+      <li ng-repeat="note in notes" id="id{{note.id}}" class="cell-list" ng-show="display(note)" du-scrollspy="note-{{note.id}}">
         <a du-smooth-scroll="note-{{note.id}}" data-toggle="tooltip" title="jump to {{note.title}}">{{note.title}}</a>
         <button class="delete-button" ng-click="deleteNote(note)" ng-show="isOwner">
           <span class="glyphicon glyphicon-remove-sign"></span>
@@ -59,9 +59,10 @@
         </ul>
       </div>
 
+
       <div class="notes">
 
-        <div ng-repeat="note in notes | orderBy:'title'" id="note-{{note.id}}" class="ind-note-container col-xs-12" ng-show="display(note)"  data-target="#sidebar-scroll"  data-offest="0">
+        <div ng-repeat="note in notes" id="note-{{note.id}}" class="ind-note-container col-xs-12" ng-show="display(note)"  data-target="#sidebar-scroll"  data-offest="0">
                       <!-- HIDDEN SHIT TEEHEEHEEHEEHEE NO ONE KNOWS TEEHEEHEEHEE -->
             <div class="right-context-menu" >
               <ul class="note-list row">
@@ -85,7 +86,7 @@
             <button class="edit-button col-xs-12" ng-click="showNoteForm(note)" ng-show="isOwner" ng-class="{active: form-show}">Edit Note</button>
             </div>
           </div>
-          
+
         <div class="form-container-edit">
           <div ng-show="editNoteFlag[{{note.id}}]" id="edit-note-{{ note.id }}">
             <form ng-submit="editNote(note)">
@@ -105,7 +106,7 @@
         <div class="snippets-container">
           <h3 class="note-title snippet-title">Snippets for {{note.title}}</h3>
           <div class="show-snippets-container row">
-            <div class="single-snippet col-xs-12" ng-repeat="snippet in note.snippets | orderBy:'description'" id="snip{{snippet.id}}" >
+            <div class="single-snippet col-xs-12" ng-repeat="snippet in note.snippets" id="snip{{snippet.id}}" >
               <div class="single-snippet-content" ng-show="!toggle">
                 <h4 class="note-header">Description:</h4>
                 <p class="note-text">{{snippet.description}}</p>
@@ -180,8 +181,8 @@
 
               <div class="unassigned-snippets-container col-xs-12" ng-show="isOwner && unassignedSnippets.length > 0">
                 <h4 class="note-title">Unassigned Snippets:</h4>
-                <div class="single-unassigned-snippet" ng-repeat="snippet in unassignedSnippets | orderBy:'created_at':reverse">
-                  <p>{{snippet.text | limitTo:140}}... created: {{snippet.created_at | date: 'EEE, MMM d'}}
+                <div class="single-unassigned-snippet" ng-repeat="snippet in unassignedSnippets">
+                  <p>{{snippet.text | limitTo:140}}...
                     <span>
                       <button ng-click="addToNote(note, snippet)">Add to Note</button>
                     </span>

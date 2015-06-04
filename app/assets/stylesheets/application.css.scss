@@ -286,7 +286,6 @@ body
     font-weight: 100;
 
     text-align: center;
-
     color: white;
     border: none;
 }
@@ -568,6 +567,7 @@ ul.note-list {
   text-align: left;
   padding-top: 1em;
   padding-bottom: 1em;
+  width: 90%;
 //  margin-bottom: 1em;
   border-bottom: 1px solid #444444;
   & > * {display: inline}
@@ -589,8 +589,16 @@ ul.note-list {
       margin-top: 1em; 
     }
       
-    #category-bread {
+    .category-bread {
       margin-top: 15px;
+      font-weight: 100;
+      font-size: 1em;
+      color: #337AB7;
+      &:hover {
+        cursor: default;
+        color: #337ab7;
+        text-decoration: none;
+      }
     }
   
 }
@@ -605,4 +613,20 @@ ul.note-list {
     font-weight: 100;
   }
   p {font-weight: 100;}
+  b {
+    font-weight: 300;
+    color: rgb(90, 204, 237);
+  }
+  
+  h3 {
+    margin-bottom: 1em;
+    font-weight: lighter;
+  }
+}
+
+h1.row-head {
+  border-bottom: 1px solid #555555;
+  padding-bottom: 1em;
+  margin-left: 25%;
+  margin-right: 25%;
 }

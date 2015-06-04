@@ -1,9 +1,9 @@
 <div class="container-fluid row home-page-container">
   <nav class="sidebar col-xs-12 col-md-12 col-lg-3">
     <div class="breadcrumb-container row visible-lg">
-      <h4 class="back-button"><a href="#/journeys/{{journey.id}}">{{journey.title}}</a></h4>
+      <h4 class="back-button"><a href="#/journeys">{{journey.title}}</a></h4>
       <span class="breadcrumb-carrot" id="first-carrot"> > </span>
-      <a id="category-bread" href="#/journeys/{{category.id}}">{{category.title}}</a>
+      <h5 class="category-bread">{{category.title}}</h5>
     </div>
     <div class="sidebar-header-container col-xs-12">
       <h1 class="cell-header col-xs-12">Categories</h1>
@@ -30,14 +30,14 @@
       </div>
     </nav>
     <div class="user-home-head col-xs-12 col-lg-8 visible-lg">
-      <h1 class="page-header row">Journey += {{ journey.title }}</h1>
+      <h1 class="page-header row-head row">Journey += {{ journey.title }}</h1>
       <!-- <div ng-show="categories.length === 0" style="color: white;"> -->
-      <div  class="default-content row">
-        <h3>Categories</h3>
-        <p>Break your <b><i>Journeys</i></b> into <b><i>Categories</i></b> by subject. In so doing, you will provide structure to your learning process as well as stream line future referencing of the material.</p>
+      <div class="default-content row">
+        <h3>What are categories?</h3>
+        <p>Break your <b>Journey</b> into <b>Categories</b> by subject. In so doing, you will provide structure to your learning process as well as stream line future referencing of the material.</p>
         <br>
-        <p><b><i>Categories</i></b> will house your <b><i>Pages</i></b>. Each <b><i>Pages</i></b> will contain a variety of content.</p>
-        <h5><-- Create or browse your <b><i>Categories</i></b></h5>
+        <p><b>Categories</b> will house your <b>Pages</b>. Each <b>Pages</b> will contain a variety of content.</p>
+        <h5><-- Create or browse your <b>Categories</b></h5>
       </div>
     </div>
   </div>

@@ -12,8 +12,18 @@ chrome.runtime.onMessage.addListener(
 
     if (request.directive == "getUserToken") {
       chrome.storage.sync.get("resource_user_token", function(response) {
-        sendResponse( {user_token: response.resource_user_token} );
-        // THIS IS A CALL BACK FUNCTION.
+            // get the url of the page, both methods need it.
+        chrome.tabs.query({'active': true, 'currentWindow': true}, function (tabs) {
+          var params = {};
+          // console.log(tabs[0].url);
+          params['snippetUrl'] = tabs[0].url;
+          params['pageTitle'] = tabs[0].title;
+            // THIS IS A CALL BACK FUNCTION.
+            // IT"S BAD FORM TO DUPLICATE THIS CODE, REFACTOR IT.
+            console.log("Got to the response section with params: ");
+            console.log(params)
+          sendResponse( {user_token: response.resource_user_token, snippetUrl: params.snippetUrl, pageTitle: params.pageTitle} );
+        });
       });
     }
 
