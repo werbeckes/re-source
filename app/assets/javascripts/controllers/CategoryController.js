@@ -82,11 +82,11 @@ app.controller("CategoryController", [
 
     $scope.deleteNote = function(note) {
       var msg = "are you sure you want to delete this Note and all included snippets?"
-      $scope.toggleMenu(note.id);
+      // $scope.toggleMenu(note.id);
       if (confirm(msg)) {
         Note.destroy( {journey_id: $scope.journey.id}, note).$promise.then( function() {
           $(".note-list").find("#id" +note.id).remove();
-          $(".notes").find("#" +note.id).remove();
+          $(".notes").find("#note-" +note.id).remove();
         } );
       }
     }
