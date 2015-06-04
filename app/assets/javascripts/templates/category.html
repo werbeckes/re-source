@@ -4,7 +4,7 @@
 
       <div class="sidebar-header-container col-xs-12" z-index='-20'>
         <h4 class="col-xs-1 back-button"><a href="#/journeys/{{journey.id}}">Back</a></h4>
-        <h1 class="cell-header">Notes:</h1>
+        <h1 class="cell-header">Pages:</h1>
       </div>
 
     </div>
@@ -13,20 +13,20 @@
       <li ng-repeat="note in notes" id="id{{note.id}}" class="cell-list" ng-show="display(note)" du-scrollspy="note-{{note.id}}">
         <a du-smooth-scroll="note-{{note.id}}" data-toggle="tooltip" title="jump to {{note.title}}">{{note.title}}</a>
         <button class="delete-button" ng-click="deleteNote(note)" ng-show="isOwner">
-        <span class="glyphicon glyphicon-remove-sign"></span>
+          <span class="glyphicon glyphicon-remove-sign"></span>
         </button>
       </li>
     </ul>
 
-    <h4 ng-click="displayForm()" class="cell-list col-xs-12 cat-new-button" ng-show="isOwner" ng-class="{active: form-show}"> New Note</h4>
+    <h4 ng-click="displayForm()" class="cell-list col-xs-12 cat-new-button" ng-show="isOwner" ng-class="{active: form-show}"> New Page</h4>
     <div class="form-container-journey">
       <form ng-show="showForm" class="animate-show" ng-submit="createNote()">
-        <h2 class="form-header">New Note</h2>
+        <h2 class="form-header">New Page</h2>
         <!-- <h5>Title</h5> -->
-        <input class="col-xs-12" type="text" ng-model="note.title" placeholder="Title"><br>
+        <input class="col-xs-12" type="text" ng-model="note.title" placeholder="Page title: a brief name of the concept."><br>
         <!-- <h5>Synopsis</h5> -->
-        <textarea class="col-xs-12" ng-model="note.synopsis" placeholder="Explain how you understand it"></textarea><br>
-        <!-- <h5>Code</h5> -->
+        <textarea class="col-xs-12" ng-model="note.synopsis" placeholder="Synopsis: summarize the concept in your own words."></textarea><br>
+        <h5 style="color:white;">Code sample:</h5>
         <div class="col-xs-12 visible-lg" ng-model="note.code" placeholder="Code here" ui-ace="{theme:'tomorrow_night_bright', useWrapMode:'true', mode: 'ruby'}"></div><br>
         <span class="check col-xs-12">
           <p>public? </p><input type="checkbox" ng-model="note.public_bool">
@@ -42,8 +42,21 @@
     <div class="notes-container-global col-lg-8 col-xs-12 scroll-area" data-spy="scroll">
 
       <div ng-show="notes.length === 0" style="color:white;">
-        <h1>What is the purpose of notes and snippets???</h1>
-        <p>This the purpose of notes and snippets....</p>
+        <h3>Pages</h3>
+        <p>A Page will contain the content you found useful-- providing intuitive access for futrue reflection.</p>
+        <h5>A “Page” consists of:</h5>
+        <ul>
+          <li><b>Synopsis</b>: Explain the concept to yourself in your own words to avoid having to relearn it again from technical documentation.</li>
+          <li><b>Code Sample</b>: Enter a sample of code to demonstrate the concept or to refer back to when trying to implement a similar feature.</li>
+          <li>
+            <b>Snippets</b>: While browsing the web you will stumble upon useful bits of information. You can use the <b><i>Re: Source</i></b> extension by highlighting the useful text and clicking the “Re:” icon to save a snippet. At your convenience, categorize the snippet to your desired note:
+            <ul>
+              <li>Navigate to desired note.</li>
+              <li>View your “unassigned snippets”</li>
+              <li>Click “Add to note”</li>
+            </ul>
+          </li>
+        </ul>
       </div>
 
       <div class="notes">
@@ -103,8 +116,10 @@
                 </p>
 
                 <div class="dropdown">
-                  <button disabled ng-show="!validUrl(snippet)" type="button" class="btn">Visit Site</button>
-                  <span class="invalid-url" ng-show="!validUrl(snippet)">Invalid URL</span>
+                  <a href="{{snippet.web_url}}" target="_blank">
+                    <button ng-show="!validUrl(snippet)" type="button" class="btn" >Visit Site</button>
+                  </a>
+                  <span class="invalid-url" ng-show="!validUrl(snippet)">Can't cache site</span>
                   <div class="dropdown btn-group" ng-show="validUrl(snippet)">
                     <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
                       Visit Site
@@ -150,10 +165,10 @@
               <div class="form-container-edit">
                 <div ng-show="visibleSnipForm[{{note.id}}]" class="snipForm">
                   <form ng-submit="saveSnip(note)">
-                    <h3 class="form-header col-xs-12 col-pull-12">Snippet description</h3>
-                    <input class="col-xs-12" type="text" ng-model="snippet.description">
-                    <h3 class="form-header col-xs-12 col-pull-12">Snippet Content</h3>
-                    <textarea class="col-xs-12" ng-model="snippet.text" placeholder="copy and paste your snippet here"></textarea>
+                    <h3 class="form-header col-xs-12 col-pull-12">Snippet Title:</h3>
+                    <input class="col-xs-12" type="text" ng-model="snippet.description" placeholder="Snippet Title: a brief name to descripe content">
+                    <h3 class="form-header col-xs-12 col-pull-12">Snippet Content:</h3>
+                    <textarea class="col-xs-12" ng-model="snippet.text" placeholder="Copy and paste useful text here or a YouTube link to embed a video."></textarea>
                     <h3 class="form-header col-xs-12 col-pull-12">Snippet Url:</h3>
                     <input class="col-xs-12" ng-model="snippet.web_url">
                     <div class="col-xs-12 submit-container">

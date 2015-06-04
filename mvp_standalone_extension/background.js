@@ -1,6 +1,7 @@
 // Listens for a message from the bin object
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
+    console.log("Got to the background!");
     console.log(sender.tab ?
                 "from a content script:" + sender.tab.url :
                 "from the extension");
@@ -34,13 +35,13 @@ function saveSnippet(request, sender, sendResponse) {
 
       request.fail(function(response) {
         $("#saveMessage").text('Error saving: ');
-        sendResponse({farewell: "goodbye, message complete!"});
+        sendResponse({response: response});
         console.log("Something went wrong.");
         console.log(response);
       });
 
       request.done(function (response) {
-        sendResponse({farewell: "goodbye, message complete!"});
+        sendResponse({response: response});
         $("#saveMessage").text("Saved!");
         console.log("Saved!");
         console.log(response);

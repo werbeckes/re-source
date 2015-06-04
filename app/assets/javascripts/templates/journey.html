@@ -17,18 +17,22 @@
       <form  ng-show="showForm" ng-submit="createCategory()">
         <!-- <h2 class="form-header" id="cat-form-head">New Category</h2> -->
         <input class="col-xs-12"  type="text" ng-model="category.title" placeholder="Title" required>
-        <input class="col-xs-12"  type="text" ng-model="category.description" placeholder="Description" required>
+        <!-- <input class="col-xs-12"  type="text" ng-model="category.description" placeholder="Description" required> -->
         <span class="check">
-          <input type="checkbox" ng-model="category.public_bool"><p>public? (you can change this later)</p> </span>
+          <input type="checkbox" ng-model="category.public_bool"><p>public?</p></span>
           <input class="col-xs-12"  type="submit" value="Create Category">
         </form>
       </div>
     </div>
     <div class="user-home-head col-xs-12 col-lg-8 visible-lg">
-      <h1 class="page-header visible-lg col-lg-8">{{ journey.title }}</h1>
-      <div ng-show="categories.length === 0" style="color: white;">
-        <h1>Category Intro</h1>
-        <p>Put purpose of categories here.</p>
+      <h1 class="page-header visible-lg col-lg-8">Journey += {{ journey.title }}</h1>
+      <!-- <div ng-show="categories.length === 0" style="color: white;"> -->
+        <div style="color: white;">
+        <h3>Categories</h3>
+        <p>Break your <b><i>Journeys</i></b> into <b><i>Categories</i></b> by subject. In so doing, you will provide structure to your learning process as well as stream line future referencing of the material.</p>
+        <br>
+        <p><b><i>Categories</i></b> will house your <b><i>Pages</i></b>. Each <b><i>Pages</i></b> will contain a variety of content.</p>
+        <h5><-- Create or browse your <b><i>Categories</i></b></h5>
       </div>
     </div>
   </div>

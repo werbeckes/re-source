@@ -28,17 +28,11 @@ app.controller("CategoryController", [
       $scope.unassignedSnippets = response;
     })
 
-
-    // handle current user on rails side.
-    console.log("Looking for unassignSnippets")
-
     $scope.notes.$promise.then( function() {
       angular.forEach($scope.notes,function(note,index){
         $scope.notes[index].snippets = Snippet.index( { journey_id: $routeParams.journey_id, category_id: $routeParams.id, note_id: note.id } );
       });
     });
-
-
 
     $scope.showForm = false;
     $scope.visibleSnipForm = [];
@@ -81,12 +75,12 @@ app.controller("CategoryController", [
     }
 
     $scope.deleteNote = function(note) {
-      var msg = "are you sure you want to delete this Note and all included snippets?"
-      $scope.toggleMenu(note.id);
+      var msg = "Are you sure you want to delete this Note and all included snippets?"
+      // $scope.toggleMenu(note.id);
       if (confirm(msg)) {
         Note.destroy( {journey_id: $scope.journey.id}, note).$promise.then( function() {
           $(".note-list").find("#id" +note.id).remove();
-          $(".notes").find("#" +note.id).remove();
+          $(".notes").find("#note-" +note.id).remove();
         } );
       }
     }
@@ -121,9 +115,12 @@ app.controller("CategoryController", [
     }
 
     $scope.deleteSnippet = function(snippet) {
-      Snippet.destroy( {journey_id: $scope.journey.id, category_id: $scope.category.id}, snippet).$promise.then( function() {
-        $(".show-snippets-container").find("#snip" + snippet.id).remove();
-      })
+      var msg = "Are you sure you want to delete this snippet?"
+      if (confirm(msg)) {
+        Snippet.destroy( {journey_id: $scope.journey.id, category_id: $scope.category.id}, snippet).$promise.then( function() {
+          $(".show-snippets-container").find("#snip" + snippet.id).remove();
+        })
+      }
     }
 
     $scope.addToNote = function(note, snippet) {
@@ -131,7 +128,7 @@ app.controller("CategoryController", [
 
       Snippet.update( {journey_id: $scope.journey.id, category_id: $scope.category.id, note_id: note.id, snippet_id: snippet.id}, snippet )
         .$promise.then( function(response){
-          console.log("We give a shit. Improve on this.");
+          // console.log("We give a shit. Improve on this.");
           $route.reload();
         })
     }
