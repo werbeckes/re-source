@@ -44,9 +44,8 @@
 }
 
 .single-snippet-content
-{
-    background-color: #4c4c4c;
-}
+
+
 
 #plus-pic
 {
@@ -220,4 +219,17 @@
 .ind-note-container {
   border: 1px solid #1C6888;
   border-radius: 1em;
+}
+
+
+
+div.single-snippet {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.snippet-buttons {
+  & > * {
+    display: inline-block;
+  }
 }
