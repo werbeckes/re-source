@@ -36,7 +36,7 @@
     </div>
     </nav> <!-- End of sidebar -->
     <h2 class="page-header col-lg-8 visible-lg">
-    Notes for {{category.title}}
+    Pages for {{category.title}}
     </h2>
     <!-- <img id="plus-pic" src="plusequals.png">  -->
     <div class="notes-container-global col-lg-8 col-xs-12 scroll-area" data-spy="scroll">
@@ -79,9 +79,9 @@
                 <h3 class="note-title col-xs-10">{{note.title}}</h3>
                 <span class="note-sidebar-container glyphicon glyphicon-cog col-xs-2" ng-click="toggleMenu(note.id)"></span>
               </div>
-              <h4 class="note-header">How I understand it:</h4>
+              <h4 class="note-header">Synopsis:</h4>
               <p class="note-text"> {{note.synopsis}}</p>
-              <h4 class="note-header">Code: </h4>
+              <h4 class="note-header">Code sample: </h4>
             <pre class="note-code" ng-bind-html="to_trusted((note.code|pretty))"></pre>
             <button class="edit-button col-xs-12" ng-click="showNoteForm(note)" ng-show="isOwner" ng-class="{active: form-show}">Edit Note</button>
             </div>
@@ -92,9 +92,9 @@
             <form ng-submit="editNote(note)">
               <h3 class="form-header col-xs-12 col-pull-12"> Title: </h3>
               <input class="col-xs-12" type="text" ng-model="editingNote.title">
-              <h3 class="form-header col-xs-12">How do you understand it?: </h3>
+              <h3 class="form-header col-xs-12">Synopsis: </h3>
               <textarea class="col-xs-12" ng-model="editingNote.synopsis"></textarea>
-              <h3 class="form-header col-xs-12">Code: </h3>
+              <h3 class="form-header col-xs-12">Code Sample: </h3>
               <div class="col-xs-12" ng-model="editingNote.code" ui-ace="{theme:'tomorrow_night_bright', useWrapMode:'true', mode: 'ruby'}" ></div>
               <div class="col-xs-12 submit-container">
                 <input type="submit" value="Save Note Edits">
