@@ -1,13 +1,13 @@
 <div class="container-fluid row">
   <nav class="sidebar col-lg-3 visible-lg" id="sidebar-scroll" >
-    <div class="sidebar-header-container">
-
-      <div class="sidebar-header-container col-xs-12" z-index='-20'>
-        <h4 class="col-xs-1 back-button"><a href="#/journeys/{{journey.id}}">Back</a></h4>
+    <div class="breadcrumb-container row visible-lg">
+      <h4 class="back-button"><a href="#/journeys/{{journey.id}}">{{journey.title}}</a></h4>
+      <span class="breadcrumb-carrot" id="first-carrot"> > </span>
+      <a id="category-bread" href="#/journeys/{{category.id}}">{{category.title}}</a>
+    </div>
+      <div class="sidebar-header-container col-xs-12" z-index='20'>
         <h1 class="cell-header">Pages:</h1>
       </div>
-
-    </div>
 
     <ul class="note-list">
       <li ng-repeat="note in notes | orderBy:'title'" id="id{{note.id}}" class="cell-list" ng-show="display(note)" du-scrollspy="note-{{note.id}}">
@@ -36,7 +36,7 @@
     </div>
     </nav> <!-- End of sidebar -->
     <h2 class="page-header col-lg-8 visible-lg">
-    {{journey.title}} += {{category.title}}
+    Notes for {{category.title}}
     </h2>
     <!-- <img id="plus-pic" src="plusequals.png">  -->
     <div class="notes-container-global col-lg-8 col-xs-12 scroll-area" data-spy="scroll">

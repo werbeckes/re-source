@@ -11,21 +11,26 @@ $(function() {
                       });
 
     auth_request.fail(function(response) {
+      getLoginHtml();
       $("#errorMessage").show();
-
       console.log("User Not Logged In.");
       console.log(response);
     });
 
     auth_request.done(function (response) {
-      $(".initiallyHidden").hide();
+      getLoginHtml();
       // $("#saveMessage").show();
       $("#loginMessage").show();
       // store user token
         chrome.storage.sync.set({'resource_user_token': response.auth_token}, function() {
           // Notify that we saved.
+          $("body #loginContainer").remove();
           console.log('Settings saved');
-          window.setTimeout(window.close, 1000);
+          window.setTimeout(function(){
+            removeLoginHtml();
+            window.close();
+          }, 1000);
+          // removeLoginHtml();
         });
 
       console.log("User Logged In");
@@ -33,3 +38,14 @@ $(function() {
     });
   });
 });
+
+function getLoginHtml() {
+  var loginMessageHtml = "<h3 class='initiallyHidden tempMessage' id='errorMessage'>Invalid Email/Password</h3><h3 class='initiallyHidden tempMessage' id='loginMessage'>Logged In!</h3>"
+  $('body').prepend(loginMessageHtml);
+  $(".tempMessage").hide();
+}
+
+function removeLoginHtml() {
+  $('.tempMessage').remove();
+
+}
