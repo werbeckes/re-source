@@ -27,5 +27,10 @@
 //= require bootstrap-sass-official/assets/javascripts/bootstrap/button
 //= require bootstrap-sass-official/assets/javascripts/bootstrap/dropdown
 //= require bootstrap-sass-official/assets/javascripts/bootstrap/tooltip
+//
+//= require app
+//= require_tree ./templates
+//= require_tree ./factories
+//= require_tree ./controllers
 //= require_tree .
 
