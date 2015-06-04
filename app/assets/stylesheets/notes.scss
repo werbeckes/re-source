@@ -226,6 +226,8 @@
 div.single-snippet {
   margin-left: 2em;
   margin-right: 2em;
+  margin-bottom: 3em;
+  border-bottom: 1px solid #999999;
 }
 
 .snippet-buttons {
@@ -233,3 +235,36 @@ div.single-snippet {
     display: inline-block;
   }
 }
+
+.note-button-container {
+  & > * {
+  display: inline;
+    float: right;
+    padding: 0;
+  }
+  button {
+    padding: 0;
+    margin: 0;
+  }
+  button#edit-snip {
+    font-size: 1em;
+    padding-right: 0;
+    margin: 0;
+    border: none;
+    &:hover {
+      color: yellow;
+    }
+}
+
+  button#delete-snip {
+    font-size: 1em;
+    padding-right: 0;
+    border: none;
+    &:hover {
+      color: red;
+    }
+}
+  
+}
+
+

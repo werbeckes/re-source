@@ -108,17 +108,9 @@
           <div class="show-snippets-container row">
             <div class="single-snippet row" ng-repeat="snippet in note.snippets | orderBy:'description'" id="snip{{snippet.id}}" >
               <div class="single-snippet-content" ng-show="!toggle">
-                <h4 class="note-header">Description:</h4>
-                <p class="note-text">{{snippet.description}}</p>
-                <h4 class="note-header">Text:</h4>
-
-                <p class="note-text" ng-bind-html="to_trusted((snippet.text | youtube))">
-                  <!-- {{snippet.text | youtube}} -->
-                </p>
-
-                <div class="dropdown">
+                 <div class="dropdown">
                   <a href="{{snippet.web_url}}" target="_blank">
-                    <button ng-show="!validUrl(snippet)" type="button" class="btn" >Visit Site</button>
+                    <button ng-show="!validUrl(snippet)" type="button" class="btn center-block" >Visit Site</button>
                   </a>
                   <span class="invalid-url" ng-show="!validUrl(snippet)">Can't cache site</span>
                   <div class="dropdown btn-group" ng-show="validUrl(snippet)">
@@ -136,13 +128,26 @@
                     </ul>
                   </div>
                 </div>
+                <h4 class="note-header">Description:</h4>
+                <p class="note-text">{{snippet.description}}</p>
+                <h4 class="note-header">Text:</h4>
+
+                <p class="note-text" ng-bind-html="to_trusted((snippet.text | youtube))">
+                  <!-- {{snippet.text | youtube}} -->
+                </p>
+
+
 
                 <br><br>
 
-                <p class="snip-date">Snipped on: {{snippet.created_at | date:'MMM d, yyyy'}}</p>
-
-                <button class="edit-button col-xs-12 lighter-edit" ng-click="toggle = !toggle" ng-show="isOwner">Edit Snippet</button>
-                <button class="edit-button col-xs-12 lighter-edit" ng-click="deleteSnippet(snippet)" ng-show="isOwner">Delete Snippet</button>
+                
+              <div class="note-button-container row">
+               <p class="snip-date col-xs-6">Snipped on: {{snippet.created_at | date:'MMM d, yyyy'}}</p>
+                <button class="edit-button col-xs-1 lighter-edit" id="edit-snip" ng-click="toggle = !toggle" ng-show="isOwner">
+                Edit Snippet</button>
+                <button class="edit-button col-xs-1 lighter-edit" id="delete-snip" ng-click="deleteSnippet(snippet)" ng-show="isOwner">
+                Delete Snippet</button>
+                </div>
               </div>
 
               <div class="form-container-edit" ng-show="toggle">
