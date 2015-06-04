@@ -18,7 +18,7 @@ class SnippetsController < ApplicationController
 
     def extension_create
       user = token_authenticate
-      @snippet = Snippet.create(text: params[:body], web_url: params[:snippetUrl], user_id: user.id)
+      @snippet = Snippet.create(text: params[:body], web_url: params[:snippetUrl], description: params[:pageTitle], user_id: user.id)
       @snippet.get_cached_url
       render plain: "Created Snippet"
     end
