@@ -26,6 +26,19 @@
     {
         margin-top: 5em;
         margin-left: 0;
+        padding: 0;
+    }
+    .ind-note-container.col-xs-12 {
+        margin-bottom: 1.5em;
+    }
+    .showing-container{
+        padding: 0;
+    }
+    pre.note-code.ng-binding {
+        margin: 0;
+    }
+    .snippets-container {
+        margin: 0;
     }
 }
 @media (min-width: 768px) and (max-width: 983px)
@@ -39,6 +52,14 @@
         margin-top: 5em;
         margin-left: 0;
     }
+    .ind-note-container {
+        margin-bottom: 1em;
+        padding: .5em;
+    }
+    .show-snippets-container {
+        margin-left: 0;
+        margin-right:0;
+    }
 }
 @media (min-width: 984px) and (max-width: 1199px)
 {
@@ -49,6 +70,9 @@
     .notes-container-global
     {
         margin-left: 25%;
+    }
+    .ind-note-container {
+        margin-bottom: 1em;
     }
 }
 @media (min-width: 1200px)
