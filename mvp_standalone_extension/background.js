@@ -25,7 +25,6 @@ chrome.runtime.onMessage.addListener(
 function saveSnippet(request, sender, sendResponse) {
       var user_token = request.user_token;
       var params = request.params;
-      // return "This function doesn't do anything."
       var request = $.ajax({
                       url: "http://localhost:3000/api/snippets",
                       method: "POST",
@@ -34,7 +33,6 @@ function saveSnippet(request, sender, sendResponse) {
                     });
 
       request.fail(function(response) {
-        $("#saveMessage").text('Error saving: ');
         sendResponse({response: response});
         console.log("Something went wrong.");
         console.log(response);
@@ -42,10 +40,8 @@ function saveSnippet(request, sender, sendResponse) {
 
       request.done(function (response) {
         sendResponse({response: response});
-        $("#saveMessage").text("Saved!");
         console.log("Saved!");
         console.log(response);
-        // window.setTimeout(window.close, 1000);
       });
 
 }
