@@ -44,14 +44,14 @@
       <div ng-show="notes.length === 0" style="color:white;">
         <h3>Pages</h3>
         <p>A Page will contain the content you found useful-- providing intuitive access for futrue reflection.</p>
-        <h5>A “Note” consists of:</h5>
+        <h5>A “Page” consists of:</h5>
         <ul>
           <li><b>Synopsis</b>: Explain the concept to yourself in your own words to avoid having to relearn it again from technical documentation.</li>
           <li><b>Code Sample</b>: Enter a sample of code to demonstrate the concept or to refer back to when trying to implement a similar feature.</li>
           <li>
             <b>Snippets</b>: While browsing the web you will stumble upon useful bits of information. You can use the <b><i>Re: Source</i></b> extension by highlighting the useful text and clicking the “Re:” icon to save a snippet. At your convenience, categorize the snippet to your desired note:
             <ul>
-              <li>Navigateto desired note.</li>
+              <li>Navigate to desired note.</li>
               <li>View your “unassigned snippets”</li>
               <li>Click “Add to note”</li>
             </ul>
@@ -116,8 +116,10 @@
                 </p>
 
                 <div class="dropdown">
-                  <button disabled ng-show="!validUrl(snippet)" type="button" class="btn">Visit Site</button>
-                  <span class="invalid-url" ng-show="!validUrl(snippet)">Invalid URL</span>
+                  <a href="{{snippet.web_url}}" target="_blank">
+                    <button ng-show="!validUrl(snippet)" type="button" class="btn" >Visit Site</button>
+                  </a>
+                  <span class="invalid-url" ng-show="!validUrl(snippet)">Can't cache site</span>
                   <div class="dropdown btn-group" ng-show="validUrl(snippet)">
                     <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
                       Visit Site
