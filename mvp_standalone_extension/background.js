@@ -35,13 +35,13 @@ function saveSnippet(request, sender, sendResponse) {
 
       request.fail(function(response) {
         $("#saveMessage").text('Error saving: ');
-        sendResponse({farewell: "goodbye, message complete!"});
+        sendResponse({response: response});
         console.log("Something went wrong.");
         console.log(response);
       });
 
       request.done(function (response) {
-        sendResponse({farewell: "goodbye, message complete!"});
+        sendResponse({response: response});
         $("#saveMessage").text("Saved!");
         console.log("Saved!");
         console.log(response);

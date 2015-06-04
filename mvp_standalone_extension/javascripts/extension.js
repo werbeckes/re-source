@@ -90,6 +90,15 @@ function sendSaveRequest(user_token, params) {
     function(response) {
       console.log("Got a response!");
       console.log(response);
+
+      if (response.response == "Created Snippet") {
+        console.log("save successful!");
+        $("#saveMessage").text('Saved!');
+        window.setTimeout(window.close, 1000);
+      } else {
+        console.log("response wasn't 'Created Snippet' so something went wrong!");
+        $("#saveMessage").text('Error saving');
+      }
     });
 }
 
