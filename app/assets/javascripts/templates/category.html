@@ -163,7 +163,7 @@
                 </div>
               </div>
 
-              <div class="unassigned-snippets-container col-xs-12" ng-show="isOwner && unassignedSnippets.count > 0">
+              <div class="unassigned-snippets-container col-xs-12" ng-show="isOwner && unassignedSnippets.length > 0">
                 <h4 class="note-title">Unassigned Snippets:</h4>
                 <div class="single-unassigned-snippet" ng-repeat="snippet in unassignedSnippets">
                   <p>{{snippet.text | limitTo:140}}...

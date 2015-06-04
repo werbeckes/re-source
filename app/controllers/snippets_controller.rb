@@ -51,8 +51,12 @@ class SnippetsController < ApplicationController
     end
 
     def unassigned
+      puts "<><><><><><><><><><><><><><><><><><><><><><><><><>HITTING UNASSIGNED IN SNIPPETS CONTROLLER<><><><><><><><><><><><><><><><><><><><><><><><><>"
       if logged_in? && current_user.id == params[:user_id].to_i
         @snippets = current_user.unassigned_snippets
+        puts "<><><><><><><><><><><><><><><><><><><><><><><><><>HITTING UNASSIGNED IN IF STATEMENT in SNIPPETS CONTROLLER<><><><><><><><><><><><><><><><><><><><><><><><><>"
+        p @snippets
+         puts "<><><><><><><><><><><><><><><><><><><><><><><><><>HITTING UNASSIGNED IN IF STATEMENT in SNIPPETS CONTROLLER<><><><><><><><><><><><><><><><><><><><><><><><><>"
         render json: @snippets.to_a
       else
         render nothing: true
