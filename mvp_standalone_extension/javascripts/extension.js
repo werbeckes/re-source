@@ -69,15 +69,14 @@ function selectionDecision(user_token) {
       // selection already exists, so no need to open the bin.
       params['body'] = selection[0];
 
-
       // send message to background to save
       sendSaveRequest(user_token, params);
-      // saveSnippet(user_token, params);
     } else {
       // no selection found, so OPEN THE BIN
-      // throw new Error("Havent started the bin route yet.");
       displaySideBar();
-      // console.log("Nothing found");
+      binOpen = true; // Should be global?
+      console.log(binOpen);
+      window.close(); // closes the popup window.
     }
     });
   });

@@ -72,6 +72,13 @@ function styleBar (id) {
 			  }, function(response) {
 				  console.log("received response: ");
 				  console.log(response);
+				  // after dropping, close bin.
+				  console.log(event.target);
+				  $(document.getElementById("resource-sidebar")).hide("fast", function() {
+				  	console.log("finished hiding");
+				  	console.log(this);
+				  	// $(this).remove();
+				  });
 				});
 			});
 
