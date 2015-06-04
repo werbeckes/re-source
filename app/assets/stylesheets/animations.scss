@@ -42,16 +42,12 @@
   100% {opacity: 0;}
 }
 .ng-hide-add {
-  -webkit-animation: fadeIn 5s infinite;
-  -webkit-animation-delay: 2s;
   animation: .4s fadeIn ease;
-  animation-delay: 1s;
 }
 
 .ng-hide-remove {
   
   animation: .4s fadeIn ease;
-  animation-delay: 1s;
 }
 
 // menu toggles
@@ -66,7 +62,7 @@
   }
   100% {
     opacity: 0;
-    transform: translateY(-10%);
+    transform: translateY(-100%);
   }
 }
 
