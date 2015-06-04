@@ -138,13 +138,11 @@
                 </div>
 
                 <br><br>
-                <p>Taken on: {{snippet.created_at | date:'medium'}};  From: {{snippet.web_url}}</p>
-                <div class="snippet-buttons row">
-                  <button class="edit-button col-xs-6 lighter-edit" ng-click="toggle = !toggle" ng-show="isOwner">
-                  Edit Snippet</button>
-                  <button class="edit-button col-xs-6 lighter-edit" ng-click="deleteSnippet(snippet)" ng-show="isOwner">
-                  Delete Snippet</button>
-                </div>
+
+                <p class="snip-date">Snipped on: {{snippet.created_at | date:'MMM d, yyyy'}}</p>
+
+                <button class="edit-button col-xs-12 lighter-edit" ng-click="toggle = !toggle" ng-show="isOwner">Edit Snippet</button>
+                <button class="edit-button col-xs-12 lighter-edit" ng-click="deleteSnippet(snippet)" ng-show="isOwner">Delete Snippet</button>
               </div>
 
               <div class="form-container-edit" ng-show="toggle">
