@@ -26,7 +26,6 @@ app.controller("CategoryController", [
 
     UnassignedSnippet.index({user_id: user_id[1]}).$promise.then( function(response) {
       $scope.unassignedSnippets = response;
-      debugger;
     })
 
 
