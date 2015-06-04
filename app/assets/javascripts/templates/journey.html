@@ -5,7 +5,7 @@
       <h1 class="cell-header col-xs-10">Categories</h1>
     </div>
     <ul class="categories">
-      <li ng-repeat="category in categories" id="id{{category.id}}" class="cell-list col-xs-12" ng-show="display(category)">
+      <li ng-repeat="category in categories | orderBy:'title'" id="id{{category.id}}" class="cell-list col-xs-12" ng-show="display(category)">
         <a href="#/journeys/{{journey.id}}/categories/{{category.id}}">{{category.title}}</a>
         <button class="delete-button" ng-click="deleteCategory(category)">
         <span class=" glyphicon glyphicon-remove-sign"></span>
@@ -17,9 +17,9 @@
       <form  ng-show="showForm" ng-submit="createCategory()">
         <!-- <h2 class="form-header" id="cat-form-head">New Category</h2> -->
         <input class="col-xs-12"  type="text" ng-model="category.title" placeholder="Title" required>
-        <input class="col-xs-12"  type="text" ng-model="category.description" placeholder="Description" required>
+        <!-- <input class="col-xs-12"  type="text" ng-model="category.description" placeholder="Description" required> -->
         <span class="check">
-          <input type="checkbox" ng-model="category.public_bool"><p>public? (you can change this later)</p> </span>
+          <input type="checkbox" ng-model="category.public_bool"><p>public?</p></span>
           <input class="col-xs-12"  type="submit" value="Create Category">
         </form>
       </div>
