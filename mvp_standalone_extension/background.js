@@ -1,6 +1,7 @@
 // Listens for a message from the bin object
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
+    console.log("Got to the background!");
     console.log(sender.tab ?
                 "from a content script:" + sender.tab.url :
                 "from the extension");
