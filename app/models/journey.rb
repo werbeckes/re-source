@@ -5,5 +5,5 @@ class Journey < ActiveRecord::Base
   has_many :snippets, through: :notes
 
   validates :title, presence: true
-  validates :description, presence: true
+  # validates :description, presence: true
 end
