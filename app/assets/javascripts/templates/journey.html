@@ -5,7 +5,7 @@
       <h1 class="cell-header col-xs-10">Categories</h1>
     </div>
     <ul class="categories">
-      <li ng-repeat="category in categories" id="id{{category.id}}" class="cell-list col-xs-12" ng-show="display(category)">
+      <li ng-repeat="category in categories | orderBy:'title'" id="id{{category.id}}" class="cell-list col-xs-12" ng-show="display(category)">
         <a href="#/journeys/{{journey.id}}/categories/{{category.id}}">{{category.title}}</a>
         <button class="delete-button" ng-click="deleteCategory(category)">
         <span class=" glyphicon glyphicon-remove-sign"></span>
