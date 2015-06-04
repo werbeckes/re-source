@@ -60,6 +60,7 @@ function selectionDecision(user_token) {
     chrome.tabs.query({'active': true, 'currentWindow': true}, function (tabs) {
       // console.log(tabs[0].url);
       params['snippetUrl'] = tabs[0].url;
+      params['pageTitle'] = tabs[0].title;
       console.log(params);
 
     if (selection[0] !== "") {
@@ -67,6 +68,7 @@ function selectionDecision(user_token) {
       console.log(selection);
       // selection already exists, so no need to open the bin.
       params['body'] = selection[0];
+
 
       // send message to background to save
       sendSaveRequest(user_token, params);
