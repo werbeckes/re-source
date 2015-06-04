@@ -9,7 +9,7 @@ app.filter('youtube', function(){
   return function(text) {
       if (text.match(regtube)) {
         var tubeId = text.match(regtube).pop();
-        var tubeHtml = "<div class='video'><iframe width=854 height=510 src=https://www.youtube.com/embed/" + tubeId + " frameborder=0 allowfullscreen></iframe></div>"
+        var tubeHtml = "<div class='video'><iframe width=320 height=180 src=https://www.youtube.com/embed/" + tubeId + " frameborder=0 allowfullscreen></iframe></div>"
          return tubeHtml
       } else {
         return text
