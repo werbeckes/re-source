@@ -19,6 +19,15 @@ app.controller("JourneyController", [
 
     $scope.showForm = false;
     $scope.displayForm = function() {
+      hideForm();
+      function hideForm(){
+        $(".cell-list").css("animation", "menuSlideUp ease-out .3s");
+        $(".cat-new-button").css("animation", "menuSlideUp ease-out .3s");
+        $(".cell-list").css("animation-fill-mode", "forwards");
+        $(".cat-new-button").css("animation-fill-mode", "forwards");
+      };
+      $(".cell-list").css("height", "0");
+      $(".cat-new-button").css("display", "none");
       $scope.showForm = true;
       $scope.category = {};
     }

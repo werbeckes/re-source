@@ -40,11 +40,16 @@ app.controller("CategoryController", [
     var menuOpen = false;
 
     $scope.displayForm = function() {
+      hideForm();
+      function hideForm(){
+        $(".note-list").css("animation", "menuSlideUp ease-out .3s");
+        $(".cat-new-button").css("animation", "menuSlideUp ease-out .3s");
+        $(".note-list").css("animation-fill-mode", "forwards");
+        $(".cat-new-button").css("animation-fill-mode", "forwards");
+      };
+      $(".note-list").css("height", "0");
+      $(".cat-new-button").css("display", "none");
       $scope.showForm = true;
-      $(".note-list").css("animation", "menuSlideUp ease-out .3s");
-      $(".note-list").css("animation-fill-mode", "forwards");
-//      $(".note-list").css("display", "none");
-      
       $scope.note = {};
     };
 
