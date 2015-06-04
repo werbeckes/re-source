@@ -41,6 +41,10 @@ app.controller("CategoryController", [
 
     $scope.displayForm = function() {
       $scope.showForm = true;
+      $(".note-list").css("animation", "menuSlideUp ease-out .3s");
+      $(".note-list").css("animation-fill-mode", "forwards");
+//      $(".note-list").css("display", "none");
+      
       $scope.note = {};
     };
 

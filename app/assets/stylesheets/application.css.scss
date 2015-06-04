@@ -284,6 +284,7 @@ body
 .page-header
 {
     font-weight: 100;
+  letter-spacing: 3px;
 
     text-align: center;
     color: white;
@@ -608,11 +609,18 @@ ul.note-list {
 }
 
 .default-content {
+  margin-left: 4em;
+    margin-right: 4em;
   & > * {
     color: white;
     font-weight: 100;
+    line-height: 1em;
+    
   }
-  p {font-weight: 100;}
+  p {
+      font-weight: 100;
+    text-align: left;
+    }
   b {
     font-weight: 300;
     color: rgb(90, 204, 237);
