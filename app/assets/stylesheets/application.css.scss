@@ -292,11 +292,7 @@ body
 }
 
 button.edit-button.col-xs-12.lighter-edit
-{
-    padding-right: 1em;
 
-    background-color: #4c4c4c;
-}
 
 .sidebar-header-container
 {
@@ -358,10 +354,9 @@ button.edit-button.col-xs-12.lighter-edit
     margin-bottom: 10em;
 }
 .dropdown {
-    padding-right: 1em;
+//    padding-right: 1em;
     float: right;
     display: block;
-
     .btn {
         background-color: #333333;
         border-radius: 2em;
