@@ -13,7 +13,7 @@
       <li ng-repeat="note in notes" id="id{{note.id}}" class="cell-list" ng-show="display(note)" du-scrollspy="note-{{note.id}}">
         <a du-smooth-scroll="note-{{note.id}}" data-toggle="tooltip" title="jump to {{note.title}}">{{note.title}}</a>
         <button class="delete-button" ng-click="deleteNote(note)" ng-show="isOwner">
-        <span class="glyphicon glyphicon-remove-sign"></span>
+          <span class="glyphicon glyphicon-remove-sign"></span>
         </button>
       </li>
     </ul>
