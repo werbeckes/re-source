@@ -60,7 +60,6 @@
 {
     margin-bottom: 0;
     padding: 1em;
-    // border-bottom: 1px solid black;
 
     background-color: #444;
     .note-header
@@ -216,4 +215,9 @@
             margin-left: 1em;
         }
     }
+}
+
+.ind-note-container {
+  border: 1px solid #1C6888;
+  border-radius: 1em;
 }
