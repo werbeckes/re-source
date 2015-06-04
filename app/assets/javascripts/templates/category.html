@@ -68,8 +68,12 @@
               <ul class="note-list row">
                 <li class="cell-list context-list delete-button col-xs-12" ng-click="deleteNote(note)">Delete</li>
                 <li class="cell-list context-list public-button col-xs-12" >Public</li>
-                <li class="cell-list context-list add-snip-button col-xs-12">
-                <button ng-click="showSnipForm(note)" ng-show="isOwner">Add Snippet</button></li>
+                
+                <li class="cell-list context-list add-snip-button col-xs-12" id="add-snip" du-scrollspy="add-snippet-form">
+                  <button ng-click="showSnipForm(note)"  ng-show="isOwner"  du-smooth-scroll="add-snippet-form" data-toggle="tooltip" title="yo">
+                  Add Snippet</button>
+                </li> 
+                
               </ul>
             </div>
             <!-- END HIDDEN NOTE SHIT TEEHEEHEEHEE -->
@@ -151,7 +155,7 @@
                 </div>
               </div>
 
-              <div class="form-container-edit" ng-show="toggle">
+              <div class="form-container-edit" id="add-snippet-form" ng-show="toggle"  data-target="#add-snip" data-offset="0">
                 <form ng-submit="saveSnipEdit(note, snippet)">
                   <h3 class="form-header col-xs-12 col-pull-12"> Snippet description</h3>
                   <input class="col-xs-12" type="text" ng-model="snippet.description">

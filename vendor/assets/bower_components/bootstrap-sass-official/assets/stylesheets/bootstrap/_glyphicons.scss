@@ -120,7 +120,7 @@
 .glyphicon-chevron-right          { &:before { content: "\e080"; } }
 .glyphicon-plus-sign              { &:before { content: "\e081"; } }
 .glyphicon-minus-sign             { &:before { content: "\e082"; } }
-.glyphicon-remove-sign            { &:before { content: "\e083"; } &:hover {color: red; } }
+.glyphicon-remove-sign            { padding-top: 1em; &:before { content: "\e083"; } &:hover {color: red; } }
 .glyphicon-ok-sign                { &:before { content: "\e084"; } }
 .glyphicon-question-sign          { &:before { content: "\e085"; } }
 .glyphicon-info-sign              { &:before { content: "\e086"; } }
