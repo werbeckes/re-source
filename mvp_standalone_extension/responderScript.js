@@ -68,7 +68,7 @@ function styleBar (id) {
 			  chrome.runtime.sendMessage({
 			  	directive: "saveAsSnippet",
 			  	user_token: token_response.user_token,
-			  	params: {body: selection, snippetUrl: document.URL}
+			  	params: {body: selection, snippetUrl: document.URL, pageTitle: token_response.pageTitle}
 			  }, function(response) {
 				  console.log("received response: ");
 				  console.log(response);
