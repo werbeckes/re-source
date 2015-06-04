@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Re:Source Snippet Saver",
   "description": "Highlight something you like, and click to save to your resource journey",
-  "version": "1.8",
+  "version": "1.9",
   "icons": {"128": "images/re_icon.png", "16": "images/re_icon_small.png"},
 
   "background": {
