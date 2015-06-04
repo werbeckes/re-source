@@ -28,7 +28,7 @@ $(function() {
           console.log('Settings saved');
           window.setTimeout(function(){
             removeLoginHtml();
-            // window.close();
+            window.close();
           }, 1000);
           // removeLoginHtml();
         });

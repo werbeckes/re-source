@@ -33,7 +33,8 @@ function initialAuthCheck(user_token) {
                     });
 
       token_request.fail(function(response) {
-        $("#loginContainer").show();
+        // $("#loginContainer").show();
+        getLoginForm();
         console.log("User Not Logged In.");
         console.log(response);
       });
@@ -100,6 +101,11 @@ function sendSaveRequest(user_token, params) {
         $("#saveMessage").text('Error saving');
       }
     });
+}
+
+function getLoginForm() {
+  var loginFormHtml = "<div class='initiallyHidden' id='loginContainer'><h3>Log into your Re:Source account:</h3><form id='loginForm'><p><input type='text', name='email', placeholder='Enter Email'></p><p><input type='password', name='password', placeholder='Enter Password'></p><p><input type='submit' value='Log In'></p></form></div>"
+  $("body").append(loginFormHtml);
 }
 
 
