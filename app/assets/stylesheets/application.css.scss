@@ -31,10 +31,15 @@
     .ind-note-container.col-xs-12 {
         margin-bottom: 1.5em;
     }
+    .showing-container{
+        padding: 0;
+    }
+    pre.note-code.ng-binding {
+        margin: 0;
+    }
     .snippets-container {
         margin: 0;
     }
-
 }
 @media (min-width: 768px) and (max-width: 983px)
 {
