@@ -25,7 +25,7 @@ $(function() {
         chrome.storage.sync.set({'resource_user_token': response.auth_token}, function() {
           // Notify that we saved.
           console.log('Settings saved');
-          window.setTimeout(window.close, 2000);
+          window.setTimeout(window.close, 1000);
         });
 
       console.log("User Logged In");
