@@ -85,7 +85,7 @@
             <button class="edit-button col-xs-12" ng-click="showNoteForm(note)" ng-show="isOwner" ng-class="{active: form-show}">Edit Note</button>
             </div>
           </div>
-
+          
         <div class="form-container-edit">
           <div ng-show="editNoteFlag[{{note.id}}]" id="edit-note-{{ note.id }}">
             <form ng-submit="editNote(note)">
