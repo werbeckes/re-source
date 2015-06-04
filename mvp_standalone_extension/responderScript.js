@@ -72,6 +72,7 @@ function styleBar (id) {
 			  }, function(response) {
 				  console.log("received response: ");
 				  console.log(response);
+				  // after dropping, close bin.
 				});
 			});
 

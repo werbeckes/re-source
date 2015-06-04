@@ -1,3 +1,6 @@
+// variable keeps track of whether the bin is open or not.
+binOpen = false;
+
 // Listens for a message from the bin object
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
@@ -22,6 +25,8 @@ chrome.runtime.onMessage.addListener(
             // IT"S BAD FORM TO DUPLICATE THIS CODE, REFACTOR IT.
             console.log("Got to the response section with params: ");
             console.log(params)
+            console.log("getting bin parameters and bin is");
+            console.log(binOpen ? "OPEN" : "CLOSED");
           sendResponse( {user_token: response.resource_user_token, snippetUrl: params.snippetUrl, pageTitle: params.pageTitle} );
         });
       });
@@ -33,6 +38,8 @@ chrome.runtime.onMessage.addListener(
 
 // saves the snippet to the database. called from the initialAuthCheck callback function in event of successful authentication.
 function saveSnippet(request, sender, sendResponse) {
+      console.log("Saving snippet while bin is");
+      console.log(binOpen ? "OPEN" : "CLOSED");
       var user_token = request.user_token;
       var params = request.params;
       var request = $.ajax({
