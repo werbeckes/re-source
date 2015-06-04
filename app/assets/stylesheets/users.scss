@@ -15,9 +15,7 @@ h4.cell-list.col-xs-12.cat-new-button
 {
     font-size: 2em;
     font-weight: 100;
-
     padding-top: .5em;
-
     color: rgb(90, 204, 237);
     &:hover
     {
@@ -43,11 +41,7 @@ h4.cell-list.col-xs-12.cat-new-button
 
     background-color: #333;
     .back-button
-    {
-        margin: 0;
-        padding: 0;
-        padding-top: 1.75em;
-    }
+
     ul
     {
         padding: 0;
@@ -240,4 +234,10 @@ h4.cell-list.col-xs-12.cat-new-button
             margin-left: 1em;
         }
     }
+}
+
+.home-page-container {
+  & > * {
+    display: inline-block;
+  }
 }
