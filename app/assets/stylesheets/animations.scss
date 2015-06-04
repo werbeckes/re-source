@@ -42,11 +42,16 @@
   100% {opacity: 0;}
 }
 .ng-hide-add {
-  animation: .3s fadeIn ease;
+  -webkit-animation: fadeIn 5s infinite;
+  -webkit-animation-delay: 2s;
+  animation: .4s fadeIn ease;
+  animation-delay: 1s;
 }
 
 .ng-hide-remove {
-  animation: .3s fadeIn ease;
+  
+  animation: .4s fadeIn ease;
+  animation-delay: 1s;
 }
 
 // menu toggles
@@ -56,17 +61,12 @@
     opacity: 1;
     transform: translateY(0);
   }
-  40% {
-    transform: translateY(-5%);
-  }
   89% {
     opacity: 0;
-//    height: 100%;
   }
   100% {
     opacity: 0;
     transform: translateY(-10%);
-    height: 0%;
   }
 }
 

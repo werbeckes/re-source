@@ -20,7 +20,7 @@
 
     <h4 ng-click="displayForm()" class="cell-list col-xs-12 cat-new-button" ng-show="isOwner" ng-class="{active: form-show}"> New Page</h4>
     <div class="form-container-journey">
-      <form ng-show="showForm" class="animate-show" ng-submit="createNote()">
+      <form ng-show="showForm" class="animate-show" class="new-form" ng-submit="createNote()">
         <h2 class="form-header">New Page</h2>
         <!-- <h5>Title</h5> -->
         <input class="col-xs-12" type="text" ng-model="note.title" placeholder="Page title: a brief name of the concept."><br>
