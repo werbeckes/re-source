@@ -140,7 +140,7 @@
 
                 <br><br>
 
-                
+
               <div class="note-button-container row">
                <p class="snip-date col-xs-6">Snipped on: {{snippet.created_at | date:'MMM d, yyyy'}}</p>
                 <button class="edit-button col-xs-1 lighter-edit" id="edit-snip" ng-click="toggle = !toggle" ng-show="isOwner">
@@ -185,19 +185,30 @@
                 </div>
               </div>
 
-              <div class="unassigned-snippets-container col-xs-12" ng-show="isOwner && unassignedSnippets.length > 0">
-                <h4 class="note-title">Unassigned Snippets:</h4>
-                <div class="single-unassigned-snippet" ng-repeat="snippet in unassignedSnippets | orderBy:'created_at'">
-                  <p>{{snippet.text | limitTo:140}}...
-                    <span>
-                      {{snippet.created_at | date:'EEE, MMM d'}}
-                    </span>
-                    <span>
-                      <button ng-click="addToNote(note, snippet)">Add to Note</button>
-                    </span>
-                  </p>
-                </div>
-                <hr>
+              <div class="unassigned-snippets-container row" ng-show="isOwner && unassignedSnippets.length > 0">
+                <div class="dropdown col-xs-12" >
+                  <div class="dropdown btn-group col-xs-12" ng-show="unassignedSnippets.length > 0">
+                  <button class="btn dropdown-toggle col-xs-12" type="button" data-toggle="dropdown" aria-expanded="true">
+                    <h4 class="note-title">Unassigned Snippets:</h4>
+                  </button>
+                  <!-- <ul class="dropdown-menu" role="menu"> -->
+                  <ul class="dropdown-menu single-unassigned-snippet" role="menu" style="overflow-y: scroll; height: 10em">
+                    <!-- <a role="menuitem" href="{{snippet.web_url}}" target="_blank">Active</a> -->
+                    <li ng-repeat="snippet in unassignedSnippets | orderBy:'created_at'">
+                      <div role="menuitem" target="_blank">{{snippet.text | limitTo:140}}...
+                        <span>
+                          {{snippet.created_at | date:'EEE, MMM d'}}
+                        </span>
+                        <span>
+                          <button ng-click="addToNote(note, snippet)">Add to Note</button>
+                        </span>
+                      </div>
+                      <hr>
+                    </li>
+                  </ul>
+
+                  </div>
+                </div> <!-- End of dropdown menu div -->
               </div>
 
               </div> <!-- End of show snippets div -->
