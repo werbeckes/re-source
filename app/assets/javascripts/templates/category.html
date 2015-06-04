@@ -6,7 +6,7 @@
       <h5 class="category-bread">{{category.title}}</h5>
     </div>
       <div class="sidebar-header-container col-xs-12" z-index='20'>
-        <h1 class="cell-header">Pages:</h1>
+        <h1 class="cell-header">Note pages:</h1>
       </div>
 
     <ul class="note-list">
@@ -106,7 +106,7 @@
         <div class="snippets-container">
           <h3 class="note-title snippet-title">Snippets for {{note.title}}</h3>
           <div class="show-snippets-container row">
-            <div class="single-snippet col-xs-12" ng-repeat="snippet in note.snippets | orderBy:'description'" id="snip{{snippet.id}}" >
+            <div class="single-snippet row" ng-repeat="snippet in note.snippets | orderBy:'description'" id="snip{{snippet.id}}" >
               <div class="single-snippet-content" ng-show="!toggle">
                 <h4 class="note-header">Description:</h4>
                 <p class="note-text">{{snippet.description}}</p>
@@ -138,6 +138,7 @@
                 </div>
 
                 <br><br>
+
                 <p class="snip-date">Snipped on: {{snippet.created_at | date:'MMM d, yyyy'}}</p>
 
                 <button class="edit-button col-xs-12 lighter-edit" ng-click="toggle = !toggle" ng-show="isOwner">Edit Snippet</button>
