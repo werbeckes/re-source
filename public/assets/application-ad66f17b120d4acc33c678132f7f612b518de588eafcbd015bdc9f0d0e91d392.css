@@ -6070,8 +6070,8 @@ tbody.collapse.in {
 }
 /* line 397, /Users/apprentice/Desktop/NatChr/re-source/vendor/assets/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+  background-color: #0B516F;
+  border: none;
 }
 /* line 401, /Users/apprentice/Desktop/NatChr/re-source/vendor/assets/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-brand {
