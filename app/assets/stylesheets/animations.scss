@@ -48,3 +48,49 @@
 .ng-hide-remove {
   animation: .3s fadeIn ease;
 }
+
+// menu toggles
+
+@keyframes menuSlideUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5%);
+  }
+  89% {
+    opacity: 0;
+//    height: 100%;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10%);
+    height: 0%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

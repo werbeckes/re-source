@@ -1,10 +1,12 @@
 <div class="container-fluid row">
 
   <div class="sidebar col-xs-12 col-md-12 col-lg-3">
-    <h3 id="journeys-side-head">Journeys</h3>
+    <div class="sidebar-header-container col-xs-12">
+      <h1 class="cell-header col-xs-12">Journeys</h1>
+    </div>
 
-    <ul>
-      <li ng-repeat="journey in journeys | orderBy:'title'" id="{{journey.id}}" ng-show="display(journey)" class="cell-list col-xs-12">
+    <ul class="categories-list col-xs-12">
+      <li ng-repeat="journey in journeys | orderBy:'title'" id="{{journey.id}}" ng-show="display(journey)" class="cell-list row">
         <a href="#/journeys/{{journey.id}}">{{journey.title}}</a>
         <button class="delete-button" ng-click="deleteJourney(journey)">
           <span class=" glyphicon glyphicon-remove-sign"></span>
@@ -23,14 +25,14 @@
   </div>
 
   <div class="user-home-head col-xs-12 col-lg-8 visible-lg">
-    <h1 class="page-header">Journey Home Page</h1>
+    <h1 class="page-header row-head row">Journey Home Page</h1>
     <!-- <div ng-show="journeys.length === 0" style="color: white;"> -->
-    <div style="color:white;">
+    <div class="default-content row">
       <h3>Welcome to Re: Source</h3>
-      <p><b><i>Re: Source </i></b> is a tool designed to enhance your code-learning journey.  Consolidate all useful bits of information you find while exploring new concepts into an intuitive structure for immediate reflection and future reference.</p>
+      <p><b>Re: Source</b> is a tool designed to enhance your code-learning journey.  Consolidate all useful bits of information you find while exploring new concepts into an intuitive structure for immediate reflection and future reference.</p>
       <br>
       <h4>Journey</h4>
-      <p>Create a new <b><i>Journey </i></b> when you embark on a new learning path. Whether it is a new programming language, technology or topic... generate a new <b><i>Journey </i></b> to document the process.</p>
+      <p>Create a new <b>Journey</b> when you embark on a new learning path. Whether it is a new programming language, technology or topic... generate a new <b>Journey</b> to document the process.</p>
       <br>
       <h5><-- Create or browse your Journeys</h5>
     </div>
