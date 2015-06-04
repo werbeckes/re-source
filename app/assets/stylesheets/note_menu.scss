@@ -28,21 +28,23 @@
     }
     .delete-button {
       color: #337AB7;
-      &:hover {
-        color: red;
-      }
     }
-    .share-button {
+    .public-button {
       color: #337AB7;
       &:hover {
         color: yellow;
       }
     }
-    .update-button {
+    .add-snip-button {
       color: #337AB7;
-      &:hover {
-        color: green;
+      button {
+        background: none;
+        border:none;
+        &:hover {
+        color: #41f22e;
       }
+      }
+      
     }
   }
 }
