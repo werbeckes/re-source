@@ -11,9 +11,7 @@ app.controller("HomeController", [
     var owner = Owner.check( {id: user_id[1]} );
     owner.$promise.then( function(response) {
       $scope.isOwner = response.isOwner;
-      console.log("Owner inside? " +$scope.isOwner);
     });
-    console.log("Owner outside? " +$scope.isOwner)
 
     $scope.journeys = Journey.index({user_id: user_id[1]});
 
@@ -32,7 +30,7 @@ app.controller("HomeController", [
     }
 
     $scope.deleteJourney = function(journey) {
-      var msg = "are you sure you want to delete this Journey and all the categories and notes in it?"
+      var msg = "Are you sure you want to delete this Journey and all the categories and notes in it?"
       if (confirm(msg)) {
         Journey.destroy(journey).$promise.then(function() {
           $(".sidebar").find("#" +journey.id).remove();
@@ -41,9 +39,6 @@ app.controller("HomeController", [
     }
 
     $scope.display = function(item) {
-      console.log("display for: " +item.title)
-      console.log("item public?: " + item.public_bool)
-      console.log($scope.isOwner || item.public_bool);
       return ($scope.isOwner || item.public_bool)
     };
 
