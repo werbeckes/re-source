@@ -12,10 +12,8 @@
        <%= password_field :password, nil, class: "col-xs-12", placeholder: "Enter password" %>
       </div>
       <div class="input-container row center-block">
-        <%= submit_tag "log in", class: "col-xs-12 submit-login"%>
-        <form action="/signup" method="GET">
-          <input class="download-extension-submit btn btn-primary" type="submit" value="join">
-        </form>
+        <%= submit_tag "log in", class: "submit-login col-xs-4"%>
+        <%= link_to("Signup", '/signup', class: "signup-link col-xs-4") %>
       </div>
     <% end %>
   </div>
