@@ -201,7 +201,7 @@ body
 
             margin-bottom: 5%;
             padding: 2em;
-
+  
             text-align: left;
 
             color: #ddd;
@@ -209,10 +209,17 @@ body
             border-radius: 1em;
             background-color: #575757;
         }
+      input[type='submit'] {
+          padding-top: 1em;
+          padding-bottom: 1em;
+          text-align: center;
+          font-weight: 100;
+
+      }
         input[type='submit']:hover
         {
-            color: #fff;
-            background-color: #95ea78;
+            color: #333;
+            background-color: #41f22e;
         }
         input:focus
         {
@@ -225,11 +232,11 @@ body
 .input-container
 {
     display: block;
-
-    height: 30%;
+//    height: 30%;
   
   input[type="submit"] {
-    width: 50%;
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 }
 
@@ -266,6 +273,8 @@ body
 .submit-login {
   float: right;
   text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 .navbar-right
 {
@@ -682,4 +691,12 @@ p.download-extension-text {
   text-align: center;
   color: #999999;
   margin-bottom: 1em;
+}
+
+.signup-bg {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  background-color: #333;
+  z-index: 9999999999999;
 }
