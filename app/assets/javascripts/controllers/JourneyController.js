@@ -43,7 +43,7 @@ app.controller("JourneyController", [
       var msg = "Are you sure you want to delete this Category and all the  notes in it?"
         if (confirm(msg)) {
           Category.destroy(category).$promise.then( function() {
-            $(".categories").find("#id" +category.id).remove();
+            $(".categories-list").find("#id" +category.id).remove();
           })
         }
     }
