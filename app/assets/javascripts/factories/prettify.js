@@ -5,7 +5,7 @@ app.filter('pretty', function(){
 })
 
 app.filter('youtube', function(){
-  var regtube = /(youtu\.?be(\.com\/watch\?v=)?\/?)(\w{11})/
+  var regtube = /(youtu\.?be(\.com\/watch\?v=)?\/?)([\w-]{11})/
   return function(text) {
       if (text.match(regtube)) {
         var tubeId = text.match(regtube).pop();
