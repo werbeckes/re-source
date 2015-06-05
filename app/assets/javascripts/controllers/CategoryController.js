@@ -99,6 +99,10 @@ app.controller("CategoryController", [
       $scope.editingNote = note;
     }
 
+    $scope.hideNoteForm = function(note) {
+      $scope.editNoteFlag[note.id] = false;
+    }
+
     $scope.editNote = function(note) {
       Note.update( {journey_id: $scope.journey.id}, $scope.editingNote).$promise.then( function() {
           $scope.editNoteFlag[note.id] = false;
@@ -110,7 +114,7 @@ app.controller("CategoryController", [
       $scope.visibleSnipForm[note.id] = true;
       $scope.snippet = {};
     }
-    
+
     $scope.hideSnipForm = function(note) {
       $scope.visibleSnipForm[note.id] = false;
     }
