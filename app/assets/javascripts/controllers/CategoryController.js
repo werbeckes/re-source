@@ -106,8 +106,13 @@ app.controller("CategoryController", [
     }
 
     $scope.showSnipForm = function(note) {
+      $scope.toggleMenu(note.id);
       $scope.visibleSnipForm[note.id] = true;
       $scope.snippet = {};
+    }
+    
+    $scope.hideSnipForm = function(note) {
+      $scope.visibleSnipForm[note.id] = false;
     }
 
     $scope.saveSnip = function(note) {
