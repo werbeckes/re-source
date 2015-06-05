@@ -20,6 +20,25 @@ $navbar-default-bg: #0B516F;
 $go-time-green: #2CB21D;
 $link-blue: rgb(90, 204, 237);
 
+@keyframes slideInLeft{
+  from {transform: translateX(-100%);}
+  to {transform: translateX(0);}
+}
+@-webkit-keyframes slideInLeft{
+  from {transform: translateX(-100%);}
+  to {transform: translateX(0);}
+}
+
+@keyframes slideOutRight{
+  from {transform: translateX(0);}
+  to {transform: translateX(-100%);}
+}
+@-webkit-keyframes slideOutRight{
+  from {transform: translateX(0);}
+  to {transform: translateX(-100%);}
+}
+
+
 @media (max-width: 767px)
 {
   .header.navbar.navbar-default.navbar-static-top.navbar-xs.navbar-md.visible-xs.visible-sm.row.ng-scope {
@@ -27,6 +46,12 @@ $link-blue: rgb(90, 204, 237);
     width: 100%;
     top: 0;
     left: 0;
+  }
+  .container-fluid.journey-container.row.ng-scope {
+    position: absolute;
+//    display: none;
+    width: 100%;
+    height: 100%;
   }
     .breakpoint-alias:before
     {
@@ -39,13 +64,36 @@ $link-blue: rgb(90, 204, 237);
         padding: 0;
         z-index: 5;
         width: 100%;
+      //animation was here
       .showing-container {
         padding:0;
       }
     }
   
+  .container-fluid.journey-container.row {
+    .sidebar.col-xs-12.col-md-12.col-lg-3 {
+      margin-top: 4em;
+      overflow: auto;
+      width: 100vw;
+      //animation was here
+      animation: .3s slideInLeft ease;
+      animation-fill-mode: forwards;
+    }
+    &.anim-out-class {
+        animation: .3s slideOutRight ease;
+        animation-fill-mode: forwards;
+      }
+  }
+  
     nav.sidebar.col-xs-12.col-md-12.col-lg-3 {
       margin-top: 4em;
+      //animation was here
+      animation: .3s slideInLeft ease;
+      animation-fill-mode: forwards;
+      .anim-out-class {
+        animation: .3s slideOutRight ease;
+        animation-fill-mode: forwards;
+      }
     }
     .ind-note-container.col-xs-12 {
         margin-bottom: 1.5em;

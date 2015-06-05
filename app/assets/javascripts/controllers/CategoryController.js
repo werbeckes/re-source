@@ -54,16 +54,7 @@ app.controller("CategoryController", [
       $scope.note = {};
     };
     
-    $scope.showCategoriesPane = function() {
-      if (rightMenuOpen === false) {
-        $(".full-content-container").css("transform", "translateX(-70%)");
-        rightMenuOpen = true;
-      } else {
-        $(".full-content-container").css("transform", "translateX(0)");
-        rightMenuOpen = false;
-      }
-      
-    }
+
 
     $scope.toggleMenu = function(noteId) {
       var noteAsString =  "#context" + noteId.toString();
@@ -79,6 +70,9 @@ app.controller("CategoryController", [
         $(noteAsString).css("box-shadow", "none");
         menuOpen = false;
       }
+    };
+    
+    $scope.slideLeft = function(className) {
     };
 
     $scope.createNote = function() {
