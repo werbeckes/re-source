@@ -78,7 +78,10 @@
             <div class="right-context-menu" >
               <ul class="note-list row">
                 <li class="cell-list context-list delete-button col-xs-12" ng-click="deleteNote(note)">Delete</li>
-                <li class="cell-list context-list public-button col-xs-12" ng-click="toggleMenu(note.id)">Public</li>
+                <li class="cell-list context-list public-button col-xs-12" ng-click="togglePublic(note)">
+                  <span ng-hide="{{note.public_bool}}">Make Public</span>
+                  <span ng-show="{{note.public_bool}}">Make Private</span>
+                </li>
                 <li class="cell-list context-list add-snip-button col-xs-12" ng-click="toggleMenu(note.id)">
                 <button ng-click="showNoteForm(note)" ng-show="isOwner" ng-class="{active: form-show}">
                 Edit Note</button>
