@@ -67,8 +67,9 @@
             <div class="right-context-menu" >
               <ul class="note-list row">
                 <li class="cell-list context-list delete-button col-xs-12" ng-click="deleteNote(note)">Delete</li>
-                <li class="cell-list context-list share-button col-xs-12" >Share</li>
-                <li class="cell-list context-list update-button col-xs-12">Update</li>
+                <li class="cell-list context-list public-button col-xs-12" >Public</li>
+                <li class="cell-list context-list add-snip-button col-xs-12">
+                <button ng-click="showSnipForm(note)" ng-show="isOwner">Add Snippet</button></li>
               </ul>
             </div>
             <!-- END HIDDEN NOTE SHIT TEEHEEHEEHEE -->
@@ -168,7 +169,7 @@
               </div> <!-- End of single snip div -->
 
 
-              <button class="edit-button col-xs-12" ng-click="showSnipForm(note)" ng-show="isOwner">Add Snippet</button>
+              
               <div class="form-container-edit">
                 <div ng-show="visibleSnipForm[{{note.id}}]" class="snipForm">
                   <form ng-submit="saveSnip(note)">
