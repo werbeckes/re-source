@@ -20,7 +20,7 @@
     <h4 class="cell-list col-xs-12 cat-new-button" ng-click="displayForm()" ng-show="isOwner">New Category</h4>
     <div class="form-container-journey">
       <form  ng-show="showForm" ng-submit="createCategory()">
-         <h4 class="form-header">New Category</h4> 
+         <h2 class="form-header">New Category</h2>
         <input class="col-xs-12"  type="text" ng-model="category.title" placeholder="Title" required>
         <!-- <input class="col-xs-12"  type="text" ng-model="category.description" placeholder="Description" required> -->
         <span class="check">
@@ -37,7 +37,20 @@
         <p>Break your <b>Journey</b> into <b>Categories</b> by subject. In so doing, you will provide structure to your learning process as well as stream line future referencing of the material.</p>
         <br>
         <p><b>Categories</b> will house your <b>Pages</b>. Each <b>Pages</b> will contain a variety of content.</p>
-        <h5> Create or browse your <b>Categories</b> in the left-hand pane.</h5>
+        <br>
+        <h5><-- Create or browse your <b>Categories</b></h5>
+        <br>
+
+        <h4 class="cell-list col-xs-12 cat-new-button" ng-click="displayForm()" ng-show="isOwner">New Category</h4>
+
+        <div class="download-extension-container">
+          <p class="download-extension-text" style="color: #999">
+            For full functionality, download the <strong>Re:Source Snippet Saver</strong>.
+          </p>
+          <form action="https://chrome.google.com/webstore/detail/resource-snippet-saver/pejlmdojlceajdfmajpmanmidmkekmmm" class="download-button">
+            <input class="download-extension-submit btn btn-primary" type="submit" value="Download Now">
+          </form>
+        </div>
       </div>
     </div>
   </div>

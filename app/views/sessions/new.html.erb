@@ -1,19 +1,33 @@
-<div class="container-fluid">
+<div class="container-fluid sign-in-bg">
   <div class="main-title row">
     <h1 class="col-xs-12 header-login"><%= image_tag("re_icon.png", class: "header-image") %> source</h1>
   </div>
 
   <div class="form-container row">
     <%= form_tag '/login', class: "login-form col-centered col-md-3 col-xs-12" do %>
-    <div class="input-container">
-      <%= email_field_tag :email, nil, class: "col-xs-12", placeholder:  "Enter email" %>
-    </div>
+      <div class="input-container">
+        <%= email_field_tag :email, nil, class: "col-xs-12", placeholder:  "Enter email" %>
+      </div>
       <div class="input-container">
        <%= password_field :password, nil, class: "col-xs-12", placeholder: "Enter password" %>
       </div>
-      <div class="input-container">
-        <%= submit_tag "log in", class: "col-xs-12 " %>
+      <div class="input-container row center-block">
+        <%= submit_tag "log in", class: "submit-login col-xs-4"%>
+        <%= link_to("Signup", '/signup', class: "signup-link col-xs-4") %>
       </div>
     <% end %>
+
+    <div class="download-extension-container row">
+      <p class="download-extension-text col-xs-12">
+        For full functionality, download the <strong>Re:Source Snippet Saver</strong>.
+      </p>
+      <form action="https://chrome.google.com/webstore/detail/resource-snippet-saver/pejlmdojlceajdfmajpmanmidmkekmmm" class="download-button">
+        <input class="download-extension-submit btn btn-primary" type="submit" value="Download Now">
+      </form>
+    </div>
+
   </div>
 </div>
+
+
+

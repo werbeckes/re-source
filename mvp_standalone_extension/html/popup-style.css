@@ -1,0 +1,60 @@
+* {
+  transition: all .2s ease-out;
+}
+
+html {
+  border: none;
+}
+
+body {
+  background-color: #333333;
+  width: 20em;
+  height: 15em;
+  border:none;
+  padding: 1em;
+}
+
+h3 {
+  color: white;
+  font-weight: lighter;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+input {
+  width: 100%;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border: none;
+  border-radius: .5em;
+  text-indent: 1em;
+  color: white;
+  font-weight: lighter;
+  background-color: #666666;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="submit"] {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: none;
+  border: none;
+  background-color: #5acced;
+  color: white;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: limegreen;
+}
+
+
+
+
+

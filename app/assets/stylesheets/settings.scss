@@ -1,3 +1,5 @@
+$go-time-green: #2CB21D;
+
 .cell-header {
   color: white;
 //  text-indent: 1em;
@@ -15,4 +17,17 @@
 
 .active {
   background-color: #4C4C4C;
+}
+
+.download-button {
+  input {
+    background: none;
+    font-weight: 100;
+    color: rgb(90, 204, 237);
+    &:hover {
+      color: white;
+      background-color: $go-time-green;
+      border-color: $go-time-green;
+    }
+  }
 }

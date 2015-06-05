@@ -1,3 +1,8 @@
+$navbar-default-bg: #0B516F;
+$go-time-green: #2CB21D;
+$link-blue: rgb(90, 204, 237);
+$link-blue-dark: #337AB7;
+
 .glyphicon-cog {
   &:hover {
     color: white;
@@ -10,7 +15,7 @@
   right: 3em;
   z-index: 0;
   width: 20%;
-  height: 18em;
+  height: 23em;
   background-color: #353535;
   // transform: translateX(-20%);
   .note-list {
@@ -27,22 +32,28 @@
       }
     }
     .delete-button {
-      color: #337AB7;
+      color: $link-blue-dark;
+      padding-top: 1em;
       &:hover {
         color: red;
       }
     }
-    .share-button {
-      color: #337AB7;
+    .public-button {
+      color: $link-blue-dark;
       &:hover {
         color: yellow;
       }
     }
-    .update-button {
-      color: #337AB7;
-      &:hover {
-        color: green;
+    .add-snip-button {
+      color: $link-blue-dark;
+      button {
+        background: none;
+        border:none;
+        &:hover {
+        color: $go-time-green;
       }
+      }
+      
     }
   }
 }

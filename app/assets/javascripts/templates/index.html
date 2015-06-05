@@ -16,6 +16,7 @@
     <h4 class="cell-list col-xs-12 cat-new-button" ng-show="isOwner" ng-click="displayForm()">New Journey</h4>
     <div class="form-container-journey">
       <form ng-show="showForm" ng-submit="createJourney()">
+        <h2 class="form-header">New Journey</h2>
         <input class="col-xs-12" type="text" ng-model="journey.title" placeholder="Title: Ruby/Rails/JavaScript?">
         <!-- <input class="col-xs-12" type="text" ng-model="journey.description" placeholder="Description"><br> -->
         <span class="check"><input type="checkbox" ng-model="journey.public_bool">  <p>public?</p> </span>
@@ -34,9 +35,20 @@
       <h4>Journey</h4>
       <p>Create a new <b>Journey</b> when you embark on a new learning path. Whether it is a new programming language, technology or topic... generate a new <b>Journey</b> to document the process.</p>
       <br>
-      <h5><-- Create or browse your Journeys</h5>
-    </div>
+      <h5><-- Create or browse your <b>Journeys</b></h5>
+      <br>
+      <h4 class="cell-list col-xs-12 cat-new-button" ng-show="isOwner" ng-click="displayForm()">New Journey</h4>
 
+  <div class="download-extension-container row">
+    <p class="download-extension-text col-xs-12">
+      For full functionality, download the <strong>Re:Source Snippet Saver</strong>.
+    </p>
+    <form action="https://chrome.google.com/webstore/detail/resource-snippet-saver/pejlmdojlceajdfmajpmanmidmkekmmm" class="download-button">
+      <input class="download-extension-submit btn btn-primary" type="submit" value="Download Now">
+    </form>
+  </div>
+   
+    </div>
   </div>
 
 

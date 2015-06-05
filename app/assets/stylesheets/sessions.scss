@@ -1,3 +1,18 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$go-time-green: #2CB21D;
+.signup-link {
+  background-color: #555555;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: 1em;
+  text-align: center;
+  font-weight: 100;
+  color: white;
+  &:hover {
+    text-decoration: none;
+    color: #222222;
+    background-color: $go-time-green;
+  }
+}

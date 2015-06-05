@@ -1,3 +1,8 @@
+$navbar-default-bg: #0B516F;
+$go-time-green: #2CB21D;
+$link-blue: rgb(90, 204, 237);
+$link-blue-dark: #337AB7;
+
 .notes-container-global
 {
     z-index: 3;
@@ -188,7 +193,7 @@
     input[type='submit']:hover
     {
         color: #fff;
-        background-color: #95ea78;
+        background-color: $go-time-green;
     }
     input:focus
     {
