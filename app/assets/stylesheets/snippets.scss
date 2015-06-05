@@ -13,12 +13,13 @@ $link-blue-dark: #337AB7;
 }
 
 .unassigned-snippets-container {
-  .single-unassigned-snippet {
-    margin-left: 3em;
-    text-align: justify;
+  li.single-unassigned-snippet {
+    height: 5em;
     color: white;
     font-weight: 100;
-    background-color: #444444;
+    p {display: inline-block;}
+    margin: 1em;
+    background-color: #333333;
     padding-top: 1em;
     padding-bottom: 1em;
     border-radius: .5em;
@@ -28,10 +29,11 @@ $link-blue-dark: #337AB7;
       button {
         background: none;
         border: none;
+        float: right;
         &:hover {
           color: $go-time-green;
         }
-  
+
       }
     }
     .unassigned-date {
@@ -40,7 +42,7 @@ $link-blue-dark: #337AB7;
       color: #888888;
     }
   }
-  
+
 }
 
 #unassigned-snip-title {
