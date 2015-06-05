@@ -30,6 +30,13 @@ app.controller("HomeController", [
       $(".cat-new-button").css("display", "none");
       $scope.journey = {};
     }
+    
+    $scope.slideLeft = function(className) {
+      debugger
+//      $(className).css("animation", ".3s slideOutRight ease");
+//      $(className).css("animation-fill-mode", "backwards");
+      
+    };
 
     $scope.createJourney = function() {
       Journey.create( $scope.journey ).$promise

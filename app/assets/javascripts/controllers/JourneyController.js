@@ -33,7 +33,7 @@ app.controller("JourneyController", [
     };
     $scope.slideLeft = function(className) {
       $(className).css("animation", ".3s slideOutRight ease");
-      $(className).css("animation-fill-mode", "forwards");
+      $(className).css("animation-fill-mode", "backwards");
       
     };
 

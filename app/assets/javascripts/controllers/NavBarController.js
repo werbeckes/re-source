@@ -23,8 +23,9 @@ app.controller("NavBarController", [
       };
 
     $scope.slideRight = function  (mainDiv) {
-      $(".categories-rightpane-mobile").css("transform", "translateX(100%)");
-      $(mainDiv).css("transform", "translateX(100%)");
+        $(".categories-rightpane-mobile").css("transform", "translateX(100%)");
+        $(mainDiv).css("transform", "translateX(100%)");
+      
       };
     
     $scope.showCategoriesPane = function() {
@@ -33,6 +34,7 @@ app.controller("NavBarController", [
         $("h3.row.cell-header").css("display", "block");
         $(".notes-container-global").css("transform", "translateX(-76%)");
         $(".navbar").css("transform", "translateX(-70%)");
+//        $(".notes-container-global").css("overflow-y", "hidden");
         rightMenuOpen = true;
       } else {
         $(".notes-container-global").css("transform", "translateX(0)");

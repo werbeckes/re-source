@@ -1,20 +1,20 @@
-<div class="container-fluid journey-container row" ng-class="animVar">
+<div class="container-fluid journey-container row">
       <!-- categories page navbar. look into partials-->
   <header class="navbar navbar-default navbar-static-top navbar-xs navbar-md visible-xs visible-sm" role="navigation" ng-controller="NavBarController">
     <div class='topbar row' role='navigation'>
           <ul class="nav navbar-left col-xs-6 col-lg-6 col-xs-resize col-lg-resize">
             <li >
-              <button class="navbar-brand visible-xs visible-md visible-sm" >
-                <a href="#/journeys" ng-click="slideRight('.container-fluid.row.home-page-container.ng-scope')">
-                  <span class="glyphicon glyphicon-menu-left"></span>
+<!--              <button class="navbar-brand visible-xs visible-md visible-sm" >-->
+<!--                <a href="#/journeys" ng-click="slideRight('.container-fluid.row.home-page-container.ng-scope')">-->
+<!--                  <span class="glyphicon glyphicon-menu-left"></span>-->
                 </a>
             </li>
           </ul>
           <ul class="nav navbar-right col-xs-6">
             <li>
-              <button class="navbar-brand visible-xs visible-md visible-sm">
-                <span ng-click="showCategoriesPane()" class="glyphicon glyphicon-list nav-glyph"></span>
-              </button></li>
+<!--              <button class="navbar-brand visible-xs visible-md visible-sm">-->
+<!--                <span ng-click="showCategoriesPane()" class="glyphicon glyphicon-list nav-glyph"></span>-->
+<!--              </button></li>-->
           </ul>
     </div>
   </header>
@@ -26,8 +26,8 @@
     </div>
 
     <ul class="categories-list col-xs-12">
-      <li ng-repeat="journey in journeys | orderBy:'title'" id="{{journey.id}}" ng-show="display(journey)" class="cell-list row">
-        <a href="#/journeys/{{journey.id}}" ng-click="animVar='anim-out-class'">{{journey.title}}</a>
+      <li ng-repeat="journey in journeys | orderBy:'title'" id="{{journey.id}}" ng-show="display(journey)" ngClick="slideLeft('.navbar.navbar-default')" class="cell-list row">
+        <a href="#/journeys/{{journey.id}}">{{journey.title}}</a>
         <button class="delete-button" ng-click="deleteJourney(journey)">
           <span class=" glyphicon glyphicon-remove-sign"></span>
         </button>
