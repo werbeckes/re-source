@@ -1,0 +1,59 @@
+<div class="container-fluid row">
+
+  <div class="sidebar col-xs-12 col-md-12 col-lg-3">
+    <h3 id="journeys-side-head">Journeys</h3>
+
+    <ul>
+      <li ng-repeat="journey in journeys" id="{{journey.id}}" ng-show="display(journey)" class="cell-list col-xs-12">
+        <a href="#/journeys/{{journey.id}}">{{journey.title}}</a>
+        <button class="delete-button" ng-click="deleteJourney(journey)">
+          <span class=" glyphicon glyphicon-remove-sign"></span>
+        </button>
+      </li>
+    </ul>
+    <h4 class="cell-list col-xs-12 cat-new-button" ng-show="isOwner" ng-click="displayForm()">New Journey</h4>
+    <div class="form-container-journey">
+      <form ng-show="showForm" ng-submit="createJourney()">
+        <input class="col-xs-12" type="text" ng-model="journey.title" placeholder="Title">
+        <input class="col-xs-12" type="text" ng-model="journey.description" placeholder="Description"><br>
+        <span class="check"><input type="checkbox" ng-model="journey.public_bool">  <p>public? (you can change this later)</p> </span>
+        <input class="col-xs-12" type="submit" value="Start Journey">
+      </form>
+    </div>
+  </div>
+
+  <div class="user-home-head col-xs-12 col-lg-8 visible-lg">
+    <h1 class="page-header">Categories</h1>
+    <div ng-show="journeys.length === 0" style="color: white;">
+      <h1>Intro</h1>
+      <p>Put Orientation text here</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="container">
+
+  </div>
+</div>
+<!--
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!- Modal content-
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div> -->

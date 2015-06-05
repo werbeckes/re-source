@@ -1,0 +1,34 @@
+<div class="container-fluid row">
+  <div class="sidebar col-xs-12 col-md-12 col-lg-3">
+    <div class="sidebar-header-container col-xs-12">
+      <h4 class="col-xs-1 back-button"><a href="#/">Back</a></h4>
+      <h1 class="cell-header col-xs-10">Categories</h1>
+    </div>
+    <ul class="categories">
+      <li ng-repeat="category in categories" id="id{{category.id}}" class="cell-list col-xs-12" ng-show="display(category)">
+        <a href="#/journeys/{{journey.id}}/categories/{{category.id}}">{{category.title}}</a>
+        <button class="delete-button" ng-click="deleteCategory(category)">
+        <span class=" glyphicon glyphicon-remove-sign"></span>
+        </button>
+      </li>
+    </ul>
+    <h4 class="cell-list col-xs-12 cat-new-button" ng-click="displayForm()" ng-show="isOwner">New Category</h4>
+    <div class="form-container-journey">
+      <form  ng-show="showForm" ng-submit="createCategory()">
+        <!-- <h2 class="form-header" id="cat-form-head">New Category</h2> -->
+        <input class="col-xs-12"  type="text" ng-model="category.title" placeholder="Title" required>
+        <input class="col-xs-12"  type="text" ng-model="category.description" placeholder="Description" required>
+        <span class="check">
+          <input type="checkbox" ng-model="category.public_bool"><p>public? (you can change this later)</p> </span>
+          <input class="col-xs-12"  type="submit" value="Create Category">
+        </form>
+      </div>
+    </div>
+    <div class="user-home-head col-xs-12 col-lg-8 visible-lg">
+      <h1 class="page-header visible-lg col-lg-8">{{ journey.title }}</h1>
+      <div ng-show="categories.length === 0" style="color: white;">
+        <h1>Category Intro</h1>
+        <p>Put purpose of categories here.</p>
+      </div>
+    </div>
+  </div>
