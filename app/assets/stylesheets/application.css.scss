@@ -99,7 +99,7 @@
     position: fixed;
     margin-top: 5em;
     border: none;
-    
+    padding-bottom: 6em;
   }
   
 
@@ -237,8 +237,18 @@ body
 .navbar-left
 {
     margin: 0;
-    li
-    {
+    li {  
+      h5 {
+        font-weight: 100;
+        font-size: 1.5em;
+        a {
+          color: #999999;
+        }
+        a:hover {
+          text-decoration: none;
+          color: white;
+        }
+      }
         padding-left: 5%;
         button
         {
@@ -260,8 +270,18 @@ body
 .navbar-right
 {
     margin: 0;
-    li
-    {
+    li {
+      h5 {
+        font-weight: 100;
+        font-size: 1.5em;
+        a {
+          color: #999999;
+        }
+        a:hover {
+          text-decoration: none;
+          color: white;
+        }
+      }
         float: right;
         button
         {
