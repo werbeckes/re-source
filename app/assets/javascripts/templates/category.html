@@ -57,6 +57,15 @@
             </ul>
           </li>
         </ul>
+
+        <div class="download-extension-container">
+          <p class="download-extension-text" style="color: #999">
+            For full functionality, download the <strong>Re:Source Snippet Saver</strong>.
+          </p>
+          <form action="https://chrome.google.com/webstore/detail/resource-snippet-saver/pejlmdojlceajdfmajpmanmidmkekmmm">
+            <input class="download-extension-submit btn btn-primary" type="submit" value="Download Now">
+          </form>
+        </div>
       </div>
 
 
@@ -75,8 +84,8 @@
                 <li class="cell-list context-list add-snip-button col-xs-12" id="add-snip" du-scrollspy="add-snippet-form" ng-click="toggleMenu(note.id)">
                   <button ng-click="showSnipForm(note)" ng-show="isOwner" du-smooth-scroll="add-snippet-form" data-toggle="tooltip">
                   Add Snippet</button>
-                </li> 
-                
+                </li>
+
               </ul>
             </div>
             <!-- END HIDDEN NOTE SHIT TEEHEEHEEHEE -->
@@ -91,7 +100,7 @@
               <p class="note-text"> {{note.synopsis}}</p>
               <h4 class="note-header">Code sample: </h4>
             <pre class="note-code" ng-bind-html="to_trusted((note.code|pretty))"></pre>
-            
+
             </div>
           </div>
 
@@ -176,7 +185,7 @@
               </div> <!-- End of single snip div -->
 
 
-              
+
               <div class="form-container-edit">
                 <div ng-show="visibleSnipForm[{{note.id}}]" class="snipForm">
                   <form ng-submit="saveSnip(note)">
