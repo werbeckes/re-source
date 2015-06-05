@@ -37,6 +37,7 @@ $link-blue-dark: #337AB7;
     margin-left: 2em;
     padding: 1em;
     padding-left: 0;
+    padding-right: 0;
 
     background-color: #4c4c4c;
 }
@@ -48,7 +49,7 @@ $link-blue-dark: #337AB7;
     padding-bottom: 3em;
 }
 
-.single-snippet-content
+.single-snippet
 
 
 
@@ -233,6 +234,9 @@ div.single-snippet {
   margin-right: 2em;
   margin-bottom: 3em;
   border-bottom: 1px solid #999999;
+  .note-header {
+    margin-left: 0;
+  }
 }
 
 .snippet-buttons {
@@ -269,7 +273,7 @@ div.single-snippet {
       color: red;
     }
 }
-  
+
 }
 
 

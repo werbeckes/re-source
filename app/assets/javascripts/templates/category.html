@@ -209,24 +209,22 @@
               <div class="unassigned-snippets-container row" ng-show="isOwner && unassignedSnippets.length > 0">
                 <div class="dropdown col-xs-12" >
                   <div class="dropdown btn-group col-xs-12" ng-show="unassignedSnippets.length > 0">
-                  <button class="btn dropdown-toggle col-xs-12" type="button" data-toggle="dropdown" aria-expanded="true">
-                    <h4 class="note-title" id="unassigned-snip-title">Unassigned Snippets:</h4>
-                  </button>
-                  <!-- <ul class="dropdown-menu" role="menu"> -->
-                  <ul class="dropdown-menu single-unassigned-snippet" role="menu" style="overflow-y: scroll; height: 10em">
-                    <!-- <a role="menuitem" href="{{snippet.web_url}}" target="_blank">Active</a> -->
-                    <li class="single-unassigned-snippet row" ng-repeat="snippet in unassignedSnippets | orderBy:'created_at'">
-                      <div role="menuitem" target="_blank" class="unassigned-text col-xs-10">{{snippet.text | limitTo:140}}...
-                        <span>
-                          <button ng-click="addToNote(note, snippet)">Add to Note</button>
-                        </span>
-                        <span class="unassigned-button col-xs-2"><p>
-                          {{snippet.created_at | date:'EEE, MMM d'}}</p>
-                        </span>
-                      </div>
-                    </li>
-                  </ul>
+                    <button class="btn dropdown-toggle col-xs-12 center-block" type="button" data-toggle="dropdown" aria-expanded="true" style="border-radius: 0.5em; border-color: none;">
+                      <h4 class="note-title" id="unassigned-snip-title">Unassigned Snippets:</h4>
+                    </button>
+                    <ul class="dropdown-menu" style="border-size: 1em; border-color: none; width: 100%; height: 15em; overflow-y: scroll; background: #4C4C4C;">
+                      <li class="single-unassigned-snippet center-block row" ng-repeat="snippet in unassignedSnippets | orderBy:'created_at'">
 
+                        <div role="menuitem" target="_blank" class="unassigned-text col-xs-12">
+                          <p class="col-xs-9">{{snippet.text | limitTo:140}}...</p>
+                          <div  class="unassigned-button col-xs-3">
+                            <button ng-click="addToNote(note, snippet)">Add to Note</button>
+                            <!-- <p>{{snippet.created_at | date:'EEE, MMM d'}}</p> -->
+                          </div>
+                        </div>
+
+                      </li>
+                   </ul>
                   </div>
                 </div> <!-- End of dropdown menu div -->
               </div>
