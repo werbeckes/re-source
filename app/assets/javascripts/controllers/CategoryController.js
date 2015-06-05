@@ -104,9 +104,16 @@ app.controller("CategoryController", [
     }
 
     $scope.editNote = function(note) {
-      Note.update( {journey_id: $scope.journey.id}, $scope.editingNote).$promise.then( function() {
+      Note.update( {journey_id: $scope.journey.id, category_id: $scope.category.id, note_id: note.id}, $scope.editingNote).$promise.then( function() {
           $scope.editNoteFlag[note.id] = false;
         } );
+    }
+
+    $scope.togglePublic = function(note) {
+      $scope.toggleMenu(note.id);
+      if (note.public_bool) { note.public_bool = false }
+      else { note.public_bool = true }
+      Note.update( {journey_id: $scope.journey.id, category_id: $scope.category.id}, note);
     }
 
     $scope.showSnipForm = function(note) {
