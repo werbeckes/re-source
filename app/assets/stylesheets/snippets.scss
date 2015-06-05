@@ -5,3 +5,40 @@
   color: #999;
   font-size: 80%;
 }
+
+.unassigned-snippets-container {
+//  margin-left: 25%;
+  .single-unassigned-snippet {
+    margin-left: 3em;
+    text-align: justify;
+    color: white;
+    font-weight: 100;
+    background-color: #444444;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: .5em;
+    margin-bottom: 1em;
+    text-indent: 1em;
+    .unassigned-button {
+      button {
+        background: none;
+        border: none;
+        &:hover {
+          color: #41f22e;
+        }
+  
+      }
+    }
+    .unassigned-date {
+      float: left;
+      font-size: 1em;
+      color: #888888;
+    }
+  }
+  
+}
+
+#unassigned-snip-title {
+  border: none;
+  margin-bottom: 1em;
+}

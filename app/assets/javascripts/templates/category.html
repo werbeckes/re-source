@@ -205,18 +205,14 @@
               </div>
 
               <div class="unassigned-snippets-container col-xs-12" ng-show="isOwner && unassignedSnippets.length > 0">
-                <h4 class="note-title">Unassigned Snippets:</h4>
-                <div class="single-unassigned-snippet" ng-repeat="snippet in unassignedSnippets | orderBy:'created_at'">
-                  <p>{{snippet.text | limitTo:140}}...
-                    <span>
-                      {{snippet.created_at | date:'EEE, MMM d'}}
-                    </span>
-                    <span>
+                <h4 class="note-title" id="unassigned-snip-title">Unassigned Snippets:</h4>
+                <div class="single-unassigned-snippet row" ng-repeat="snippet in unassignedSnippets | orderBy:'created_at'">
+                  <p class="unassigned-text col-xs-10">{{snippet.text | limitTo:140}}...</p>
+                    <span class="unassigned-button col-xs-2">
                       <button ng-click="addToNote(note, snippet)">Add to Note</button>
                     </span>
-                  </p>
+                    <span class="unassigned-date col-xs-12"><p>{{snippet.created_at | date:'EEE, MMM d'}}</p></span>
                 </div>
-                <hr>
               </div>
 
               </div> <!-- End of show snippets div -->
