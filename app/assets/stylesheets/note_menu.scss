@@ -10,7 +10,7 @@
   right: 3em;
   z-index: 0;
   width: 20%;
-  height: 18em;
+  height: 23em;
   background-color: #353535;
   // transform: translateX(-20%);
   .note-list {
@@ -28,6 +28,10 @@
     }
     .delete-button {
       color: #337AB7;
+      padding-top: 1em;
+      &:hover {
+        color: red;
+      }
     }
     .public-button {
       color: #337AB7;

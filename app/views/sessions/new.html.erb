@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid sign-in-bg">
   <div class="main-title row">
     <h1 class="col-xs-12 header-login"><%= image_tag("re_icon.png", class: "header-image") %> source</h1>
   </div>
@@ -11,8 +11,8 @@
       <div class="input-container">
        <%= password_field :password, nil, class: "col-xs-12", placeholder: "Enter password" %>
       </div>
-      <div class="input-container">
-        <%= submit_tag "log in", class: "col-xs-12 " %>
+      <div class="input-container row center-block">
+        <%= submit_tag "log in", class: "col-xs-12 submit-login"%>
       </div>
     <% end %>
   </div>
