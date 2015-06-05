@@ -41,7 +41,7 @@
     <!-- <img id="plus-pic" src="plusequals.png">  -->
     <div class="notes-container-global col-lg-8 col-xs-12 scroll-area" data-spy="scroll">
 
-      <div ng-show="notes.length === 0" style="color:white;">
+      <div ng-show="notes.length === 0" class = "default-content">
         <h3>Pages</h3>
         <p>A Page will contain the content you found useful-- providing intuitive access for futrue reflection.</p>
         <h5>A “Page” consists of:</h5>
@@ -141,7 +141,7 @@
 
                 <br><br>
 
-                
+
               <div class="note-button-container row">
                <p class="snip-date col-xs-6">Snipped on: {{snippet.created_at | date:'MMM d, yyyy'}}</p>
                 <button class="edit-button col-xs-1 lighter-edit" id="edit-snip" ng-click="toggle = !toggle" ng-show="isOwner">
