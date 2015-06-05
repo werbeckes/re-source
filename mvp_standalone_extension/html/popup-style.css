@@ -1,3 +1,7 @@
+* {
+  transition: all .2s ease-out;
+}
+
 html {
   border: none;
 }
@@ -26,6 +30,8 @@ input {
   border: none;
   border-radius: .5em;
   text-indent: 1em;
+  color: white;
+  font-weight: lighter;
   background-color: #666666;
 }
 
@@ -42,3 +48,13 @@ input[type="submit"] {
   background-color: #5acced;
   color: white;
 }
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: limegreen;
+}
+
+
+
+
+

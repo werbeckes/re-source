@@ -1,13 +1,23 @@
-
+@keyframes rotate-logo {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
 
 #resource-sidebar {
     position: fixed;
     top: 0;
+    display: block;
     /*transition: height .2s ease-in;*/
     width: 100%;
-    height: 5em;
+    height: 4em;
     z-index: 999999;
-    background-color: white;
+    background-color: #333333;
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
     box-shadow: 0px 6px 10px 2px rgba(0, 0, 0, .3);
     transition: background-color .2s ease-out;
 }
@@ -16,28 +26,26 @@
   background-color: yellow;
 }*/
 
-#resource-sidebar > h1 {
-  display: inline-block;
-  position: absolute;
-  /*text-align: center;*/
-  left: 45%;
-  color: black;
-  border-bottom: none;
-  padding-top: 1em;
-  font-family:"Open-Sans";
-  font-weight: 100;
-
-}
-
 #re-logo {
   display: inline-block;
-  position: absolute;
-  top: .5em;
-  left: 40%;
-  width: 4em;
-  height: 4em;
+  vertical-align: middle;
+  margin-left: 35vw;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1em;
 
 }
+
+#resource-sidebar > h1 {
+  display: inline-block;
+  font-size: 25px;
+  color: white;
+  border-bottom: none;
+  font-family:"Open-Sans";
+  font-weight: normal;
+}
+
+
 
 .drag-hover {
   background-color: none;

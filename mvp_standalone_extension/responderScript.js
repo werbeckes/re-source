@@ -60,6 +60,9 @@ function styleBar (id) {
 			// api(selection);
 			// alert("dropped")
 			// send message back to extension.js
+      $("#resource-sidebar").css("background-color", "#ad650d");
+      $("#re-logo").css("animation", "rotate-logo 1s linear");
+      $("#re-logo").css("animation-iteration-count", "infinite");
 			console.log("Object drop detected");
 			chrome.runtime.sendMessage({directive: "getUserToken"}, function(token_response) {
 			  console.log("received response: ");
@@ -72,9 +75,10 @@ function styleBar (id) {
 			  }, function(response) {
 				  console.log("received response: ");
 				  console.log(response);
+          $("#resource-sidebar").css("background-color", "#23ff23");
 				  // after dropping, close bin.
 				  console.log(event.target);
-				  $(document.getElementById("resource-sidebar")).hide("fast", function() {
+				  $("#resource-sidebar").delay(1500).slideToggle("fast", function() {
 				  	console.log("finished hiding");
 				  	console.log(this);
 				  	// $(this).remove();
