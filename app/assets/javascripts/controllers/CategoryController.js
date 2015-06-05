@@ -38,6 +38,7 @@ app.controller("CategoryController", [
     $scope.visibleSnipForm = [];
     $scope.editNoteFlag = [];
     var menuOpen = false;
+    var rightMenuOpen = false;
 
     $scope.displayForm = function() {
       hideForm();
@@ -52,6 +53,17 @@ app.controller("CategoryController", [
       $scope.showForm = true;
       $scope.note = {};
     };
+    
+    $scope.showCategoriesPane = function() {
+      if (rightMenuOpen === false) {
+        $(".full-content-container").css("transform", "translateX(-70%)");
+        rightMenuOpen = true;
+      } else {
+        $(".full-content-container").css("transform", "translateX(0)");
+        rightMenuOpen = false;
+      }
+      
+    }
 
     $scope.toggleMenu = function(noteId) {
       var noteAsString =  "#context" + noteId.toString();

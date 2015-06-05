@@ -16,22 +16,79 @@
 @import 'bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets';
 @import 'bootstrap-sass-official/assets/stylesheets/bootstrap';
 
+$navbar-default-bg: #0B516F;
+$go-time-green: #2CB21D;
+$link-blue: rgb(90, 204, 237);
 
 @media (max-width: 767px)
 {
+  .header.navbar.navbar-default.navbar-static-top.navbar-xs.navbar-md.visible-xs.visible-sm.row.ng-scope {
+    position: fixed;  
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
     .breakpoint-alias:before
     {
         content: 'XS';
     }
     .notes-container-global
     {
-        margin-top: 5em;
+        margin-top: 4em;
         margin-left: 0;
         padding: 0;
+        z-index: 5;
+        width: 100%;
+      .showing-container {
+        padding:0;
+      }
+    }
+  
+    nav.sidebar.col-xs-12.col-md-12.col-lg-3 {
+      margin-top: 4em;
     }
     .ind-note-container.col-xs-12 {
         margin-bottom: 1.5em;
+        border: none;
+        border-radius: 0;
+      .note-title {
+        padding: 3px;
+      }
+      h4.note-header {
+        margin-left: 5px;
+      }
+      p.note-text {
+        margin-left: 7px;
+        margin-right: 7px;
+      }
     }
+  .container-fluid.full-content-container.ng-scope {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+    overflow-y: scroll;
+
+  }
+  
+  
+  
+  
+  
+  
+  
+  .single-unassigned-snippet.row.ng-scope {
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 0;
+    span.unassigned-button.col-lg-2.col-xs-12 {
+      margin: 0;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      margin-top: 1em;
+      background-color: $go-time-green;
+    }
+  }
 
     pre.note-code.ng-binding {
         margin: 0;
@@ -73,6 +130,9 @@
     .ind-note-container {
         margin-bottom: 1em;
     }
+  .container-fluid.full-content-container.ng-scope {
+   padding: 0; 
+}
 }
 @media (min-width: 1200px)
 {
@@ -84,6 +144,9 @@
     {
         margin-left: 25%;
     }
+  .container-fluid.full-content-container.ng-scope {
+   padding: 0; 
+}
 
   .navbar{
     min-height: 5em;
@@ -100,7 +163,7 @@
     margin-top: 5em;
     border: none;
     padding-bottom: 6em;
-  }
+}
 
 
 }
@@ -111,9 +174,7 @@
 
 // @media screen
 
-$navbar-default-bg: #0B516F;
-$go-time-green: #2CB21D;
-$link-blue: rgb(90, 204, 237);
+
 
 
 *
@@ -263,11 +324,14 @@ body
         button
         {
             border: none;
-            background-color: white;
+            background-color: #0b516f;
             &:focus
             {
                 outline: none;
             }
+          .nav-glyph {
+            color: white;
+          }
         }
     }
 }
@@ -298,11 +362,14 @@ body
         button
         {
             border: none;
-            background-color: white;
+            background-color: #0b516f;
             &:focus
             {
                 outline: none;
             }
+          .nav-glyph {
+            color: white;
+          }
         }
     }
 }
