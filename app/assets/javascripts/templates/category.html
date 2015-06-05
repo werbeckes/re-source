@@ -83,8 +83,8 @@
                 <button ng-click="showNoteForm(note)" ng-show="isOwner" ng-class="{active: form-show}">
                 Edit Note</button>
                 </li>
-                <li class="cell-list context-list add-snip-button col-xs-12" id="add-snip" du-scrollspy="add-snippet-form" ng-click="toggleMenu(note.id)">
-                  <button ng-click="showSnipForm(note)" ng-show="isOwner" du-smooth-scroll="add-snippet-form" data-toggle="tooltip">
+                <li class="cell-list context-list add-snip-button col-xs-12" id="add-snip" du-scrollspy="new-snip-{{note.id}}" ng-click="toggleMenu(note.id)">
+                  <button ng-click="showSnipForm(note)" ng-show="isOwner" du-smooth-scroll="new-snip-{{note.id}}" data-toggle="tooltip">
                   Add Snippet</button>
                 </li>
 
@@ -169,7 +169,7 @@
                 </div>
               </div>
 
-              <div class="form-container-edit" id="add-snippet-form" ng-show="toggle"  data-target="#add-snip" data-offset="0">
+              <div class="form-container-edit" ng-show="toggle" >
                 <form ng-submit="saveSnipEdit(note, snippet)">
                   <h3 class="form-header col-xs-12 col-pull-12"> Snippet description</h3>
                   <input class="col-xs-12" type="text" ng-model="snippet.description">
@@ -190,15 +190,16 @@
 
               <div class="form-container-edit">
                 <div ng-show="visibleSnipForm[{{note.id}}]" class="snipForm">
-                  <form ng-submit="saveSnip(note)">
-                    <h3 class="form-header col-xs-12 col-pull-12">Snippet Title:</h3>
+                  <form ng-submit="saveSnip(note)" class="add-snip-container row">
+                    <h3 class="form-header col-xs-12 col-pull-12" id="new-snip-{{note.id}}" data-target="#add-snip" data-offset="0">Snippet Title:</h3>
                     <input class="col-xs-12" type="text" ng-model="snippet.description" placeholder="Snippet Title: a brief name to descripe content">
                     <h3 class="form-header col-xs-12 col-pull-12">Snippet Content:</h3>
                     <textarea class="col-xs-12" ng-model="snippet.text" placeholder="Copy and paste useful text here or a YouTube link to embed a video."></textarea>
                     <h3 class="form-header col-xs-12 col-pull-12">Snippet Url:</h3>
                     <input class="col-xs-12" ng-model="snippet.web_url">
-                    <div class="col-xs-12 submit-container">
+                    <div class="col-xs-12 submit-container" id="add-snip-submit">
                       <input type="submit" value="Save snippet">
+                      <a class="cancel-button col-xs-3" ng-click="hideSnipForm(note)">Cancel</a>
                     </div>
                   </form>
                 </div>
