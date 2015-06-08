@@ -30,7 +30,13 @@ app.controller("JourneyController", [
       $(".cat-new-button").css("display", "none");
       $scope.showForm = true;
       $scope.category = {};
-    }
+    };
+    $scope.slideLeft = function(className) {
+      $(className).css("animation", ".3s slideOutRight ease");
+      $(className).css("animation-fill-mode", "backwards");
+      
+    };
+
 
     $scope.createCategory = function() {
       Category.create( {journey_id: $scope.journey.id}, $scope.category )

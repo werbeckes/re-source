@@ -1,5 +1,5 @@
 
-<header class="navbar navbar-default navbar-static-top navbar-xs navbar-md " role="navigation" ng-controller="NavBarController">
+<header class="navbar navbar-default navbar-static-top navbar-xs navbar-md visible-lg" role="navigation" ng-controller="NavBarController">
   <div class='container-fluid row' role='navigation'>
       <% if logged_in? %>
         <ul class="nav navbar-left col-xs-6 col-lg-6 col-xs-resize col-lg-resize">
@@ -7,7 +7,7 @@
           <li >
             <h5 class="navbar-brand visible-lg"><a href="/"><%= current_user.first_name %></a></h5>
             <button class="navbar-brand visible-xs visible-md visible-sm" >
-              <span ng-click="showJourneySidebar()" class="glyphicon glyphicon-menu-hamburger"></span>
+              <span ng-click="showJourneySidebar()" class="glyphicon glyphicon-menu-hamburger nav-glyph"></span>
           </li>
         </ul>
         <ul class="nav navbar-right col-xs-6">
@@ -15,7 +15,7 @@
           <li>
             <h5 class="navbar-brand visible-lg"><%= link_to("Logout", logout_path) %></h5>
             <button class="navbar-brand visible-xs visible-md visible-sm">
-              <span ng-click="addJourneyPopup()" class="glyphicon glyphicon-plus "></span>
+              <span ng-click="addJourneyPopup()" class="glyphicon glyphicon-plus nav-glyph"></span>
             </button></li>
         </ul>
       <% else %>
@@ -26,7 +26,6 @@
           <li><h5 class="navbar-text"><%= link_to "Join", signup_path %></h5></li>
         </ul>
       <% end %>
-
   </div>
 </header>
 

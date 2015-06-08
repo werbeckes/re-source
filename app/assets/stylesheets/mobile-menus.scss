@@ -1,0 +1,90 @@
+//.container-fluid.full-content-container.ng-scope {
+//  position: absolute;
+//  z-index: 75;
+//  position: fixed;
+//  padding-right: 0;
+//  padding: 0;
+//  width: 100vw;
+//  height: 100vw;
+//}
+
+.container-fluid.row.categories-rightpane-mobile.ng-scope {
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  z-index: 4;
+  width: 100vw;
+  height: 100%;
+  margin-right:10%;
+  margin-left: 0;
+  padding: 0;
+  h3.row.cell-header {
+    text-align: right;
+    padding-right: 3em;
+    display: none;
+    a {
+      z-index: 8;
+      color: red;
+    }
+  }
+  ul.note-list.row {
+    text-align: right;
+    display: none;
+    color: rgb(90, 204, 237);
+    width: 100%;
+    font-size: 1.5em;
+    
+    margin-top: 0;
+    font-weight: 100;
+    margin-right: 0;
+    margin-left: 0;
+    float: right;
+    li.background-cell-list
+    {
+        padding: 0;
+        padding-top: 1em;
+        padding-bottom: 2em;
+        padding-right: 1em;
+        list-style-type: none;
+        border-bottom: 1px solid #666;
+        
+        a
+        {
+            padding-right: 1em;
+            font-size: 2em;
+            font-weight: 100;
+            float: right;
+            text-decoration: none;
+            text-indent: 0;
+
+            color: rgb(90, 204, 237);
+            &:link
+            {
+                text-decoration: none;
+            }
+            &:visited
+            {
+                text-decoration: none;
+
+                color: rgb(90, 204, 237);
+            }
+            &:hover
+            {
+                cursor: pointer;
+                text-decoration: none;
+
+                color: white;
+            }
+            &:active
+            {
+                cursor: pointer;
+                text-decoration: none;
+
+                color: white;
+            }
+        }
+    }
+  }
+}
+
+

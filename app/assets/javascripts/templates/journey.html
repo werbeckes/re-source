@@ -1,4 +1,25 @@
-<div class="container-fluid row home-page-container">
+<div class="container-fluid row home-page-container" >
+    <!-- categories page navbar. look into partials-->
+  <header class="navbar navbar-default navbar-static-top navbar-xs navbar-md visible-xs visible-sm" role="navigation" ng-controller="NavBarController">
+    <div class='topbar row' role='navigation'>
+          <ul class="nav navbar-left col-xs-6 col-lg-6 col-xs-resize col-lg-resize">
+            <li>
+              <button class="navbar-brand visible-xs visible-md visible-sm" >
+                <a href="#/journeys" ng-click="slideRight('.container-fluid.row.home-page-container.ng-scope')">
+                  <span class="glyphicon glyphicon-menu-left"></span>
+                </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-right col-xs-6">
+            <li>
+<!--              <button class="navbar-brand visible-xs visible-md visible-sm">-->
+<!--                <span ng-click="showCategoriesPane()" class="glyphicon glyphicon-list nav-glyph"></span>-->
+<!--              </button></li>-->
+          </ul>
+    </div>
+  </header>
+  <!-- end categories page navbar. look into partials-->
+ 
   <nav class="sidebar col-xs-12 col-md-12 col-lg-3">
     <div class="breadcrumb-container row visible-lg">
       <h4 class="back-button"><a href="#/journeys">{{journey.title}}</a></h4>
@@ -11,7 +32,7 @@
 
     <ul class="categories-list col-xs-12">
       <li ng-repeat="category in categories | orderBy:'title'" id="id{{category.id}}" class="cell-list row" ng-show="display(category)">
-        <a href="#/journeys/{{journey.id}}/categories/{{category.id}}">{{category.title}}</a>
+        <a href="#/journeys/{{journey.id}}/categories/{{category.id}}" >{{category.title}}</a>
         <button class="delete-button" ng-click="deleteCategory(category)">
         <span class=" glyphicon glyphicon-remove-sign"></span>
         </button>

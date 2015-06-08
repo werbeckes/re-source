@@ -26,7 +26,7 @@ app.controller("CategoryController", [
 
     UnassignedSnippet.index({user_id: user_id[1]}).$promise.then( function(response) {
       $scope.unassignedSnippets = response;
-    })
+    });
 
     $scope.notes.$promise.then( function() {
       angular.forEach($scope.notes,function(note,index){
@@ -38,6 +38,7 @@ app.controller("CategoryController", [
     $scope.visibleSnipForm = [];
     $scope.editNoteFlag = [];
     var menuOpen = false;
+    var rightMenuOpen = false;
 
     $scope.displayForm = function() {
       hideForm();
@@ -46,12 +47,14 @@ app.controller("CategoryController", [
         $(".cat-new-button").css("animation", "menuSlideUp ease-out .3s");
         $(".note-list").css("animation-fill-mode", "forwards");
         $(".cat-new-button").css("animation-fill-mode", "forwards");
-      };
+      }
       $(".note-list").css("height", "0");
       $(".cat-new-button").css("display", "none");
       $scope.showForm = true;
       $scope.note = {};
     };
+
+
 
     $scope.toggleMenu = function(noteId) {
       var noteAsString =  "#context" + noteId.toString();
@@ -69,6 +72,9 @@ app.controller("CategoryController", [
       }
     };
 
+    $scope.slideLeft = function(className) {
+    };
+
     $scope.createNote = function() {
       Note.create( {journey_id: $scope.journey.id, category_id: $scope.category.id}, $scope.note )
         .$promise.then( function(response) {
@@ -80,11 +86,11 @@ app.controller("CategoryController", [
           //Add note to bottom of notes div
 
           $route.reload();
-        })
-    }
+        });
+    };
 
     $scope.deleteNote = function(note) {
-      var msg = "Are you sure you want to delete this Note and all included snippets?"
+      var msg = "Are you sure you want to delete this Note and all included snippets?";
       // $scope.toggleMenu(note.id);
       if (confirm(msg)) {
         Note.destroy( {journey_id: $scope.journey.id}, note).$promise.then( function() {
@@ -92,12 +98,12 @@ app.controller("CategoryController", [
           $(".notes").find("#note-" +note.id).remove();
         } );
       }
-    }
+    };
 
     $scope.showNoteForm = function(note) {
       $scope.editNoteFlag[note.id] = true;
       $scope.editingNote = note;
-    }
+    };
 
     $scope.hideNoteForm = function(note) {
       $scope.editNoteFlag[note.id] = false;
@@ -107,7 +113,7 @@ app.controller("CategoryController", [
       Note.update( {journey_id: $scope.journey.id, category_id: $scope.category.id, note_id: note.id}, $scope.editingNote).$promise.then( function() {
           $scope.editNoteFlag[note.id] = false;
         } );
-    }
+    };
 
     $scope.togglePublic = function(note) {
       $scope.toggleMenu(note.id);
@@ -120,11 +126,11 @@ app.controller("CategoryController", [
       $scope.toggleMenu(note.id);
       $scope.visibleSnipForm[note.id] = true;
       $scope.snippet = {};
-    }
+    };
 
     $scope.hideSnipForm = function(note) {
       $scope.visibleSnipForm[note.id] = false;
-    }
+    };
 
     $scope.saveSnip = function(note) {
       Snippet.create( {journey_id: $scope.journey.id, category_id: $scope.category.id, note_id: note.id}, $scope.snippet )
@@ -133,20 +139,20 @@ app.controller("CategoryController", [
 
           $route.reload();
         });
-    }
+    };
 
     $scope.saveSnipEdit = function(note, snippet) {
-      Snippet.update( {journey_id: $scope.journey.id, category_id: $scope.category.id, note_id: note.id, snippet_id: snippet.id}, snippet )
-    }
+      Snippet.update( {journey_id: $scope.journey.id, category_id: $scope.category.id, note_id: note.id, snippet_id: snippet.id}, snippet );
+    };
 
     $scope.deleteSnippet = function(snippet) {
-      var msg = "Are you sure you want to delete this snippet?"
+      var msg = "Are you sure you want to delete this snippet?";
       if (confirm(msg)) {
         Snippet.destroy( {journey_id: $scope.journey.id, category_id: $scope.category.id}, snippet).$promise.then( function() {
           $(".show-snippets-container").find("#snip" + snippet.id).remove();
-        })
+        });
       }
-    }
+    };
 
     $scope.addToNote = function(note, snippet) {
       snippet.note_id = note.id;
@@ -155,18 +161,25 @@ app.controller("CategoryController", [
         .$promise.then( function(response){
           // console.log("We give a shit. Improve on this.");
           $route.reload();
-        })
-    }
+        });
+    };
 
-    $scope.display = function(item) { return ($scope.isOwner || item.public_bool) };
+    $scope.display = function(item)
+    {
+     return ($scope.isOwner || item.public_bool);
+   };
 
     $scope.validUrl = function(snippet) {
-      if (snippet.cached_url) {return true}
-      else {return false}
-    }
+      if (snippet.cached_url) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    };
 
     $scope.to_trusted = function(html_code) {
       return $sce.trustAsHtml(html_code);
-    }
+    };
   }
 ]);

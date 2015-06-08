@@ -1,11 +1,42 @@
-<div class="container-fluid row">
+<div class="container-fluid row categories-rightpane-mobile visible-xs visible-sm" >
+  <h3 class="row cell-header"><a href="/logout">Logout</a></h3>
+  <ul class="note-list row">
+    <li ng-repeat="note in notes | orderBy:'title'" class="background-cell-list" ng-show="display(note)">{{note.title}}</li>
+</div>
+
+
+
+
+ <div class="container-fluid full-content-container">
+   <!-- categories page navbar. look into partials-->
+  <header class="navbar navbar-default navbar-static-top navbar-xs navbar-md visible-xs visible-sm row" role="navigation" ng-controller="NavBarController">
+    <div class='topbar row' role='navigation'>
+          <ul class="nav navbar-left col-xs-6 col-lg-6 col-xs-resize col-lg-resize">
+            <li >
+              <button class="navbar-brand visible-xs visible-md visible-sm" >
+                <a href="#/journeys/{{journey.id}}" ng-click="slideRight('.full-content-container')">
+                  <span class="glyphicon glyphicon-menu-left"></span>
+                </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-right col-xs-6">
+            <li>
+              <button class="navbar-brand visible-xs visible-md visible-sm">
+                <span ng-click="showCategoriesPane()" class="glyphicon glyphicon-list nav-glyph"></span>
+              </button></li>
+          </ul>
+    </div>
+  </header>
+  <!-- end categories page navbar. look into partials-->
+
+<!-- begin sidebar -->
   <nav class="sidebar col-lg-3 visible-lg" id="sidebar-scroll" >
     <div class="breadcrumb-container row visible-lg">
       <h4 class="back-button"><a href="#/journeys/{{journey.id}}">{{journey.title}}</a></h4>
       <span class="breadcrumb-carrot" id="first-carrot"> > </span>
       <h5 class="category-bread">{{category.title}}</h5>
     </div>
-      <div class="sidebar-header-container col-xs-12" z-index='20'>
+      <div class="sidebar-header-container col-xs-12">
         <h1 class="cell-header">Note pages:</h1>
       </div>
 
@@ -71,11 +102,11 @@
       </div>
 
 
-      <div class="notes">
+      <div class="notes row">
 
         <div ng-repeat="note in notes | orderBy:'title'" id="note-{{note.id}}" class="ind-note-container col-xs-12" ng-show="display(note)"  data-target="#sidebar-scroll"  data-offest="0">
                       <!-- HIDDEN SHIT TEEHEEHEEHEEHEE NO ONE KNOWS TEEHEEHEEHEE -->
-            <div class="right-context-menu" >
+            <div class="right-context-menu visible-lg visible-md" >
               <ul class="note-list row">
                 <li class="cell-list context-list delete-button col-xs-12" ng-click="deleteNote(note)">Delete</li>
                 <li class="cell-list context-list public-button col-xs-12" ng-click="togglePublic(note)">
@@ -99,7 +130,7 @@
             <div ng-hide="editNoteFlag[{{note.id}}]" id="show-note-{{ note.id }}">
               <div class="note-head-container row">
                 <h3 class="note-title col-xs-10">{{note.title}}</h3>
-                <span class="note-sidebar-container glyphicon glyphicon-cog col-xs-2" ng-click="toggleMenu(note.id)"></span>
+                <span class="note-sidebar-container glyphicon glyphicon-cog col-xs-2 visible-lg visible-md" ng-click="toggleMenu(note.id)"></span>
               </div>
               <h4 class="note-header">Synopsis:</h4>
               <p class="note-text"> {{note.synopsis}}</p>
@@ -166,9 +197,9 @@
 
               <div class="note-button-container row">
                <p class="snip-date col-xs-6">Snipped on: {{snippet.created_at | date:'MMM d, yyyy'}}</p>
-                <button class="edit-button col-xs-1 lighter-edit" id="edit-snip" ng-click="toggle = !toggle" ng-show="isOwner">
+                <button class="edit-button col-xs-1 lighter-edit visible-lg visible-md" id="edit-snip" ng-click="toggle = !toggle" ng-show="isOwner">
                 Edit Snippet</button>
-                <button class="edit-button col-xs-1 lighter-edit" id="delete-snip" ng-click="deleteSnippet(snippet)" ng-show="isOwner">
+                <button class="edit-button col-xs-1 lighter-edit visible-lg visible-md" id="delete-snip" ng-click="deleteSnippet(snippet)" ng-show="isOwner">
                 Delete Snippet</button>
                 </div>
               </div>

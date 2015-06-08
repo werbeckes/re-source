@@ -1,12 +1,32 @@
-<div class="container-fluid row">
+<div class="container-fluid journey-container row">
+      <!-- categories page navbar. look into partials-->
+  <header class="navbar navbar-default navbar-static-top navbar-xs navbar-md visible-xs visible-sm" role="navigation" ng-controller="NavBarController">
+    <div class='topbar row' role='navigation'>
+          <ul class="nav navbar-left col-xs-6 col-lg-6 col-xs-resize col-lg-resize">
+            <li >
+<!--              <button class="navbar-brand visible-xs visible-md visible-sm" >-->
+<!--                <a href="#/journeys" ng-click="slideRight('.container-fluid.row.home-page-container.ng-scope')">-->
+<!--                  <span class="glyphicon glyphicon-menu-left"></span>-->
+                </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-right col-xs-6">
+            <li>
+<!--              <button class="navbar-brand visible-xs visible-md visible-sm">-->
+<!--                <span ng-click="showCategoriesPane()" class="glyphicon glyphicon-list nav-glyph"></span>-->
+<!--              </button></li>-->
+          </ul>
+    </div>
+  </header>
+  <!-- end categories page navbar. look into partials-->
 
-  <div class="sidebar col-xs-12 col-md-12 col-lg-3">
-    <div class="sidebar-header-container col-xs-12">
+  <nav class="sidebar col-xs-12 col-md-12 col-lg-3">
+    <div class="sidebar-header-container row center-block">
       <h1 class="cell-header col-xs-12">Journeys</h1>
     </div>
 
     <ul class="categories-list col-xs-12">
-      <li ng-repeat="journey in journeys | orderBy:'title'" id="{{journey.id}}" ng-show="display(journey)" class="cell-list row">
+      <li ng-repeat="journey in journeys | orderBy:'title'" id="{{journey.id}}" ng-show="display(journey)" ngClick="slideLeft('.navbar.navbar-default')" class="cell-list row">
         <a href="#/journeys/{{journey.id}}">{{journey.title}}</a>
         <button class="delete-button" ng-click="deleteJourney(journey)">
           <span class=" glyphicon glyphicon-remove-sign"></span>
@@ -17,13 +37,13 @@
     <div class="form-container-journey">
       <form ng-show="showForm" ng-submit="createJourney()">
         <h2 class="form-header">New Journey</h2>
-        <input class="col-xs-12" type="text" ng-model="journey.title" placeholder="Title: Ruby/Rails/JavaScript?">
+        <input class="col-xs-12" type="text" ng-model="journey.title" placeholder="Title">
         <!-- <input class="col-xs-12" type="text" ng-model="journey.description" placeholder="Description"><br> -->
         <span class="check"><input type="checkbox" ng-model="journey.public_bool">  <p>public?</p> </span>
         <input class="col-xs-12" type="submit" value="Start Journey">
       </form>
     </div>
-  </div>
+  </nav>
 
   <div class="user-home-head col-xs-12 col-lg-8 visible-lg">
     <h1 class="page-header row-head row">Journey Home Page</h1>
@@ -47,7 +67,7 @@
       <input class="download-extension-submit btn btn-primary" type="submit" value="Download Now">
     </form>
   </div>
-   
+
     </div>
   </div>
 
