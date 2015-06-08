@@ -28,7 +28,7 @@
     </div>
   </header>
   <!-- end categories page navbar. look into partials-->
-   
+
 <!-- begin sidebar -->
   <nav class="sidebar col-lg-3 visible-lg" id="sidebar-scroll" >
     <div class="breadcrumb-container row visible-lg">
@@ -109,7 +109,10 @@
             <div class="right-context-menu visible-lg visible-md" >
               <ul class="note-list row">
                 <li class="cell-list context-list delete-button col-xs-12" ng-click="deleteNote(note)">Delete</li>
-                <li class="cell-list context-list public-button col-xs-12" ng-click="toggleMenu(note.id)">Public</li>
+                <li class="cell-list context-list public-button col-xs-12" ng-click="togglePublic(note)">
+                  <span ng-hide="{{note.public_bool}}">Make Public</span>
+                  <span ng-show="{{note.public_bool}}">Make Private</span>
+                </li>
                 <li class="cell-list context-list add-snip-button col-xs-12" ng-click="toggleMenu(note.id)">
                 <button ng-click="showNoteForm(note)" ng-show="isOwner" ng-class="{active: form-show}">
                 Edit Note</button>
@@ -148,6 +151,7 @@
               <div class="col-xs-12" ng-model="editingNote.code" ui-ace="{theme:'tomorrow_night_bright', useWrapMode:'true', mode: 'ruby'}" ></div>
               <div class="col-xs-12 submit-container">
                 <input type="submit" value="Save Note Edits">
+                <a class="cancel-button col-xs-3" ng-click="hideNoteForm(note)">Cancel</a>
               </div>
             </form>
           </div>
@@ -236,15 +240,27 @@
                 </div>
               </div>
 
-              <div class="unassigned-snippets-container col-xs-12" ng-show="isOwner && unassignedSnippets.length > 0">
-                <h4 class="note-title" id="unassigned-snip-title">Unassigned Snippets:</h4>
-                <div class="single-unassigned-snippet row" ng-repeat="snippet in unassignedSnippets | orderBy:'created_at'">
-                  <p class="unassigned-text col-lg-10 col-xs-12">{{snippet.text | limitTo:140}}...</p>
-                    <span class="unassigned-button col-lg-2 col-xs-12 ">
-                      <button ng-click="addToNote(note, snippet)">Add to Note</button>
-                    </span>
-                    <span class="unassigned-date col-xs-12 visible-lg visible-md"><p>{{snippet.created_at | date:'EEE, MMM d'}}</p></span>
-                </div>
+              <div class="unassigned-snippets-container row" ng-show="isOwner && unassignedSnippets.length > 0">
+                <div class="dropdown col-xs-12" >
+                  <div class="dropdown btn-group col-xs-12" ng-show="unassignedSnippets.length > 0">
+                    <button class="btn dropdown-toggle col-xs-12 center-block" type="button" data-toggle="dropdown" aria-expanded="true" style="border-radius: 0.5em; border-color: none;">
+                      <h4 class="note-title" id="unassigned-snip-title">Unassigned Snippets:</h4>
+                    </button>
+                    <ul class="dropdown-menu" style="border-size: 1em; border-color: none; width: 100%; height: 15em; overflow-y: scroll; background: #4C4C4C;">
+                      <li class="single-unassigned-snippet center-block row" ng-repeat="snippet in unassignedSnippets | orderBy:'created_at'">
+
+                        <div role="menuitem" target="_blank" class="unassigned-text col-xs-12">
+                          <p class="col-xs-9">{{snippet.text | limitTo:140}}...</p>
+                          <div  class="unassigned-button col-xs-3">
+                            <button ng-click="addToNote(note, snippet)">Add to Note</button>
+                            <!-- <p>{{snippet.created_at | date:'EEE, MMM d'}}</p> -->
+                          </div>
+                        </div>
+
+                      </li>
+                   </ul>
+                  </div>
+                </div> <!-- End of dropdown menu div -->
               </div>
 
               </div> <!-- End of show snippets div -->
