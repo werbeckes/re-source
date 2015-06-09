@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: re-source_production
-  username: re-source
+  username: resource
   password: <%= ENV['RE-SOURCE_DATABASE_PASSWORD'] %>
