@@ -7,7 +7,8 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
     else
-      redirect_to '/signup'
+      @errors = "Sorry! Something went wrong. Please try again."
+      render 'users/new'
     end
   end
 

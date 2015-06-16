@@ -801,7 +801,12 @@ h1.row-head {
   z-index: 999999999;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   background-color: #333333;
+}
+
+.signup-bg {
+  overflow: hidden;
 }
 
 .main-title {
@@ -830,8 +835,30 @@ p.download-extension-text {
   z-index: 9999999999999;
 }
 
+@keyframes errorSlideFade {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 p.home-error-message.center-text {
   color: red;
   text-align: center;
+  opacity: 0;
+  animation: errorSlideFade .4s ease;
+  animation-delay: .4s;
+  animation-fill-mode: forwards;
+
+}
+
+#signup-form {
+  input {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
 }
