@@ -16,6 +16,9 @@
         <%= link_to("Signup", '/signup', class: "signup-link col-xs-4") %>
       </div>
     <% end %>
+    <% if @errors %>
+      <p class="row home-error-message center-text"><%= @errors %></p>
+    <% end %>
 
     <div class="download-extension-container row">
       <p class="download-extension-text col-xs-12">
