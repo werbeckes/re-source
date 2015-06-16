@@ -50,13 +50,18 @@ $link-blue-dark: #337AB7;
   margin-bottom: 1em;
 }
 
-form.add-snip-container.row.ng-pristine.ng-valid {
+form.add-snip-container.row {
   margin-left: 2em;
   margin-right: 2em;
   background-color: #333333;
   border-radius: 1em;
   padding: 1em;
   border: none;
+  input:enabled {
+    // margin-left: 2em;
+    // margin-right: 2em;
+  }
+
 }
 
 #add-snip-submit {
