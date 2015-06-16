@@ -59,7 +59,7 @@ $link-blue: rgb(90, 204, 237);
       }
     }
   .header.navbar.navbar-default.navbar-static-top.navbar-xs.navbar-md.visible-xs.visible-sm.row.ng-scope {
-    position: fixed;  
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
@@ -73,8 +73,8 @@ $link-blue: rgb(90, 204, 237);
     .slide-out {
 //      transform: translateX(-100%);
     }
-  
-  
+
+
   .container-fluid.journey-container.row {
     .sidebar.col-xs-12.col-md-12.col-lg-3 {
       margin-top: 4em;
@@ -91,7 +91,7 @@ $link-blue: rgb(90, 204, 237);
   }
   .container-fluid.journey-container.row.ng-scope.slide-out {
   }
-  
+
     nav.sidebar.col-xs-12.col-md-12.col-lg-3 {
       margin-top: 4em;
       //animation was here
@@ -125,13 +125,13 @@ $link-blue: rgb(90, 204, 237);
     overflow-y: scroll;
 
   }
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
   .single-unassigned-snippet.row.ng-scope {
     margin-left: 0;
     margin-right: 0;
@@ -186,7 +186,7 @@ $link-blue: rgb(90, 204, 237);
         margin-bottom: 1em;
     }
   .container-fluid.full-content-container.ng-scope {
-   padding: 0; 
+   padding: 0;
 }
 }
 @media (min-width: 1200px)
@@ -200,7 +200,7 @@ $link-blue: rgb(90, 204, 237);
         margin-left: 25%;
     }
   .container-fluid.full-content-container.ng-scope {
-   padding: 0; 
+   padding: 0;
 }
 
   .navbar{
@@ -801,7 +801,12 @@ h1.row-head {
   z-index: 999999999;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   background-color: #333333;
+}
+
+.signup-bg {
+  overflow: hidden;
 }
 
 .main-title {
@@ -828,4 +833,32 @@ p.download-extension-text {
   height: 100%;
   background-color: #333;
   z-index: 9999999999999;
+}
+
+@keyframes errorSlideFade {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+p.home-error-message.center-text {
+  color: red;
+  text-align: center;
+  opacity: 0;
+  animation: errorSlideFade .4s ease;
+  animation-delay: .4s;
+  animation-fill-mode: forwards;
+
+}
+
+#signup-form {
+  input {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
 }

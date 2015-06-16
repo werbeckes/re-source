@@ -16,15 +16,20 @@
         <%= link_to("Signup", '/signup', class: "signup-link col-xs-4") %>
       </div>
     <% end %>
+    <% if @errors %>
+      <p class="row home-error-message center-text"><%= @errors %></p>
+    <% end %>
 
-    <div class="download-extension-container row">
+
+<!-- not sure we need this on login or signup? Team meeting I'm willing to leave it, I just don't know why it would be here. -->
+<!--     <div class="download-extension-container row">
       <p class="download-extension-text col-xs-12">
         For full functionality, download the <strong>Re:Source Snippet Saver</strong>.
       </p>
       <form action="https://chrome.google.com/webstore/detail/resource-snippet-saver/pejlmdojlceajdfmajpmanmidmkekmmm" class="download-button">
         <input class="download-extension-submit btn btn-primary" type="submit" value="Download Now">
       </form>
-    </div>
+    </div> -->
 
   </div>
 </div>

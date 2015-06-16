@@ -14,7 +14,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
     else
-      redirect_to '/login'
+      @errors = "Sorry, something went wrong. Please try again."
+      render 'sessions/new'
     end
   end
 

@@ -2,7 +2,7 @@
   <div class="main-title row">
     <h1 class="col-xs-12 header-login">Sign up</h1>
   </div>
-  <div class="form-container row">
+  <div class="form-container row" id="signup-form">
     <%= form_for :user, url: '/users', html: {class: "login-form col-centered col-md-3 col-xs-12"} do |f| %>
       <div class="input-container">
         <%= f.text_field :first_name, class: "col-xs-12", placeholder:  "First Name" %>
@@ -25,6 +25,10 @@
       <div class="input-container">
         <%= f.submit "Submit", class: "submit-login" %>
       </div>
+      <% if @errors %>
+      <p class="col-xs-12 home-error-message center-text"><%= @errors %></p>
     <% end %>
+    <% end %>
+
   </div>
 </div>
