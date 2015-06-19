@@ -4,7 +4,6 @@
 
 Re: Source is a tool designed to enhance your code-learning journey. Consolidate all useful bits of information you find while exploring new concepts into an intuitive structure for immediate reflection and future reference.
 
-[Expounded Vision](vision.md)
 
 #Project Operating Agreement
 
