@@ -6,7 +6,7 @@ app.controller("JourneyController", [
   'Journey',
   'Owner',
   function($scope, $location, $routeParams, Category, Journey, Owner) {
-    var regex = /users\/(.)#/;
+    var regex = /users\/(\d+)#/;
     var user_id = regex.exec($location.absUrl());
 
     var owner = Owner.check( {id: user_id[1]} );

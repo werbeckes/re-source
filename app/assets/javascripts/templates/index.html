@@ -29,7 +29,7 @@
       <li ng-repeat="journey in journeys | orderBy:'title'" id="{{journey.id}}" ng-show="display(journey)" ngClick="slideLeft('.navbar.navbar-default')" class="cell-list row">
         <a href="#/journeys/{{journey.id}}">{{journey.title}}</a>
         <button class="delete-button" ng-click="deleteJourney(journey)">
-          <span class=" glyphicon glyphicon-remove-sign"></span>
+          <span class="glyphicon glyphicon-remove-sign"></span>
         </button>
       </li>
     </ul>
