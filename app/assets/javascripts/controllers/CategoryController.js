@@ -11,7 +11,7 @@ app.controller("CategoryController", [
   'Owner',
   '$sce',
   function($scope, $location, $route, $routeParams, Journey, Category, Note, Snippet, UnassignedSnippet, Owner, $sce ) {
-    var regex = /users\/(.)#/;
+    var regex = /users\/(\d+)#/;
     var user_id = regex.exec($location.absUrl());
     $scope.fullPath = $location.absUrl();
 
