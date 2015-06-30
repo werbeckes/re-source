@@ -6,9 +6,14 @@ class HomeController < ApplicationController
   end
 
   def load_journeys
-    journeys = current_user.journeys
+    if current_user == nil
+      cur_user = User.find_by_id(params[:user_id])
+      @journeys = cur_user.journeys
+    else
+      @journeys = current_user.journeys
+    end
     journey_hash = []
-    journeys.each do |journey|
+    @journeys.each do |journey|
       journey_hash[journey.id] = {
         title: journey.title,
         description: journey.description,
