@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def load_journeys
-    if current_user == nil
+    if !current_user
       cur_user = User.find_by_id(params[:user_id])
       @journeys = cur_user.journeys
     else
